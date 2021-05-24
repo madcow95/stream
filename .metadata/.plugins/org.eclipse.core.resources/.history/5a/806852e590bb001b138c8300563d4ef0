@@ -1,0 +1,16 @@
+package com.moviestream.movie.persistence.impl;
+
+import java.util.List;
+
+import com.moviestream.movie.domain.BoardDTO;
+import com.moviestream.movie.persistence.IBoardDAO;
+
+public class BoardDAOImpl implements IBoardDAO{
+
+	@Override
+	public List<BoardDTO> boardList() throws Exception {
+		
+		return null;
+	}
+
+}

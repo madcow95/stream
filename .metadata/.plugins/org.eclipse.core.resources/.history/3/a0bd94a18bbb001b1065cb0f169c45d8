@@ -1,0 +1,9 @@
+package com.moviestream.movie.persistence;
+
+import com.moviestream.movie.domain.MemberDTO;
+
+public interface IMemberDAO {
+	
+	public MemberDTO getMember() throws Exception;
+
+}

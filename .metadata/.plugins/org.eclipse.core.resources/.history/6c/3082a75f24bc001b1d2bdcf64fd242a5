@@ -1,0 +1,17 @@
+package com.moviestream.movie.service;
+
+import java.util.List;
+
+import com.moviestream.movie.domain.BoardDTO;
+import com.moviestream.movie.domain.Criteria;
+import com.moviestream.movie.domain.FreeCriteria;
+
+public interface IBoardService {
+
+	public List<BoardDTO> boardList(Criteria cri) throws Exception;
+	public List<BoardDTO> freeBoard(FreeCriteria cri) throws Exception;
+	public int getTotalCnt(Criteria cri) throws Exception;
+	public BoardDTO read(int articleno) throws Exception;
+	public boolean modify(BoardDTO bDto) throws Exception;
+	public boolean remove(BoardDTO bDto) throws Exception;
+}

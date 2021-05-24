@@ -1,0 +1,23 @@
+package com.moviestream.movie.persistence;
+
+import java.sql.Date;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class MemberDTO {
+
+	private String id;
+	private String pwd;
+	private String name;
+	private String email;
+	private String address;
+	private String phone;
+	private char useyn;
+	private Date indate;
+	private String zip_num;
+}

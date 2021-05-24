@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BoardMapper">
+	<sql id="criteria">
+		<trim prefix="()" suffix=") AND" prefixOverrides="OR">
+			<foreach item="type" collection="typeArr">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'T'.toString()">
+							subject LIKE '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'C'.toString()">
+							content LIKE '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'W'.toString()">
+							id LIKE '%'||#{keyword}||'%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+
+	<select id="boardList" resultType="com.moviestream.movie.domain.BoardDTO">
+				<![CDATA[
+			SELECT articleno,
+				   subject,
+				   content,
+				   reg_date,
+				   readcount,
+				   ref,
+				   re_step,
+				   re_level,
+				   filename,
+				   id
+			FROM  (
+				   SELECT /*+ INDEX_DESC(board BOARD_NUM_PK) */
+				   		  rownum rn,
+				   		  articleno,
+				   		  subject,
+				   		  content,
+				   		  reg_date,
+				   		  readcount,
+				   		  ref,
+				   		  re_step,
+				   		  re_level,
+				   		  filename,
+				   		  id
+				   FROM	  board
+				   WHERE  
+			]]>
+			<include refid="criteria"></include>
+			<![CDATA[
+				   rownum <= #{pageNum} * #{amount})
+			WHERE rn > (#{pageNum} - 1) * #{amount}
+			]]>
+	</select>
+	
+	<select id="getTotalCnt" resultType="int">
+		SELECT COUNT(*)
+		FROM board
+		WHERE articleno > 0
+	</select>
+	
+	<select id="read" resultType="com.moviestream.movie.domain.BoardDTO">
+		SELECT *
+		FROM board
+		WHERE articleno=#{articleno}
+	</select>
+</mapper>

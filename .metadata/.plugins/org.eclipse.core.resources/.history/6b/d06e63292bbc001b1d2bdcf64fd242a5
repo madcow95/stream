@@ -1,0 +1,10 @@
+package com.moviestream.movie.service;
+
+import java.util.List;
+
+import com.moviestream.movie.member.domain.MovieDTO;
+
+public interface IMovieService {
+
+	public List<MovieDTO> getMovie() throws Exception;
+}

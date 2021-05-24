@@ -1,0 +1,21 @@
+package com.moviestream.movie.persistence.impl;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.moviestream.movie.domain.MemberDTO;
+import com.moviestream.movie.persistence.IMemberDAO;
+
+@Repository
+public class MemberDAOImpl implements IMemberDAO{
+	
+	@Autowired SqlSession session;
+
+	@Override
+	public MemberDTO getMember() throws Exception {
+
+		return session.selectList("MemberMapper.getMember");
+	}
+
+}

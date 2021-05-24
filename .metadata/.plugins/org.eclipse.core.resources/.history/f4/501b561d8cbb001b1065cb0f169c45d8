@@ -1,0 +1,11 @@
+package com.moviestream.movie.service;
+
+import java.util.List;
+
+import com.moviestream.movie.domain.MemberDTO;
+
+public interface IMemberService {
+	
+	public List<MemberDTO> getMember() throws Exception;
+
+}
