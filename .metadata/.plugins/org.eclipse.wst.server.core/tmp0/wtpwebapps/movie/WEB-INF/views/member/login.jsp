@@ -13,6 +13,10 @@
 		$("#find").on("click", function () {
 			location.href="${ctx}/member/find";
 		});
+		
+		$("#contract").on("click", function () {
+			location.href="${ctx}/member/contract";
+		});
 	});
 </script>
 <body>
@@ -36,7 +40,7 @@
 
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Login</button>
               <hr class="my-4">
-              <button class="btn btn-lg btn-google btn-block text-uppercase" id="join">회원가입</button>
+              <button class="btn btn-lg btn-google btn-block text-uppercase" id="contract">회원가입</button>
               <button class="btn btn-lg btn-facebook btn-block text-uppercase" id="find">아이디 / 비밀번호 찾기</button>
             </form>
           </div>

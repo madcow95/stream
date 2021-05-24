@@ -5,16 +5,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.moviestream.movie.member.domain.MemberDTO;
 import com.moviestream.movie.member.service.IMemberService;
@@ -26,27 +25,34 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class MemberController {
 	
-	private org.slf4j.Logger logger = LoggerFactory.getLogger(MemberController.class);
-	
 	@Autowired
 	private IMemberService service;
 	
+	// 단순 페이지이동
 	@RequestMapping("/login")
-	public void login() throws Exception {
+	public void login() {
 	}
-	
 	@RequestMapping("/contract")
 	public void contract() {
 	}
-	
 	@RequestMapping("/mypage")
 	public void mypage() {
 	}
+	@RequestMapping("/find")
+	public void find() {
+	}
+	@RequestMapping("/join")
+	public void toJoin() {
+	}
+	@RequestMapping("/jusoPopup")
+	public void juso() {
+	}
 	
+	// control
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(@RequestParam("id") String id,
-					  @RequestParam("password") String pwd,
-					  HttpSession session) throws Exception{
+			@RequestParam("password") String pwd,
+			HttpSession session) throws Exception{
 		
 		String uri = "/member/result/login_fail";
 		List<MemberDTO> memList = service.getMember();
@@ -63,8 +69,21 @@ public class MemberController {
 		return uri;
 	}
 	
-	@RequestMapping("/find")
-	public void find() {
+	@PostMapping(value = "/id_check")
+	public @ResponseBody Map<String, Object> id_check(@RequestParam("id") String id) throws Exception {
+		Map<String, Object> checkMap = new HashMap<>();
+		int result = -1;
+		if(service.id_check(id) == 1) {
+			result = 1;
+		}
+		checkMap.put("id", id);
+		checkMap.put("message", result);
+		return checkMap;
 	}
 	
+	@RequestMapping(value = "/join", method = RequestMethod.POST)
+	public String join(MemberDTO mDto) throws Exception {
+		log.info(mDto);
+		return "";
+	}
 }

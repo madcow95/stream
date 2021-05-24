@@ -27,4 +27,9 @@ public class MemberDAOImpl implements IMemberDAO{
 		return session.selectOne("MemberMapper.login", loginMap);
 	}
 
+	@Override
+	public int id_check(String id) throws Exception {
+		return session.selectOne("id", id);
+	}
+
 }

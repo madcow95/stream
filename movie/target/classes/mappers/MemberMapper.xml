@@ -15,4 +15,10 @@
 		WHERE id=#{id}
 		AND pwd=#{pwd}
 	</select>
+	
+	<select id="id" resultType="int">
+		SELECT COUNT(*)
+		FROM member
+		WHERE id=#{id}
+	</select>
 </mapper>

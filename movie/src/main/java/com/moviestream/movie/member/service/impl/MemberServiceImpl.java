@@ -28,4 +28,9 @@ public class MemberServiceImpl implements IMemberService{
 		return mDao.login(loginMap);
 	}
 
+	@Override
+	public int id_check(String id) throws Exception {
+		return mDao.id_check(id);
+	}
+
 }
