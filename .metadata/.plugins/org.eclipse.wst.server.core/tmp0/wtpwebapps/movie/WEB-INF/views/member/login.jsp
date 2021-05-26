@@ -11,7 +11,7 @@
 <script type="text/javascript">
 	$(document).ready(function () {
 		$("#find").on("click", function () {
-			location.href="${ctx}/member/find";
+			location.href="${ctx}/member/findid";
 		});
 		
 		$("#contract").on("click", function () {

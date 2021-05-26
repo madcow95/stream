@@ -1,0 +1,15 @@
+package com.moviestream.movie.movie;
+
+import java.io.IOException;
+import java.net.URLEncoder;
+
+public class GetMovie {
+	
+	public static void main(String[] args) throws IOException{
+		
+		StringBuilder urlBuilder = new StringBuilder("http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&nation=대한민국");
+		urlBuilder.append("?" + URLEncoder.encode("ServiceKey","UTF-8")+"=1PK871G36HUKL041381C");
+		
+	}
+
+}

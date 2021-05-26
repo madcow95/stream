@@ -15,6 +15,10 @@
 	  -o-background-size: cover;
 	  background-size: cover;
 	}
+	
+	header {
+		background-color: #000000;
+	}
 </style>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="${ctx}/resources/css/carousel.css">

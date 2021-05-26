@@ -38,8 +38,11 @@ public class MemberController {
 	@RequestMapping("/mypage")
 	public void mypage() {
 	}
-	@RequestMapping("/find")
-	public void find() {
+	@RequestMapping("/findid")
+	public void findId() {
+	}
+	@RequestMapping("/findpwd")
+	public void findPwd() {
 	}
 	@RequestMapping("/join")
 	public void toJoin() {
@@ -84,6 +87,19 @@ public class MemberController {
 	@RequestMapping(value = "/join", method = RequestMethod.POST)
 	public String join(MemberDTO mDto) throws Exception {
 		log.info(mDto);
+		return "";
+	}
+	
+	@RequestMapping(value = "/findId", method = RequestMethod.POST)
+	public String findId(MemberDTO mDto) throws Exception {
+		log.info(mDto);
+		List<MemberDTO> memList = service.getMember();
+		for(int i = 0; i< memList.size(); i++) {
+			if(memList.get(i).getName().equals(mDto.getName()) && memList.get(i).getEmail().equals(mDto.getEmail())) {
+				log.info("일치 회원 있음");
+				break;
+			}
+		}
 		return "";
 	}
 }

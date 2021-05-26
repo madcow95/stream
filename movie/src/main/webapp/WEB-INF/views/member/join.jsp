@@ -83,7 +83,7 @@
     			</span>
     			<span class="error_next_box"></span>    
 			</div>
-	         <div class="btn_area">
+	         <div class="btn_area" >
     	         <p style="margin: 0 auto; text-align: center;">
   					<button type="button" class="btn btn-default btn-lg" style="border: 1px solid #000000;" id="toList">취소</button>
   					<button type="submit" class="btn btn-primary btn-lg">회원가입</button>

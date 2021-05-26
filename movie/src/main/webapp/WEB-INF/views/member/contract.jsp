@@ -33,7 +33,7 @@ $(document).ready(function () {
 </script>
 <body>
 <%@ include file="../header.jsp" %>
-<form action="" id="joinForm" name="frm" method="get">
+<form action="" id="joinForm" name="frm" method="get" style="margin-bottom: 5%;">
 		<ul class="join_box" style="margin-top: 20%;">
 			<li class="checkBox check01">
 				<ul class="clearfix">
@@ -63,7 +63,7 @@ OOO 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사�
 			</li>
 		</ul>
 		<p style="margin: 0 auto; text-align: center;">
- 		 <button type="button" class="btn btn-default btn-lg" id="toHome">비동의</button>
+ 		 <button type="button" class="btn btn-default btn-lg" id="toHome" style="border: 1px solid #000000;">비동의</button>
 		 <button type="button" class="btn btn-primary btn-lg" id="toJoin" >동의</button>
 		</p>
 	</form>

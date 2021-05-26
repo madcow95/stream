@@ -1,0 +1,26 @@
+/**
+ * 
+ */
+ var movieSearch = (function () {
+	function search(keyword, callback, error) {
+		console.log("keyword search .........................");
+		
+		$.ajax({
+			type : "post",
+			url : keyword.ctx + "/board/movieBoard",
+			data : JSON.stringify(keyword.searchKeyword),
+			contentType : "application/json; charset=UTF-8",
+			success : function(result, status, xhr) {
+				if (callback) {
+					console.log(result);
+					callback(result);
+				}
+			},
+			error : function(xhr, status, er) {
+				if(error) {
+					error(er);
+				}
+			}
+		})
+	}
+});

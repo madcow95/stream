@@ -110,10 +110,11 @@ $(document).ready(function() {
                 <!-- /.col-lg-12 -->
             </div>
             <select class="form-control" name="selectBoard" id="selectBoard" onchange="window.location.href=this.value" style="margin-bottom: 5px; border: 1px solid #000000;">
-			  <option>선택</option>
+			  <!-- <option>선택</option> -->
+			  <option value="${ctx}/board/list">선택</option>
 			  <option value="${ctx}/board/list" id="board">공지사항</option>
 			  <option value="${ctx}/board/freeBoard" id="free">자유게시판</option>
-			  <option value="${ctx}/board/board_ready" id="movie">영화추천</option>
+			  <option value="${ctx}/board/movieBoard" id="movie">영화정보</option>
 			</select>
             <!-- /.row -->
             <div class="row">
