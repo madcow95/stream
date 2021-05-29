@@ -32,4 +32,9 @@ public class MemberDAOImpl implements IMemberDAO{
 		return session.selectOne("id", id);
 	}
 
+	@Override
+	public int pwdChange(Map<String, String> changeMap) throws Exception {
+		return session.update("changePwd", changeMap);
+	}
+
 }

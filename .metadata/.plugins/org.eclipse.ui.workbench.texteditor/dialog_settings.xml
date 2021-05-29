@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="Url"/>
+		<item key="selection" value="null"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="null"/>
+			<item value="board"/>
 			<item value="url"/>
 			<item value="해리"/>
 			<item value="서편제"/>
@@ -21,8 +23,6 @@
 			<item value="해리포터"/>
 			<item value="login"/>
 			<item value="int"/>
-			<item value="board"/>
-			<item value="wid"/>
 		</list>
 		<list key="replacehistory">
 			<item value="form-control"/>
@@ -33,10 +33,14 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1380"/>
-		<item key="DIALOG_Y_ORIGIN" value="373"/>
+		<item key="DIALOG_X_ORIGIN" value="1522"/>
+		<item key="DIALOG_Y_ORIGIN" value="303"/>
 		<item key="DIALOG_WIDTH" value="340"/>
 		<item key="DIALOG_HEIGHT" value="454"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="932"/>
+		<item key="DIALOG_Y_ORIGIN" value="497"/>
 	</section>
 </section>

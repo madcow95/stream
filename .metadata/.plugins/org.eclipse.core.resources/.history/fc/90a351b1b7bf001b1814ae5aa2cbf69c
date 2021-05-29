@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MovieMapper">
+	<select id="movieList" resultType="com.moviestream.movie.movie.domain.MovieDTO">
+		SELECT *
+		FROM movie
+	</select>
+	
+	<insert id="saveMovie">
+		INSERT INTO movieinfo(title, subtitle, director, actor, image, userRating, link)
+		VALUES(#{title}, #{subtitle}, #{director}, #{actor}, #{image}, #{userRating}, #{link})
+	</insert>
+	
+	<delete id="delSameInfo">
+		DELETE FROM movieinfo
+		WHERE link=#{link}
+	</delete>
+</mapper>

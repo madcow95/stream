@@ -15,7 +15,7 @@ public class MemberServiceImpl implements IMemberService{
 	
 	@Autowired
 	private IMemberDAO mDao;
-
+	
 	@Override
 	public List<MemberDTO> getMember() throws Exception {
 		

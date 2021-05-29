@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="${ctx}/resources/css/find.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="${ctx}/resources/js/find.js"></script>
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("#codBtn").on("click", function () {
+			var code = $("input[name='code']").value;
+		});
+	});
+</script>
+<body>
+<%@ include file="../header.jsp" %>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">인증번호를 입력해주세요</h5>
+            <form class="form-signin" action="${ctx}/member/find" method="post">
+              <div class="form-label-group">
+                <input type="text" id="inputCode" class="form-control" placeholder="인증번호" name="code">
+                <label></label>
+              </div>
+
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="button" id="codeBtn">입력</button>
+              <hr class="my-4">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<input type="text" value="${code.id }">
+<input type="text" value="${code.code }">
+</body>
+</html>

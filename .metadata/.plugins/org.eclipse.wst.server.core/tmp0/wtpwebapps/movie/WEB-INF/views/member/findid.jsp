@@ -17,7 +17,7 @@
         <div class="card card-signin my-5">
           <div class="card-body">
             <h5 class="card-title text-center">아이디 찾기</h5>
-            <form class="form-signin" action="${ctx}/member/findId" method="post">
+            <form class="form-signin" action="${ctx}/member/find" method="post">
               <div class="form-label-group">
                 <input type="text" id="inputName" class="form-control" placeholder="이름" name="name">
                 <label></label>
@@ -28,11 +28,11 @@
                 <label></label>
               </div>
 
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">인증번호 받기</button>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">아이디 찾기</button>
               <hr class="my-4">
             </form>
               <button class="btn btn-lg btn-google btn-block text-uppercase" id="contract" style="border: 2px solid #000000;">회원가입</button>
-              <div class="text-center"><a class="small" href="${ctx}/member/findpwd">비밀번호 찾기</a></div>
+              <div class="text-center"><a class="small" href="${ctx}/member/findPwd">비밀번호 찾기</a></div>
           </div>
         </div>
       </div>

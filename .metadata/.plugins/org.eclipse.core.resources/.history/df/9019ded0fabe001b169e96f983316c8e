@@ -1,0 +1,28 @@
+$(document).ready(function() {
+	$("#contract").on("click", function() {
+		location.href="contract";
+	});
+	
+});
+
+$(document).ready(function () {
+		$("#codeChk").on("click", function () {
+			var code = document.getElementById("rCode").value;
+			var codeChk = document.getElementById("code").value;
+			console.log("code , codeChk"+ code + codeChk);
+			if(codeCheck(code, codeChk) == true) {
+				console.log("true check")
+				alert("오케이 일치!")
+			} else {
+				alert("인증번호가 일치하지 않습니다.");
+			}
+		});
+		function codeCheck(code, codeChk) {
+			console.log("code와 codeChk 체크"+code+"/"+codeChk);
+			if(code == codeChk) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	});

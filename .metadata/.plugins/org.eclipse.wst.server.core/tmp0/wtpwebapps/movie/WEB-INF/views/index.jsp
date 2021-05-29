@@ -7,14 +7,15 @@
 <head>
 <style type="text/css">
 	.carousel-item {
-	  height: 50vh;
-	  min-height: 350px;
+	  height: 75vh;
+	  min-height: 500px;
 	  background: no-repeat center center scroll;
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
 	  -o-background-size: cover;
 	  background-size: cover;
-	}
+	  
+	  	}
 	
 	header {
 		background-color: #000000;
@@ -22,6 +23,7 @@
 </style>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="${ctx}/resources/css/carousel.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -35,21 +37,21 @@
     </ol>
     <div class="carousel-inner" role="listbox" >
       <!-- Slide One - Set the background image for this slide in the line below -->
-      <div class="carousel-item active" style="background-image: url(${ctx}/resources/images/익스트랙션가로.jpg)">
+      <div class="carousel-item active" style="background-image: url(${ctx}/resources/images/익스트랙션배경.jpg)">
         <div class="carousel-caption d-none d-md-block">
           <h3 class="display-4">익스트랙션</h3>
           <p class="lead">마약집안 아들래미 구출작전</p>
         </div>
       </div>
       <!-- Slide Two - Set the background image for this slide in the line below -->
-      <div class="carousel-item" style="background-image: url(${ctx}/resources/images/신세계가로.jpg)">
+      <div class="carousel-item" style="background-image: url(${ctx}/resources/images/조선명탐정.PNG)">
         <div class="carousel-caption d-none d-md-block">
-          <h3 class="display-4">신세계</h3>
-          <p class="lead">경찰의 이중생활</p>
+          <h3 class="display-4">조선명탐정</h3>
+          <p class="lead">;;</p>
         </div>
       </div>
       Slide Three - Set the background image for this slide in the line below
-      <div class="carousel-item" style="background-image: url(${ctx}/resources/images/존윅가로.jpg)">
+      <div class="carousel-item" style="background-image: url(${ctx}/resources/images/존윅.PNG)">
         <div class="carousel-caption d-none d-md-block">
           <h3 class="display-4">존윅</h3>
           <p class="lead">애견인의 복수</p>

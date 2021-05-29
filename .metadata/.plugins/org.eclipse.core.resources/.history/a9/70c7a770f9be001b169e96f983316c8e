@@ -1,0 +1,13 @@
+$(document).ready(function() {
+	$("#contract").on("click", function() {
+		location.href="contract";
+	});
+});
+
+function codeCheck(code, codeChk) {
+	if(code == codeChk) {
+		return true;
+	} else {
+		return false;
+	}
+}

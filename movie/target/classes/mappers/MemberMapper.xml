@@ -21,4 +21,8 @@
 		FROM member
 		WHERE id=#{id}
 	</select>
+	
+	<update id="changePwd">
+		
+	</update>
 </mapper>
