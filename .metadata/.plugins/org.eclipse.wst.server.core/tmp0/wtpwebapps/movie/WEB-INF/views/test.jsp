@@ -12,130 +12,19 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <title>Insert title here</title>
 </head>
-<body>
+<body style="background-color: #000000;">
+<%@ include file="header.jsp" %>
 <div class="row">
     <h3 class="row_title">Trending Now</h3>
-    <div class="row_posters" onscroll="getScrollVal()">
+    <div class="row_posters" onscroll="getScrollVal()" style="margin-left: 20px; margin-top: 15px;">
+      <c:forEach items="${movieList}" var="list" begin="1" end="30" step="1">
       <div class="wrap">
-        <img src="https://image.tmdb.org/t/p/original///56v2KjBlU4XaOv9rVYEQypROD7P.jpg" alt="movieImage" class="row_poster" />
-        <h5 class="poster_title">Stranger Things</h5>
+        <img src="${list.image}" alt="movieImage" class="row_poster" style="margin-left: 20px;">
         <div class="poster_info">
-          <h4>Stranger Things</h4>
-          <p>When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.</p>
+        	
         </div>
       </div>
-      <div class="wrap">
-        <img src="https://image.tmdb.org/t/p/original///56v2KjBlU4XaOv9rVYEQypROD7P.jpg" alt="movieImage" class="row_poster" />
-        <h5 class="poster_title">Stranger Things</h5>
-        <div class="poster_info">
-          <h4>Stranger Things</h4>
-          <p>When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.</p>
-        </div>
-      </div>
-      <div class="wrap">
-        <img src="https://image.tmdb.org/t/p/original///56v2KjBlU4XaOv9rVYEQypROD7P.jpg" alt="movieImage" class="row_poster" />
-        <h5 class="poster_title">Stranger Things</h5>
-        <div class="poster_info">
-          <h4>Stranger Things</h4>
-          <p>When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.</p>
-        </div>
-      </div>
-      <div class="wrap">
-        <img src="https://image.tmdb.org/t/p/original///56v2KjBlU4XaOv9rVYEQypROD7P.jpg" alt="movieImage" class="row_poster" />
-        <h5 class="poster_title">Stranger Things</h5>
-        <div class="poster_info">
-          <h4>Stranger Things</h4>
-          <p>When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.</p>
-        </div>
-      </div>
-      <div class="wrap">
-        <img src="https://image.tmdb.org/t/p/original///56v2KjBlU4XaOv9rVYEQypROD7P.jpg" alt="movieImage" class="row_poster" />
-        <h5 class="poster_title">Stranger Things</h5>
-        <div class="poster_info">
-          <h4>Stranger Things</h4>
-          <p>When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.</p>
-        </div>
-      </div>
-      <div class="wrap">
-        <img src="https://image.tmdb.org/t/p/original///56v2KjBlU4XaOv9rVYEQypROD7P.jpg" alt="movieImage" class="row_poster" />
-        <h5 class="poster_title">Stranger Things</h5>
-        <div class="poster_info">
-          <h4>Stranger Things</h4>
-          <p>When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.</p>
-        </div>
-      </div>
-      <div class="wrap">
-        <img src="https://image.tmdb.org/t/p/original///56v2KjBlU4XaOv9rVYEQypROD7P.jpg" alt="movieImage" class="row_poster" />
-        <h5 class="poster_title">Stranger Things</h5>
-        <div class="poster_info">
-          <h4>Stranger Things</h4>
-          <p>When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.</p>
-        </div>
-      </div>
-      <div class="wrap">
-        <img src="https://image.tmdb.org/t/p/original///56v2KjBlU4XaOv9rVYEQypROD7P.jpg" alt="movieImage" class="row_poster" />
-        <h5 class="poster_title">Stranger Things</h5>
-        <div class="poster_info">
-          <h4>Stranger Things</h4>
-          <p>When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.</p>
-        </div>
-      </div>
-      <div class="wrap">
-        <img src="https://image.tmdb.org/t/p/original///56v2KjBlU4XaOv9rVYEQypROD7P.jpg" alt="movieImage" class="row_poster" />
-        <h5 class="poster_title">Stranger Things</h5>
-        <div class="poster_info">
-          <h4>Stranger Things</h4>
-          <p>When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.</p>
-        </div>
-      </div>
-      <div class="wrap">
-        <img src="https://image.tmdb.org/t/p/original///56v2KjBlU4XaOv9rVYEQypROD7P.jpg" alt="movieImage" class="row_poster" />
-        <h5 class="poster_title">Stranger Things</h5>
-        <div class="poster_info">
-          <h4>Stranger Things</h4>
-          <p>When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.</p>
-        </div>
-      </div>
-      <div class="wrap">
-        <img src="https://image.tmdb.org/t/p/original///56v2KjBlU4XaOv9rVYEQypROD7P.jpg" alt="movieImage" class="row_poster" />
-        <h5 class="poster_title">Stranger Things</h5>
-        <div class="poster_info">
-          <h4>Stranger Things</h4>
-          <p>When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.</p>
-        </div>
-      </div>
-      <div class="wrap">
-        <img src="https://image.tmdb.org/t/p/original///56v2KjBlU4XaOv9rVYEQypROD7P.jpg" alt="movieImage" class="row_poster" />
-        <h5 class="poster_title">Stranger Things</h5>
-        <div class="poster_info">
-          <h4>Stranger Things</h4>
-          <p>When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.</p>
-        </div>
-      </div>
-      <div class="wrap">
-        <img src="https://image.tmdb.org/t/p/original///56v2KjBlU4XaOv9rVYEQypROD7P.jpg" alt="movieImage" class="row_poster" />
-        <h5 class="poster_title">Stranger Things</h5>
-        <div class="poster_info">
-          <h4>Stranger Things</h4>
-          <p>When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.</p>
-        </div>
-      </div>
-      <div class="wrap">
-        <img src="https://image.tmdb.org/t/p/original///56v2KjBlU4XaOv9rVYEQypROD7P.jpg" alt="movieImage" class="row_poster" />
-        <h5 class="poster_title">Stranger Things</h5>
-        <div class="poster_info">
-          <h4>Stranger Things</h4>
-          <p>When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.</p>
-        </div>
-      </div>
-      <div class="wrap">
-        <img src="https://image.tmdb.org/t/p/original///56v2KjBlU4XaOv9rVYEQypROD7P.jpg" alt="movieImage" class="row_poster" />
-        <h5 class="poster_title">Stranger Things</h5>
-        <div class="poster_info">
-          <h4>Stranger Things</h4>
-          <p>When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.</p>
-        </div>
-      </div>
+      </c:forEach>
       <div class="space"></div>
       <div class="left_arrow scroll_button" onclick="scrollL()">
         <i class="arrow left"></i>

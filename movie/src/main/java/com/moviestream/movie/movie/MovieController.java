@@ -48,7 +48,7 @@ public class MovieController {
         } catch (UnsupportedEncodingException e) {
             throw new RuntimeException("검색어 인코딩 실패",e);
         }
-        String apiURL = "https://openapi.naver.com/v1/search/movie.json?query=" + text;    // json 결과
+        String apiURL = "https://openapi.naver.com/v1/search/movie.json?&query=" + text;    // json 결과
         //String apiURL = "https://openapi.naver.com/v1/search/blog.xml?query="+ text; // xml 결과
 
         Map<String, String> requestHeaders = new HashMap<>();
@@ -107,28 +107,29 @@ public class MovieController {
 		JSONArray infoArray = (JSONArray) jsonObject.get("items");
 		MovieInfoDTO movieInfo = null;
 		List<MovieInfoDTO> mList = new ArrayList<>();
-		if(infoArray != null) {
-			for(int i = 0; i < infoArray.size(); i++) {
-				JSONObject itemObject = (JSONObject) infoArray.get(i);
-				String title = (String)itemObject.get("title");
-				String subtitle = (String)itemObject.get("subtitle");
-				String director = (String)itemObject.get("director");
-				String actor = (String)itemObject.get("actor");
-				String image = (String)itemObject.get("image");
-				String userRating = (String)itemObject.get("userRating");
-				String link = (String)itemObject.get("link");
-				movieInfo = new MovieInfoDTO();
-				movieInfo.setTitle(title);
-				movieInfo.setSubtitle(subtitle);
-				movieInfo.setDirector(director);
-				movieInfo.setActor(actor);
-				movieInfo.setImage(image);
-				movieInfo.setUserRating(userRating);
-				movieInfo.setLink(link);
-				service.saveMovie(movieInfo);
-				service.delSameInfo(link);
-				mList.add(movieInfo);
-			}
+		if(infoArray == null) {
+			return null;
+		}
+		for(int i = 0; i < infoArray.size(); i++) {
+			JSONObject itemObject = (JSONObject) infoArray.get(i);
+			String title = (String)itemObject.get("title");
+			String subtitle = (String)itemObject.get("subtitle");
+			String director = (String)itemObject.get("director");
+			String actor = (String)itemObject.get("actor");
+			String image = (String)itemObject.get("image");
+			String userRating = (String)itemObject.get("userRating");
+			String link = (String)itemObject.get("link");
+			movieInfo = new MovieInfoDTO();
+			movieInfo.setTitle(title);
+			movieInfo.setSubtitle(subtitle);
+			movieInfo.setDirector(director);
+			movieInfo.setActor(actor);
+			movieInfo.setImage(image);
+			movieInfo.setUserRating(userRating);
+			movieInfo.setLink(link);
+			service.saveMovie(movieInfo);
+			service.delSameInfo(link);
+			mList.add(movieInfo);
 		}
 		List<MovieInfoDTO> movieList = service.search(keyword);
 		Map<String, List<MovieInfoDTO>> movieMap = new HashMap<>();

@@ -121,7 +121,7 @@ $(document).ready(function() {
                                         <th>작성자</th>
                                         <th>제목</th>
                                         <th>날짜</th>
-                                        <th>조회수</th>
+                                        <th>조회수<a style="cursor: pointer;">∇</a></th>
                                     </tr>
                                 </thead>
                                 <tbody>

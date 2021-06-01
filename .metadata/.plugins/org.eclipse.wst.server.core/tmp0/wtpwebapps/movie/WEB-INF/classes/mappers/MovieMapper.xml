@@ -9,8 +9,10 @@
 	</select>
 	
 	<insert id="saveMovie">
-		INSERT INTO movieinfo(title, subtitle, director, actor, image, userRating, link)
-		VALUES(#{title}, #{subtitle}, #{director}, #{actor}, #{image}, #{userRating}, #{link})
+		<![CDATA[
+			INSERT INTO movieinfo(title, subtitle, director, actor, image, userRating, link)
+			VALUES(REGEXP_REPLACE(#{title},'<b>|</b>', ''), #{subtitle}, #{director}, #{actor}, #{image}, #{userRating}, #{link})
+		]]>
 	</insert>
 	
 	<delete id="delSameInfo">
@@ -24,10 +26,12 @@
 
 	<select id="search" resultType="com.moviestream.movie.board.domain.MovieInfoDTO">
 		<![CDATA[
-			SELECT *
+			SELECT title, subtitle, director, actor, image, userRating, link
 			FROM movieinfo
 			WHERE REPLACE(title, ' ', '') LIKE '%'||#{keyword}||'%'
+			AND image IS NOT NULL
 			AND userRating < 10.00
+			AND userRating > 0.00
 			ORDER BY userrating desc
 		]]>
 	</select>

@@ -12,4 +12,5 @@ public class MovieInfoDTO {
 	private String image;
 	private String userRating;
 	private String link;
+	private String genre;
 }

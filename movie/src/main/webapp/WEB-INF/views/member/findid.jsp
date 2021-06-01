@@ -22,12 +22,10 @@
                 <input type="text" id="inputName" class="form-control" placeholder="이름" name="name">
                 <label></label>
               </div>
-
               <div class="form-label-group">
                 <input type="email" id="inputEmail" class="form-control" placeholder="이메일" name="email">
                 <label></label>
               </div>
-
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">아이디 찾기</button>
               <hr class="my-4">
             </form>

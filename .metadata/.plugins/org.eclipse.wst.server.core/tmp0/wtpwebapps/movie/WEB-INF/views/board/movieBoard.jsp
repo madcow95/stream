@@ -116,7 +116,7 @@ $(document).ready(function() {
 			  <option value="${ctx}/board/list" id="board">공지사항</option>
 			  <option value="${ctx}/board/freeBoard" id="free">자유게시판</option>
 			  <option value="${ctx}/board/movieBoard" id="movie">영화정보</option>
-			  <option value="${ctx}/board/movieBoardtest" id="movie">영화정보_testVER</option>
+			  <option value="${ctx}/board/movieBoardtest" id="movie">실시간 영화검색</option>
 			</select>
             <!-- /.row -->
             <div class="row">

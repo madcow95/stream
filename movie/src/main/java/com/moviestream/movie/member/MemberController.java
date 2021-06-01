@@ -61,9 +61,12 @@ public class MemberController {
 	@RequestMapping("/changePwd")
 	public void changePwd() {
 	}
+	@PostMapping("/updateForm")
+	public void change(MemberDTO mDto) throws Exception {
+	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(@RequestParam("id") String id,
+	public String login(@RequestParam("username") String id,
 			@RequestParam("password") String pwd,
 			HttpSession session) throws Exception{
 		
@@ -199,5 +202,11 @@ public class MemberController {
 							@RequestParam("passwordCheck") String pwdChk) throws Exception {
 		log.info("password AND passwordCheck >>>> " + pwd +" &&& " + pwdChk);
 		return "member/login";
+	}
+	
+	@PostMapping("/update")
+	public String updateInfo(MemberDTO mDto) throws Exception {
+		log.info("update Info DTO >>>>> "+mDto);
+		return "";
 	}
 }

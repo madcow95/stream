@@ -29,7 +29,7 @@
             <h5 class="card-title text-center">로그인</h5>
             <form class="form-signin" action="${ctx}/member/login" method="post">
               <div class="form-label-group">
-                <input type="text" id="inputEmail" class="form-control" placeholder="ID" required autofocus name="id">
+                <input type="text" id="inputEmail" class="form-control" placeholder="ID" required autofocus name="username">
                 <label for="inputEmail">ID</label>
               </div>
 
@@ -42,6 +42,7 @@
               <hr class="my-4">
               <button class="btn btn-lg btn-google btn-block text-uppercase" id="contract">회원가입</button>
               <button class="btn btn-lg btn-facebook btn-block text-uppercase" id="find">아이디 / 비밀번호 찾기</button>
+              <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
             </form>
           </div>
         </div>

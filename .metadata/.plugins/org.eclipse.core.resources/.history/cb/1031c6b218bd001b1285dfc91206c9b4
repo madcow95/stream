@@ -1,5 +1,0 @@
-$(document).ready(function() {
-	var xhr = new XMLHttpRequest();
-	var url = 'http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&nation=대한민국';
-	var queryParams = '?' + encodeURIComponent('ServiceKey=1PK871G36HUKL041381C');
-});

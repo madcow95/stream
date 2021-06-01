@@ -36,7 +36,7 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) throws Exception{
 		logger.info("Welcome home! The client locale is {}.", locale);
-		List<MovieDTO> movieList = service.getMovie();
+		List<MovieInfoDTO> movieList = mapper.getMovie();
 		model.addAttribute("movieList", movieList);
 		return "index";
 	}

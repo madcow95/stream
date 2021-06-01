@@ -53,12 +53,14 @@
 				<input type="text" id="" style="border: 0; width: 15cm; background-color: #ffffff;" disabled="disabled">
     			<span class="error_next_box"></span>
 			</div>
-			<div>
-    			<h3 class="join_title"><label for="email">본인확인 이메일</label></h3>
-    			<span class="box int_email">
-        			<input type="text" id="email" class="int" maxlength="100" name="email" style="font-size: 12px;">
-				</span>
-				<input type="text" id="" style="border: 0; width: 15cm; background-color: #ffffff;" disabled="disabled">
+			<div class="btn-group">
+				<div>
+	    			<h3 class="join_title"><label for="email">본인확인 이메일</label></h3>
+	    			<span class="box int_email">
+	        			<input type="text" id="email" class="int" maxlength="100" name="email" style="font-size: 12px; width: 460px;">
+					</span>
+					<input type="text" id="" style="border: 0; width: 15cm; background-color: #ffffff;" disabled="disabled">
+	            </div>
             </div>
 			<div>
                 <h3 class="join_title"><label for="addr">우편번호&nbsp;&nbsp;<button type="button" onclick="findAddr()" id="findaddr" class="btn btn-info" style="background-color: #819FF7; border-color: #819FF7;">주소찾기</button></label></h3>

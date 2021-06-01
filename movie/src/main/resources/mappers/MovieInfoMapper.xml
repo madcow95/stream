@@ -6,6 +6,7 @@
 	<select id="getMovie" resultType="com.moviestream.movie.board.domain.MovieInfoDTO">
 		SELECT *
 		FROM movieinfo
+		WHERE image IS NOT NULL
 		ORDER BY userrating desc
 	</select>
 </mapper>

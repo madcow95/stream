@@ -23,10 +23,16 @@
 </style>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="${ctx}/resources/css/carousel.css">
+<link rel="stylesheet" href="${ctx}/resources/css/test.css">
+<link rel="stylesheet" href="${ctx}/resources/css/test1.css">
+<script type="text/javascript" src="${ctx}/resources/js/test.js"></script>
+<script type="text/javascript" src="${ctx}/resources/js/test1.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+</script>
 <title>Insert title here</title>
 </head>
-<body>
+<body style="background-color: #000000;">
 <%@ include file="header.jsp" %>
 <header>
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -68,96 +74,45 @@
         </a>
   </div>
 </header>
-<div class="container" style="margin-top: 10px; display: inline;">
-	<h3>액션</h3>
-	<div class="wrapper">
-  <section id="section1">
-  <c:forEach items="${movieList}" var="list">
-  	<c:choose>
-  		<c:when test="${list.m_code > 0 && list.m_code <= 5 }">
-  			<div class="item">
-    			<img src="${ctx}/resources/images/${list.m_img}" alt="Describe Image" width="341px" height="192px">
-		  	</div>
-  		</c:when>
-  	</c:choose>
-  </c:forEach>
-    <a href="#section3" class="arrow__btn">‹</a>
-    <a href="#section2" class="arrow__btn">›</a>
-  </section>
-  <section id="section2">
-  <c:forEach items="${movieList}" var="list">
-  	<c:choose>
-  		<c:when test="${list.m_code > 5 && list.m_code <= 10 }">
-  			<div class="item">
-    			<img src="${ctx}/resources/images/${list.m_img}" alt="Describe Image" width="341px" height="192px">
-		  	</div>
-  		</c:when>
-  	</c:choose>
-  </c:forEach>
-    <a href="#section1" class="arrow__btn">‹</a>
-    <a href="#section3" class="arrow__btn">›</a>
-  </section>
-  <section id="section3">
-    <a href="#section2" class="arrow__btn">‹</a>
-    <c:forEach items="${movieList}" var="list">
-  	<c:choose>
-  		<c:when test="${list.m_code > 10 && list.m_code <= 15 }">
-  			<div class="item">
-    			<img src="${ctx}/resources/images/${list.m_img}" alt="Describe Image" width="341px" height="192px">
-		  	</div>
-  		</c:when>
-  	</c:choose>
-  </c:forEach>
-    <a href="#section1" class="arrow__btn">›</a>
-  </section>
+<div class="row" style="margin-left: 45px;">
+    <h3 class="row_title" style="margin-left: 5%; margin-bottom: 0; color: #ffffff;">평점순</h3>
+    <div class="row_posters" onscroll="getScrollVal()" style="margin-left: 20px;">
+      <c:forEach items="${movieList}" var="list" begin="1" end="30" step="1">
+      <div class="wrap">
+        <img src="${list.image}" alt="movieImage" class="row_poster" style="margin-left: 20px;">
+        <div class="poster_info">
+        </div>
+      </div>
+      </c:forEach>
+      <div class="space"></div>
+      <div class="left_arrow scroll_button" onclick="scrollL()">
+        <i class="arrow left"></i>
+      </div>
+      <div class="right_arrow scroll_button" onclick="scrollR()">
+        <i class="arrow right"></i>
+      </div>
+    </div>
 </div>
+
+<div class="row1">
+    <h3 class="row_title1" style=" color: #ffffff;">평점순</h3>
+    <div class="row_posters1" onscroll="getScrollVal1()" >
+      <c:forEach items="${movieList}" var="list" begin="31" end="50" step="1">
+      <div class="wrap1">
+        <img src="${list.image}" alt="movieImage" class="row_poster1" style="margin-left: 20px;">
+        <div class="poster_info1">
+        </div>
+      </div>
+      </c:forEach>
+      <div class="space1"></div>
+      <div class="left_arrow1 scroll_button1" onclick="scrollL1()">
+        <i class="arrow1 left1"></i>
+      </div>
+      <div class="right_arrow1 scroll_button1" onclick="scrollR1()">
+        <i class="arrow1 right1"></i>
+      </div>
+    </div>
 </div>
-<br>
-<hr>
-<br>
-<div class="container" style="margin-top: 10px; display: inline;">
-	<h3>판타지</h3>
-	<div class="wrapper">
-  <section id="section4">
-  <c:forEach items="${movieList}" var="list">
-  	<c:choose>
-  		<c:when test="${list.m_code > 0 && list.m_code <= 5 }">
-  			<div class="item">
-    			<img src="${ctx}/resources/images/${list.m_img}" alt="Describe Image" width="341px" height="192px">
-		  	</div>
-  		</c:when>
-  	</c:choose>
-  </c:forEach>
-    <a href="#section6" class="arrow__btn">‹</a>
-    <a href="#section5" class="arrow__btn">›</a>
-  </section>
-  <section id="section5">
-  <c:forEach items="${movieList}" var="list">
-  	<c:choose>
-  		<c:when test="${list.m_code > 5 && list.m_code <= 10 }">
-  			<div class="item">
-    			<img src="${ctx}/resources/images/${list.m_img}" alt="Describe Image" width="341px" height="192px">
-		  	</div>
-  		</c:when>
-  	</c:choose>
-  </c:forEach>
-    <a href="#section4" class="arrow__btn">‹</a>
-    <a href="#section6" class="arrow__btn">›</a>
-  </section>
-  <section id="section6">
-    <a href="#section5" class="arrow__btn">‹</a>
-    <c:forEach items="${movieList}" var="list">
-  	<c:choose>
-  		<c:when test="${list.m_code > 10 && list.m_code <= 15 }">
-  			<div class="item">
-    			<img src="${ctx}/resources/images/${list.m_img}" alt="Describe Image" width="341px" height="192px">
-		  	</div>
-  		</c:when>
-  	</c:choose>
-  </c:forEach>
-    <a href="#section4" class="arrow__btn">›</a>
-  </section>
-</div>
-</div>
+</body>
 </body>
 </html>
