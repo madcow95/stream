@@ -1,0 +1,5 @@
+package com.moviestream.movie.member.security.service;
+
+public class DetailService {
+
+}

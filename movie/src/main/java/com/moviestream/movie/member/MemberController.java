@@ -1,6 +1,7 @@
 package com.moviestream.movie.member;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,14 +16,18 @@ import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.moviestream.movie.member.domain.MemberAuth;
 import com.moviestream.movie.member.domain.MemberDTO;
 import com.moviestream.movie.member.service.IMemberService;
 
@@ -61,9 +66,21 @@ public class MemberController {
 	@RequestMapping("/changePwd")
 	public void changePwd() {
 	}
+	@GetMapping("/login_fail")
+	public void login_fail(Authentication auth) {
+		log.info("login fail");
+		log.info("access denied : " + auth);
+	}
+	
 	@PostMapping("/updateForm")
 	public void change(MemberDTO mDto) throws Exception {
+		log.info(mDto);
 	}
+	
+	@PostMapping("/securityLogin")
+	public void securityLogin() {
+	}
+	
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(@RequestParam("username") String id,
@@ -73,12 +90,12 @@ public class MemberController {
 		String uri = "/member/result/login_fail";
 		List<MemberDTO> memList = service.getMember();
 		Map<String, String> loginMap = new HashMap<>();
-		
+		log.info(memList);
 		for(int i = 0; i < memList.size(); i++) {
 			if(memList.get(i).getId().equals(id) && memList.get(i).getPwd().equals(pwd)) {
 				loginMap.put("id", id);
 				loginMap.put("pwd", pwd);
-				session.setAttribute("memList", service.login(loginMap));
+				session.setAttribute("a", service.login(loginMap));
 				uri="redirect:/";
 			}
 		}
@@ -99,8 +116,17 @@ public class MemberController {
 	
 	@RequestMapping(value = "/join", method = RequestMethod.POST)
 	public String join(MemberDTO mDto) throws Exception {
-		log.info(mDto);
-		return "";
+		String url = "member/result/login_fail";
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		String encodedPwd = encoder.encode(mDto.getPwd());
+		mDto.setPwd(encodedPwd);
+		
+		int result = service.join(mDto);
+		if (result > 0) {
+			service.authJoin(mDto);
+			url = "member/login";
+		}
+		return url;
 	}
 	
 	@RequestMapping(value = "/find", method = RequestMethod.POST)
@@ -113,7 +139,6 @@ public class MemberController {
 			
 			for(int i = 0; i< memList.size(); i++) {
 				if(memList.get(i).getName().equals(mDto.getName()) && memList.get(i).getEmail().equals(mDto.getEmail())) {
-					log.info(i+"번째 배열에 일치하는 회원이 있다." + memList.get(i).getId());
 					String host = "smtp.gmail.com";
 					final String username = "lobasketve@gmail.com";
 					final String password = "sdtcow031#";
@@ -151,7 +176,6 @@ public class MemberController {
 		else if(mDto.getId() !=null && mDto.getName() == null && mDto.getEmail() != null){
 			for(int i = 0; i < memList.size(); i++) {
 				if(memList.get(i).getId().equals(mDto.getId()) && memList.get(i).getEmail().equals(mDto.getEmail())) {
-					log.info(i+"번째 배열에 일치하는 회원이 있다. 비밀번호는 >>> " + memList.get(i).getPwd());
 					Random rnd = new Random();
 					int rndNum = rnd.nextInt(100000) + 1;
 					int code = 0;

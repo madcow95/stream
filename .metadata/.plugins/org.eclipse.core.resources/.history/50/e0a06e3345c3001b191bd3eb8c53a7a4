@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moviestream.movie.member.mampper.MemberMapper">
+
+	<!-- <select id="getMember" resultType="com.moviestream.movie.member.domain.MemberDTO">
+		SELECT *
+		FROM tbl_member
+	</select>
+	
+	<select id="login" resultType="com.moviestream.movie.member.domain.MemberDTO">
+		SELECT *
+		FROM tbl_member
+		WHERE id=#{id}
+		AND pwd=#{pwd}
+	</select>
+	
+	<select id="id" resultType="int">
+		SELECT COUNT(*)
+		FROM tbl_member
+		WHERE id=#{id}
+	</select>
+	
+	<update id="changePwd">
+		
+	</update> -->
+</mapper>

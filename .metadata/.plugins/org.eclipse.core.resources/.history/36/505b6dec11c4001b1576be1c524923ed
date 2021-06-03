@@ -1,0 +1,10 @@
+/**
+ * 
+ */
+ $(document).ready(function() {
+	var change = $("button[name='change']");
+	
+	change.on("click", function() {
+		document.frm.submit();
+	});
+});

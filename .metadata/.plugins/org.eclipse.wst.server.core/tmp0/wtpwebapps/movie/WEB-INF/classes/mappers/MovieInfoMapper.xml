@@ -7,6 +7,7 @@
 		SELECT *
 		FROM movieinfo
 		WHERE image IS NOT NULL
+		AND userrating BETWEEN 0.1 AND 10
 		ORDER BY userrating desc
 	</select>
 </mapper>

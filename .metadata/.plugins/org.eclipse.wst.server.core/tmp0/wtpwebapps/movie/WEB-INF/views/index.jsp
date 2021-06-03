@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <c:set var="ctx" value="${pageContext.request.contextPath == '/' ? '' : pageContext.request.contextPath }" scope="application"></c:set>
 <!DOCTYPE html>
 <html>
@@ -50,10 +51,10 @@
         </div>
       </div>
       <!-- Slide Two - Set the background image for this slide in the line below -->
-      <div class="carousel-item" style="background-image: url(${ctx}/resources/images/조선명탐정.PNG)">
+      <div class="carousel-item" style="background-image: url(${ctx}/resources/images/신세계가로.jpg)">
         <div class="carousel-caption d-none d-md-block">
-          <h3 class="display-4">조선명탐정</h3>
-          <p class="lead">;;</p>
+          <h3 class="display-4">신세계</h3>
+          <p class="lead">경찰의 이중생활</p>
         </div>
       </div>
       Slide Three - Set the background image for this slide in the line below

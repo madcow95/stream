@@ -1,0 +1,9 @@
+package com.moviestream.movie.member.mapper;
+
+import com.moviestream.movie.member.domain.MemberDTO;
+
+public interface MemberMapper {
+	public MemberDTO read(String id);
+	public MemberDTO adminread(String id);
+
+}

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <c:set var="ctx" value="${pageContext.request.contextPath == '/' ? '' : pageContext.request.contextPath }" scope="application"></c:set>
 <!DOCTYPE html>
 <html>
@@ -34,17 +35,17 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-          	<c:choose>
-				<c:when test="${empty memList}">
-  					<li class="nav-item"><a class="nav-link" href="${ctx}/member/login">LOGIN</a></li>
+          <c:choose>
+          	<c:when test="${empty sessionScope.memList }">
+  					<li class="nav-item"><a class="nav-link" href="${ctx}/login">LOGIN</a></li>
            			<li class="nav-item"><a class="nav-link" href="${ctx}/member/contract">JOIN</a></li>
-				</c:when>
-				<c:otherwise>
-           			<li class="nav-item"><a class="nav-link" href="${ctx}/member/mypage">${memList.name}님</a></li>
+          	</c:when>
+          	<c:otherwise>
+           			<li class="nav-item"><a class="nav-link" href="${ctx}/member/mypage">${sessionScope.memList.name }님</a></li>
            			<li class="nav-item"><a class="nav-link" href="${ctx}/logout">LOGOUT</a></li>
            			<li class="nav-item"><a class="nav-link" href="${ctx}/member/mypage">MY PAGE</a></li>
-				</c:otherwise>
-			</c:choose>
+          	</c:otherwise>
+          </c:choose>
 	           	<li class="nav-item"><a href="${ctx}/board/list" class="nav-link" >BOARD</a></li>
             </ul>
         </div>

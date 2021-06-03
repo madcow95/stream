@@ -26,26 +26,22 @@
 	<select id="boardList" resultType="com.moviestream.movie.board.domain.BoardDTO">
 				<![CDATA[
 			SELECT articleno,
-				   subject,
+				   title,
 				   content,
-				   reg_date,
 				   readcount,
-				   ref,
-				   re_step,
-				   re_level,
+				   regdate,
+				   updatedate,
 				   filename,
 				   id
 			FROM  (
 				   SELECT /*+ INDEX_DESC(board BOARD_NUM_PK) */
 				   		  rownum rn,
 				   		  articleno,
-				   		  subject,
+				   		  title,
 				   		  content,
-				   		  reg_date,
 				   		  readcount,
-				   		  ref,
-				   		  re_step,
-				   		  re_level,
+				   		  regdate,
+				   		  updatedate,
 				   		  filename,
 				   		  id
 				   FROM	  board
@@ -61,26 +57,22 @@
 	<select id="freeBoardList" resultType="com.moviestream.movie.board.domain.BoardDTO">
 				<![CDATA[
 			SELECT articleno,
-				   subject,
+				   title,
 				   content,
-				   reg_date,
 				   readcount,
-				   ref,
-				   re_step,
-				   re_level,
+				   regdate,
+				   updatedate,
 				   filename,
 				   id
 			FROM  (
 				   SELECT /*+ INDEX_DESC(board BOARD_NUM_PK) */
 				   		  rownum rn,
 				   		  articleno,
-				   		  subject,
+				   		  title,
 				   		  content,
-				   		  reg_date,
 				   		  readcount,
-				   		  ref,
-				   		  re_step,
-				   		  re_level,
+				   		  reg_date,
+				   		  updatedate,
 				   		  filename,
 				   		  id
 				   FROM	  freeboard

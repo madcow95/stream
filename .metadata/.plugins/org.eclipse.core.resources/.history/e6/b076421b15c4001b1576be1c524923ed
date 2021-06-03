@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moviestream.movie.member.mapper.MemberMapper">
+	
+	<resultMap type="com.moviestream.movie.member.domain.MemberDTO" id="memberMap">
+		<id property="id" column="id"/>
+		<result property="id" column="id"/>
+		<result property="pwd" column="pwd"/>
+		<result property="name" column="name"/>
+		<result property="email" column="email"/>
+		<result property="zip_num" column="zip_num"/>
+		<result property="address" column="address"/>
+		<result property="phone" column="phone"/>
+		<result property="regdate" column="regdate"/>
+		<result property="lastlogin" column="lastlogin"/>
+		<collection property="authList" resultMap="authMap">
+		</collection>
+	</resultMap>
+	
+	<resultMap type="com.moviestream.movie.member.domain.MemberAuth" id="authMap">
+		<result property="id" column="id"/>
+		<result property="auth" column="auth"/>
+	</resultMap>
+	<!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+	<resultMap type="com.moviestream.movie.member.domain.AdminDTO" id="adminMap">
+		<id property="id" column="id"/>
+		<result property="id" column="id"/>
+		<result property="pwd" column="pwd"/>
+		<result property="name" column="name"/>
+		<collection property="adminAuthList" resultMap="adminAuthMap">
+		</collection>
+	</resultMap>
+	
+	<resultMap type="com.moviestream.movie.member.domain.MemberAuth" id="adminAuthMap">
+		<result property="id" column="id"/>
+		<result property="auth" column="auth"/>
+	</resultMap>
+	
+	<select id="read" resultMap="memberMap">
+		SELECT mem.id, pwd, name, email, zip_num, address, phone, regdate, lastlogin, enabled, auth
+		FROM tbl_member mem LEFT OUTER JOIN tbl_auth auth on mem.id = auth.id
+		WHERE mem.id = #{id}
+	</select>
+	
+	<select id="adminread" resultMap="adminMap">
+		SELECT mem.id, pwd, name, auth
+		FROM tbl_admin mem LEFT OUTER JOIN tbl_admin_auth auth on mem.id = auth.id
+		WHERE mem.id = #{id}
+	</select>
+	<select id="getMember" resultType="com.moviestream.movie.member.domain.MemberDTO">
+		SELECT mem.id, pwd, name, auth
+		FROM tbl_member mem LEFT OUTER JOIN tbl_admin_auth auth on mem.id = auth.id
+	</select>
+	
+	<!-- <select id="login" resultType="com.moviestream.movie.member.domain.MemberDTO">
+		SELECT *
+		FROM tbl_member
+		WHERE id=#{id}
+		AND pwd=#{pwd}
+	</select>
+	
+	<select id="id" resultType="int">
+		SELECT COUNT(*)
+		FROM tbl_member
+		WHERE id=#{id}
+	</select>
+	
+	<update id="changePwd">
+		
+	</update> -->
+</mapper>

@@ -15,6 +15,15 @@
 			location.href="${ctx}/";
 		});
 	});
+	function findAddr(){
+		var pop = window.open("jusoPopup","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
+	}
+	
+	function jusoCallBack(roadFullAddr,zipNo) {
+		alert(zipNo + roladFullAddr);
+		document.getElementById("zip_num").value = zipNo;
+		document.getElementById("address").value = roadFullAddr;
+	}
 </script>
 <title>Insert title here</title>
 </head>
@@ -93,6 +102,7 @@
         	 </div>
      	</div> 
  </div> 
+ <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 </form>
 </body>
 </html>

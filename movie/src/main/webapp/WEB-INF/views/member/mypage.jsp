@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <c:set var="ctx" value="${pageContext.request.contextPath == '/' ? '' : pageContext.request.contextPath }" scope="application"></c:set>
 <html>
 <head>
@@ -33,7 +34,7 @@
 
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="button" name="change">정보 변경</button>
               <button class="btn btn-lg btn-danger btn-block text-uppercase" type="button" name="quit">회원 탈퇴</button>
-              <input type="hidden" id="originPwd" value="${sessionScope.memList.pwd}">
+              <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
             </form>
           </div>
         </div>

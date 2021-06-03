@@ -15,8 +15,9 @@ public interface IMovieService {
 	public String get(String apiUrl, Map<String, String> requestHeaders) throws Exception;
 	public HttpURLConnection connect(String apiUrl) throws Exception;
 	public String readBody(InputStream body) throws Exception;
-	public int saveMovie(MovieInfoDTO mDto) throws Exception;
-	public void delSameInfo(String link) throws Exception;
 	
+	public int saveMovie(MovieInfoDTO mDto) throws Exception;
+	
+	public void delSameInfo(String link) throws Exception;
 	public List<MovieInfoDTO> search(String keyword) throws Exception;
 }

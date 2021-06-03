@@ -27,21 +27,23 @@
         <div class="card card-signin my-5">
           <div class="card-body">
             <h5 class="card-title text-center">로그인</h5>
-            <form class="form-signin" action="${ctx}/member/login" method="post">
+            <form class="form-signin" method="post" action="${ctx}/login">
               <div class="form-label-group">
-                <input type="text" id="inputEmail" class="form-control" placeholder="ID" required autofocus name="username">
+                <input type="text" id="inputEmail" class="form-control" placeholder="ID" autofocus name="username">
                 <label for="inputEmail">ID</label>
               </div>
 
-              <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required name="password">
+              <div class="form-label-group" style="margin-bottom: 0;">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password"  name="password">
                 <label for="inputPassword">Password</label>
               </div>
-
+              <div class="form-label-group" style="margin-top: 0;">
+				  <input type="text" disabled="disabled" name="loginFail" class="form-control" value="${requestScope.loginFailMsg}" style="height: 25px; font-size: 8px; text-align: center; border: 0px #ffffff; color: red; background-color: #ffffff;">
+              </div>
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Login</button>
               <hr class="my-4">
-              <button class="btn btn-lg btn-google btn-block text-uppercase" id="contract">회원가입</button>
-              <button class="btn btn-lg btn-facebook btn-block text-uppercase" id="find">아이디 / 비밀번호 찾기</button>
+              <button type="button" class="btn btn-lg btn-google btn-block text-uppercase" id="contract">회원가입</button>
+              <button type="button" class="btn btn-lg btn-facebook btn-block text-uppercase" id="find">아이디 / 비밀번호 찾기</button>
               <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
             </form>
           </div>
