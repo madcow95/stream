@@ -85,4 +85,16 @@
 		WHERE id=#{id}
 	</update>
 	
+	<update id="addrUpdate" parameterType="com.moviestream.movie.member.domain.MemberDTO">
+		UPDATE tbl_member
+		SET address=#{address}
+		WHERE id=#{id}
+	</update>
+	
+	<update id="pwdUpdate" parameterType="com.moviestream.movie.member.domain.MemberDTO">
+		UPDATE tbl_member
+		SET pwd=#{pwd}
+		WHERE id=#{id}
+	</update>
+	
 </mapper>

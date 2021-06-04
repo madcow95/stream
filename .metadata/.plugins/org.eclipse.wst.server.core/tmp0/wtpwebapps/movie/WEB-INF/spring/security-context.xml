@@ -13,7 +13,7 @@
 	
 	<security:http>
 		<security:intercept-url pattern="/admin/adminhome" access="hasRole('ROLE_ADMIN')"/>
-		<security:form-login login-page="/login" authentication-success-handler-ref="customLoginSuccess" authentication-failure-handler-ref="LoginFailHandler"/>
+		<security:form-login login-page="/member/login" authentication-success-handler-ref="customLoginSuccess" authentication-failure-handler-ref="LoginFailHandler"/>
 		<!-- <security:access-denied-handler ref="accessDenied"/> -->
 		<security:logout logout-url="/logout" invalidate-session="true" delete-cookies="remember-me, JSESSION_ID"/>
 	</security:http>

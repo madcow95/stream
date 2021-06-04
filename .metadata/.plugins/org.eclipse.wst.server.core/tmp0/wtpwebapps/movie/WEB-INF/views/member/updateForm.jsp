@@ -9,6 +9,7 @@
 <meta charset="UTF-8">
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="${ctx}/resources/js/updateForm.js"></script>
 <link href="${ctx}/resources/css/update.css" rel="stylesheet" />
 <script type="text/javascript">
 function findAddr() {
@@ -30,26 +31,26 @@ function findAddr() {
         <div class="card card-signin flex-row my-5">
           <div class="card-body">
             <h5 class="card-title text-center">회원정보 수정</h5>
-            <form class="form-signin" method="get" action="${ctx}/member/update">
+            <form class="form-signin" method="post" action="${ctx}/member/update">
               <div class="form-label-group">
                 <input type="text" id="inputId" class="form-control" placeholder="Username" value="${sessionScope.mDto.id}" disabled="disabled">
-                <input type="hidden" name="originId" value="${sessionScope.mDto.id}">
+                <input type="hidden" name="id" value="${sessionScope.mDto.id}">
                 <label for="inputID">User ID</label>
               </div>
 
               
               <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" maxlength="15">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" maxlength="15" name="pwd">
                 <label for="inputPassword">Password</label>
               </div>
               
               <div class="form-label-group">
-                <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Password" maxlength="15">
+                <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Password" maxlength="15" name="pwdChk">
                 <label for="inputConfirmPassword">Confirm password</label>
               </div>
               
               <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" value="${sessionScope.mDto.email}">
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" value="${sessionScope.mDto.email}" name="email">
                 <label for="inputEmail">Email address</label>
               </div>
               
@@ -61,17 +62,17 @@ function findAddr() {
 	          <button type="button" class="btn btn-primary btn-sm" style="margin-bottom: 5px;" onclick="findAddr()">주소찾기</button>
 	          
               <div class="form-label-group">
-                <input type="text" id="inputZip_num" class="form-control" placeholder="Post Code" value="${sessionScope.mDto.zip_num}">
+                <input type="text" id="inputZip_num" class="form-control" placeholder="Post Code" value="${sessionScope.mDto.zip_num}" name="zip_num">
                 <label for="inputZip_num">Post Code</label>
               </div>
               
               <div class="form-label-group">
-                <input type="text" id="inputAddress" class="form-control" placeholder="Address" value="${sessionScope.mDto.address}">
+                <input type="text" id="inputAddress" class="form-control" placeholder="Address" value="${sessionScope.mDto.address}" name="addr1">
                 <label for="inputAddress">Address</label>
               </div>
               
               <div class="form-label-group">
-                <input type="text" id="inputDetailAddress" class="form-control" placeholder="Detail Address">
+                <input type="text" id="inputDetailAddress" class="form-control" placeholder="Detail Address" name="addr2">
                 <label for="inputDetailAddress">Detail Address</label>
               </div>
               
@@ -82,8 +83,8 @@ function findAddr() {
 
               <!-- <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button> -->
               <p style="margin: 0 auto; text-align: center;">
-  				<button type="button" class="btn btn-warning btn-lg">취소</button>
-  				<button type="button" class="btn btn-primary btn-lg">정보 수정</button>
+  				<button type="button" class="btn btn-warning btn-lg" name="toList">취소</button>
+  				<button type="button" class="btn btn-primary btn-lg" name="updateInfo" >정보 수정</button>
 			  </p>
 			  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" id="token">
             </form>

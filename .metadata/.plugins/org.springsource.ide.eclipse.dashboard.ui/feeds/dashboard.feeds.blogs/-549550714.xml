@@ -5,7 +5,62 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2021-06-03T08:00:00Z</updated>
+  <updated>2021-06-04T17:51:28Z</updated>
+  <entry>
+    <title>Spring Integration AWS 2.5.1 and Spring Cloud Stream Kinesis Binder 2.2.0 Available</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/06/04/spring-integration-aws-2-5-1-and-spring-cloud-stream-kinesis-binder-2-2-0-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Artem Bilan</name>
+    </author>
+    <id>tag:spring.io,2021-06-04:4461</id>
+    <updated>2021-06-04T17:51:28Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;Dear Spring Community,&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Today it&amp;#8217;s my pleasure to announce releases of Spring Integration for Amazon Web Services extension versions &lt;code&gt;2.5.1&lt;/code&gt; and Spring Cloud Stream Binder for AWS Kinesis &lt;code&gt;2.2.0&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;These releases can be downloaded from Maven Central:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="groovy"&gt;compile 'org.springframework.integration:spring-integration-aws:2.5.1'&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;If you don&amp;#8217;t use Kinesis Binder.
+Or via Binder dependency:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="groovy"&gt;compile 'org.springframework.cloud:spring-cloud-stream-binder-kinesis:2.2.0'&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Integration for AWS extension of &lt;code&gt;2.5.1&lt;/code&gt; has some minor bug fixes after the previous &lt;code&gt;2.5.0&lt;/code&gt; &lt;a href="https://spring.io/blog/2021/05/20/spring-integration-for-aws-2-5-goes-ga"&gt;announcement&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The Spring Cloud Stream Binder for AWS Kinesis &lt;code&gt;2.2.0&lt;/code&gt; is the first release in the project generation which is based on a new independent &lt;a href="https://awspring.io/"&gt;Spring Cloud for AWS artifact&lt;/a&gt;. It also was upgraded to the latest &lt;a href="https://spring.io/blog/2021/05/28/spring-cloud-2020-0-3-aka-ilford-is-available"&gt;Spring Cloud &lt;code&gt;2020.0.3&lt;/code&gt;&lt;/a&gt; and has some other bug fixes and improvements.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Any feedback is welcome via all the available communication channels!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Integration for AWS resources:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-integration-aws"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Cloud Stream Binder for AWS Kinesis resources:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis/blob/master/spring-cloud-stream-binder-kinesis-docs/src/main/asciidoc/contributing.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-cloud-stream"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-cloud-stream"&gt;Chat&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: JHipster creator and Microsoft Java Developer Advocacy manager Julien Dubois</title>
     <link rel="alternate" href="https://spring.io/blog/2021/06/03/a-bootiful-podcast-jhipster-creator-and-microsoft-java-developer-advocacy-manager-julien-dubois" />
@@ -798,23 +853,6 @@ Artem&lt;/p&gt;
     <content type="html">&lt;p&gt;Hi, Spring fans! We wrapped up the epic SpringOne Tour installment for May a couple of days ago. Here&amp;rsquo;s the Day 1 recording - &lt;em&gt;Booternetes II: The YAML Strikes Back&lt;/em&gt; - featuring yours truly, Mark Heckler, Mario Gray, David Turanski, Tiffany Jernigan, Chris Sterling, and special guest star, Kubernetes cofounder, Joe Beda. &lt;/p&gt;
 &lt;p&gt;This edition pulls together a lot of different Spring ecosystem technologies, showing projects that you might use to more fully exploit the power of Kubernetes. Enjoy! &lt;/p&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/wu38Fm56wew" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring LDAP 2.3.4 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/05/14/spring-ldap-2-3-4-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Rob Winch</name>
-    </author>
-    <id>tag:spring.io,2021-05-14:4440</id>
-    <updated>2021-05-14T22:07:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the community, I¡¯m pleased to announce the release of Spring LDAP 2.3.4!  This release fixes including a fix where Spring LDAP breaks on JDK9+.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You can find the complete details in the &lt;a href="https://github.com/spring-projects/spring-ldap/releases/tag/2.3.4.RELEASE"&gt;release notes&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

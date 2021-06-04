@@ -44,7 +44,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="select username"/>
+			<item key="textPattern" value="stringify"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -59,7 +59,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="ajax"/>
+			<item key="textPattern" value="select username"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -71,7 +71,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="id style"/>
+			<item key="textPattern" value="ajax"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -83,7 +83,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="cmdline"/>
+			<item key="textPattern" value="id style"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -95,7 +95,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="console"/>
+			<item key="textPattern" value="cmdline"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -107,7 +107,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="responsebody"/>
+			<item key="textPattern" value="console"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -119,7 +119,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="!empty"/>
+			<item key="textPattern" value="responsebody"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -131,7 +131,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="application/json"/>
+			<item key="textPattern" value="!empty"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -143,7 +143,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="application"/>
+			<item key="textPattern" value="application/json"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -155,7 +155,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="잘못된 쿼리"/>
+			<item key="textPattern" value="application"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -167,7 +167,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="before"/>
+			<item key="textPattern" value="잘못된 쿼리"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -179,7 +179,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="::before"/>
+			<item key="textPattern" value="before"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>

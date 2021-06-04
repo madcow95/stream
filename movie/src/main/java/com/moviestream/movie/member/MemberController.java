@@ -42,7 +42,7 @@ public class MemberController {
 	private IMemberService service;
 	
 	// 단순 페이지이동
-	@RequestMapping("/login")
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public void login() {
 	}
 	@RequestMapping("/contract")
@@ -80,7 +80,7 @@ public class MemberController {
 		if(encoder.matches(mDto.getPwd(), memList.getPwd())) {
 			return "redirect:/member/updateForm";
 		} else {
-			return "member/result/login_fail";
+			return "member/result/mypage_fail";
 		}
 	}
 	@GetMapping("updateForm")
@@ -227,9 +227,36 @@ public class MemberController {
 	}
 	
 	@PostMapping("/update")
-	public String updateInfo(MemberDTO mDto) throws Exception {
-		log.info("update Info DTO >>>>> "+mDto);
-		return "";
+	public String updateInfo(MemberDTO mDto,
+							 @RequestParam("addr1") String addr1,
+							 @RequestParam("addr2") String addr2,
+							 HttpSession session) throws Exception {
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		String url = "member/result/login_fail";
+		String address = addr1 + addr2;
+		mDto.setAddress(address);
+		log.info("update mDto" + mDto);
+		int result = 0;
+		if(mDto.getPwd() == null || mDto.getPwd()=="") {
+			result = service.addrUpdate(mDto);
+			if(result > 0) {
+				MemberDTO memList = service.read(mDto.getId());
+				session.removeAttribute("mDto");
+				session.setAttribute("mDto", memList);
+				url = "member/mypage";
+			}
+		} else {
+			String encodePwd = encoder.encode(mDto.getPwd());
+			mDto.setPwd(encodePwd);
+			result = service.pwdUpdate(mDto);
+			if(result > 0) {
+				MemberDTO memList = service.read(mDto.getId());
+				session.removeAttribute("mDto");
+				session.setAttribute("mDto", memList);
+				url = "member/mypage";
+			}
+		}
+		return url;
 	}
 	
 	@PostMapping("codeChk")

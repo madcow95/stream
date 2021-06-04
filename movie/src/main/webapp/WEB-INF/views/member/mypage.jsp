@@ -14,6 +14,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 <%@ include file="../header.jsp" %>
   <div class="container">
     <div class="row">
@@ -26,14 +27,12 @@
                 <input type="text" id="inputEmail" name="id" class="form-control" placeholder="Email address" autofocus value="${sessionScope.mDto.id}" readonly="readonly">
                 <label for="inputEmail">ID</label>
               </div>
-
               <div class="form-label-group">
                 <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" required maxlength="15">
                 <label for="inputPassword">Password</label>
               </div>
-
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="button" name="change">정보 변경</button>
-              <button class="btn btn-lg btn-danger btn-block text-uppercase" type="button" name="quit">회원 탈퇴</button>
+              <button class="btn btn-lg btn-danger btn-block text-uppercase" type="button">회원 탈퇴</button>
               <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
             </form>
           </div>

@@ -58,5 +58,15 @@ public class MemberServiceImpl implements IMemberService{
 		return mapper.findAndUpdate(updateMap);
 	}
 
+	@Override
+	public int addrUpdate(MemberDTO mDto) throws Exception {
+		return mapper.addrUpdate(mDto);
+	}
+
+	@Override
+	public int pwdUpdate(MemberDTO mDto) throws Exception {
+		return mapper.pwdUpdate(mDto);
+	}
+
 
 }
