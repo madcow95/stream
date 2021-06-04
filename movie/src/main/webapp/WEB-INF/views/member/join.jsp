@@ -6,6 +6,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="_csrf" content="${_csrf.token}">
+<meta name="_csrf_header" content="${_csrf.headerName}">
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="${ctx}/resources/css/join.css">
 <script src="${ctx}/resources/js/join.js"></script>
@@ -15,15 +18,17 @@
 			location.href="${ctx}/";
 		});
 	});
-	function findAddr(){
-		var pop = window.open("jusoPopup","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
+	
+	function findAddr() {
+	    new daum.Postcode({
+	        oncomplete: function(data) {
+	            document.getElementById("address").value = data.roadAddress + " ("+data.jibunAddress+") " + data.buildingName;
+	            document.getElementById("zip_num").value = data.zonecode;
+	            document.getElementById("DetailAddress").focus();
+	        }
+	    }).open();
 	}
 	
-	function jusoCallBack(roadFullAddr,zipNo) {
-		alert(zipNo + roladFullAddr);
-		document.getElementById("zip_num").value = zipNo;
-		document.getElementById("address").value = roadFullAddr;
-	}
 </script>
 <title>Insert title here</title>
 </head>
@@ -59,7 +64,7 @@
     			<span class="box int_name">
         			<input type="text" id="iname" class="int" maxlength="8" name="name" style="font-size: 12px;" onkeyup="engBlock(this)" placeholder="한글만 입력해주세요">
 				</span>
-				<input type="text" id="" style="border: 0; width: 15cm; background-color: #ffffff;" disabled="disabled">
+				<input type="text" id="4" style="border: 0; width: 15cm; background-color: #ffffff;" disabled="disabled">
     			<span class="error_next_box"></span>
 			</div>
 			<div class="btn-group">
@@ -68,7 +73,7 @@
 	    			<span class="box int_email">
 	        			<input type="text" id="email" class="int" maxlength="100" name="email" style="font-size: 12px; width: 460px;">
 					</span>
-					<input type="text" id="" style="border: 0; width: 15cm; background-color: #ffffff;" disabled="disabled">
+					<input type="text" id="1" style="border: 0; width: 15cm; background-color: #ffffff;" disabled="disabled">
 	            </div>
             </div>
 			<div>
@@ -76,7 +81,7 @@
 				<span class="box int_zip_num">
     				<input type="text" id="zip_num" class="int" maxlength="7" name="zip_num" style="font-size: 12px;">
 				</span>
-				<input type="text" id="" style="border: 0; width: 15cm; background-color: #ffffff;" disabled="disabled">
+				<input type="text" id="2" style="border: 0; width: 15cm; background-color: #ffffff;" disabled="disabled">
                 <span class="error_next_box"></span>    
             </div>
 			<div>
@@ -84,7 +89,15 @@
             	    <span class="box int_addr">
 	                    <input type="text" id="address" class="int" maxlength="100" name="address" style="font-size: 12px;">
 					</span>
-					<input type="text" id="" style="border: 0; width: 15cm; background-color: #ffffff;" disabled="disabled">
+					<input type="text" id="3" style="border: 0; width: 15cm; background-color: #ffffff;" disabled="disabled">
+   				<span class="error_next_box"></span>    
+			</div>
+			<div>
+                <h3 class="join_title"><label for="addr">상세주소</label></h3>
+            	    <span class="box int_addr">
+	                    <input type="text" id="DetailAddress" class="int" maxlength="100" name="DetailAddress" style="font-size: 12px;">
+					</span>
+					<input type="text" id="5" style="border: 0; width: 15cm; background-color: #ffffff;" disabled="disabled">
    				<span class="error_next_box"></span>    
 			</div>
 			<div>
@@ -97,12 +110,12 @@
 	         <div class="btn_area" >
     	         <p style="margin: 0 auto; text-align: center;">
   					<button type="button" class="btn btn-default btn-lg" style="border: 1px solid #000000;" id="toList">취소</button>
-  					<button type="submit" class="btn btn-primary btn-lg">회원가입</button>
+  					<button type="button" class="btn btn-primary btn-lg" id="join">회원가입</button>
 				</p>
         	 </div>
      	</div> 
  </div> 
- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+ <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" id="token">
 </form>
 </body>
 </html>

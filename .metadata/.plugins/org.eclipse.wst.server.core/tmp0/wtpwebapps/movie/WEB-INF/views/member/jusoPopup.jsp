@@ -14,6 +14,7 @@
 
 %>
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script language="javascript">
 // opener관련 오류가 발생하는 경우 아래 주석을 해지하고, 사용자의 도메인정보를 입력합니다. ("주소입력화면 소스"도 동일하게 적용시켜야 합니다.)
 //document.domain = "abc.go.kr";
@@ -42,11 +43,11 @@ function init(){
 }
 </script>
 <body onload="init();">
-	<form id="form" name="form" method="post">
+	<form id="form" name="form" method="get">
 		<input type="hidden" id="confmKey" name="confmKey" value=""/>
 		<input type="hidden" id="returnUrl" name="returnUrl" value=""/>
 		<input type="hidden" id="resultType" name="resultType" value=""/>
-		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" id="token">
 		<!-- 해당시스템의 인코딩타입이 EUC-KR일경우에만 추가 START-->
 		<!-- 
 		<input type="hidden" id="encodingType" name="encodingType" value="EUC-KR"/>

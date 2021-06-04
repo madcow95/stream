@@ -9,12 +9,17 @@
 				$("#idmessage").val("4글자 이상으로 입력해주세요").css("color","red").css("font-size","12px");
 			} else {
 				$("#idmessage").val("");
+				var token = $("meta[name='_csrf']").attr("content");
+				var header = $("meta[name='_csrf_header']").attr("content");
 				var id = document.getElementById("uid").value;
 				$.ajax({
 					type : "post",
 					url : "/member/id_check",
-					dataType : "json",
-					data : "id="+id,
+					data : JSON.stringify(id),
+					contentType : "application/json; charset=UTF-8",
+					beforeSend : function(xhr){
+						xhr.setRequestHeader(header, token);
+					},
 					success : function (data) {
 						if(data.message == "1"){
 							$("#idmessage").val("이미 사용중인 아이디 입니다.").css("color","red").css("font-size","12px");
@@ -50,49 +55,39 @@
 			}
 		});
 		
-		$("#btnJoin").click(function () {
-			var uid = document.getElementById("uid").value;
-			var uidlen = document.getElementById("uid").value.length;
-			var uPwd = document.getElementById("pwd").value;
-			var uPwdlen = document.getElementById("pwd").value.length
-			var uPwdChk = document.getElementById("pwdChk").value;
-			var name = document.getElementById("iname").value;
-			var email = document.getElementById("email").value;
-			var zip_num = document.getElementById("zip_num").value;
-			var address = document.getElementById("address").value;
-			var mobile = document.getElementById("mobile").value;
-			var reid = document.getElementById("reid").value;
-			if(uid == ""){
-				alert("아이디를 입력해주세요");
-				document.getElementById("uid").focus();
-			} else if (uidlen < 4){
-				alert("아이디는 4글자 이상 입력해주세요");
-				document.getElementById("uid").focus();
-			} else if(uPwd == ""){
-				alert("비밀번호를 입력해주세요");
-				document.getElementById("pwd").focus();
-			} else if(uPwdlen < 6){
-				alert("비밀번호는 6글자 이상 입력해주세요");
-				document.getElementById("pwd").focus();
-			} else if(uPwdChk == ""){
-				alert("비밀번호 확인칸을 입력해주세요");
-				document.getElementById("pwdChk").focus();
-			} else if(uPwd != uPwdChk){
+		$("#join").click(function () {
+			var id = $("input[name='id']").val();
+			var pwd = $("input[name='pwd']").val();
+			var pwdChk = $("input[name='pwdChk']").val();
+			var name = $("input[name='name']").val();
+			var email = $("input[name='email']").val();
+			var idLen = $("input[name='id']").val().length;
+			var pwdLen = $("input[name='pwd']").val().length;
+			if(id == "") {
+				alert("아이디는 필수 입력사항입니다.");
+				$("input[name='id']").focus();
+			} else if(pwd == "") {
+				alert("비밀번호는 필수 입력사항 입니다.");
+				$("input[name='pwd']").focus();
+			} else if(pwdChk == "") {
+				alert("비밀번호 확인란을 입력해주세요.");
+				$("input[name='pwdChk']").focus();
+			} else if(pwd != pwdChk) {
 				alert("비밀번호가 일치하지 않습니다.");
-				document.getElementById("pwd").focus();
-			} else if(name == ""){
-				alert("이름을 입력해주세요.");
-				document.getElementById("iname").focus();
-			} else if(email == ""){
-				alert("이메일을 입력해주세요");
-				document.getElementById("email").focus();
-			} else if(zip_num == "" || address == ""){
-				alert("주소를 입력해주세요");
-				document.frm.address.focus();
-			} else if(mobile == ""){
-				alert("전화번호를 입력해주세요");
-				document.frm.phone.focus();
-			} else if(reid == "-1"){
+				$("input[name='pwd']").focus();
+			} else if(name == "") {
+				alert("이름은 필수 입력사항 입니다.");
+				$("input[name='name']").focus();
+			} else if(email == "") {
+				alert("이메일은 필수 입력사항 입니다.");
+				$("input[name='email']").focus();
+			} else if(idLen < 4) {
+				alert("아이디는 4글자 이상 입력해주세요");
+				$("input[name='id']").focus();
+			} else if(pwdLen < 6) {
+				alert("비밀번호는 6글자 이상 입력해주세요");
+				$("input[name='pwd']").focus();
+			} else {
 				document.getElementById("frm").submit();
 			}
 		});
@@ -111,12 +106,12 @@
 	function engBlock(e) {
 		e.value=e.value.replace(/[a-z0-9A-Z!@#$%^&*()-=_+`~;:,./<>?]/gi,"");
 	}
-	function test() {
-		var reid = document.getElementById("reid").value;
-		if(reid == "1") {
-			alert("aaa");
-		} else if(reid == "-1"){
-			alert("bbb");
-		}
+	
+	/*function findAddr(){
+		var pop = window.open("jusoPopup","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
 	}
 	
+	function jusoCallBack(roadFullAddr,zipNo) {
+		document.getElementById("zip_num").value = zipNo;
+		document.getElementById("address").value = roadFullAddr;
+	}*/

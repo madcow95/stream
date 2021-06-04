@@ -15,6 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -68,36 +69,34 @@ public class HomeController {
 	}
 	
 	@GetMapping("/login")
-	public String login(String error, String logout) {
-		log.info("error : " + error);
-		log.info("logout : " + logout);
+	public String login(String error, String logout,
+						@ModelAttribute("mDto") MemberDTO mDto) {
 		return "/member/login";
 		
 	}
-	@PostMapping("/login")
-	public String loginpost(@RequestParam("username") String id, @RequestParam("password") String pwd, Model model) throws Exception {
+	@PostMapping("/loginPost")
+	public String loginpost(@RequestParam("username") String id, @RequestParam("password") String pwd, Model model, HttpSession session) throws Exception {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		log.info("login id >>> "+id);
 		String returnUrl = "";
 		MemberDTO mDto = memberService.read(id);
 		Map<String, String> loginMap = new HashMap<>();
-		if(encoder.matches(pwd, mDto.getPwd())) {
-			log.info("info same");
-			loginMap.put("id", id);
-			loginMap.put("pwd", mDto.getPwd());
-			log.info(loginMap);
-			MemberDTO memList = memberService.login(loginMap);
-			log.info(memList);
-//			if(memList != null && memList.getAuthList().get(0).equals("ROLE_MEMBER")) {
-//				
-//			}
-//			session.setAttribute("memList", memList);
-		} else {
+		if(mDto != null) {
+			if(encoder.matches(pwd, mDto.getPwd())) {
+				log.info("info same");
+				loginMap.put("id", id);
+				loginMap.put("pwd", mDto.getPwd());
+				MemberDTO memList = memberService.login(loginMap);
+				model.addAttribute("memInfo", memList);
+				returnUrl = "index";
+			} else {
+				returnUrl = "member/result/login_fail";
+			}
+		}else {
 			returnUrl = "member/result/login_fail";
 			
 		}
-		
 		return returnUrl;
-		
 	}
 	
 }

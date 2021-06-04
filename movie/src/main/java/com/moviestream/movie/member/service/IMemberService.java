@@ -13,4 +13,5 @@ public interface IMemberService {
 	public MemberDTO read(String id) throws Exception;
 	public int join(MemberDTO mDto) throws Exception;
 	public void authJoin(MemberDTO mDto) throws Exception;
+	public int findAndUpdate(Map<String, String> updateMap) throws Exception;
 }

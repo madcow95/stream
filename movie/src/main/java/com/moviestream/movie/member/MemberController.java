@@ -1,7 +1,6 @@
 package com.moviestream.movie.member;
 
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,6 +14,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -22,12 +22,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.moviestream.movie.member.domain.MemberAuth;
 import com.moviestream.movie.member.domain.MemberDTO;
 import com.moviestream.movie.member.service.IMemberService;
 
@@ -64,7 +64,8 @@ public class MemberController {
 	public void juso() {
 	}
 	@RequestMapping("/changePwd")
-	public void changePwd() {
+	public void changePwd(@RequestParam("id") String id, Model model) {
+		model.addAttribute("id", id);
 	}
 	@GetMapping("/login_fail")
 	public void login_fail(Authentication auth) {
@@ -73,65 +74,50 @@ public class MemberController {
 	}
 	
 	@PostMapping("/updateForm")
-	public void change(MemberDTO mDto) throws Exception {
-		log.info(mDto);
-	}
-	
-	@PostMapping("/securityLogin")
-	public void securityLogin() {
-	}
-	
-	
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(@RequestParam("username") String id,
-			@RequestParam("password") String pwd,
-			HttpSession session) throws Exception{
-		
-		String uri = "/member/result/login_fail";
-		List<MemberDTO> memList = service.getMember();
-		Map<String, String> loginMap = new HashMap<>();
-		log.info(memList);
-		for(int i = 0; i < memList.size(); i++) {
-			if(memList.get(i).getId().equals(id) && memList.get(i).getPwd().equals(pwd)) {
-				loginMap.put("id", id);
-				loginMap.put("pwd", pwd);
-				session.setAttribute("a", service.login(loginMap));
-				uri="redirect:/";
-			}
+	public String change(MemberDTO mDto) throws Exception {
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		MemberDTO memList = service.read(mDto.getId());
+		if(encoder.matches(mDto.getPwd(), memList.getPwd())) {
+			return "redirect:/member/updateForm";
+		} else {
+			return "member/result/login_fail";
 		}
-		return uri;
+	}
+	@GetMapping("updateForm")
+	public void changeForm() {
 	}
 	
 	@PostMapping(value = "/id_check")
-	public @ResponseBody Map<String, Object> id_check(@RequestParam("id") String id) throws Exception {
-		Map<String, Object> checkMap = new HashMap<>();
+	public @ResponseBody Map<String, Integer> id_check(@RequestBody String id) throws Exception {
+		Map<String, Integer> checkMap = new HashMap<>();
 		int result = -1;
-		if(service.id_check(id) == 1) {
+		id = id.replaceAll("\"", "");
+		result = service.id_check(id);
+		if(result > 0) {
 			result = 1;
 		}
-		checkMap.put("id", id);
 		checkMap.put("message", result);
 		return checkMap;
 	}
 	
 	@RequestMapping(value = "/join", method = RequestMethod.POST)
-	public String join(MemberDTO mDto) throws Exception {
+	public String join(MemberDTO mDto, @RequestParam("DetailAddress") String detailAddr) throws Exception {
 		String url = "member/result/login_fail";
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		String encodedPwd = encoder.encode(mDto.getPwd());
+		String detailAddress = mDto.getAddress() + detailAddr;
+		mDto.setAddress(detailAddress);
 		mDto.setPwd(encodedPwd);
-		
 		int result = service.join(mDto);
 		if (result > 0) {
 			service.authJoin(mDto);
-			url = "member/login";
+			url = "member/result/join_suc";
 		}
 		return url;
 	}
 	
 	@RequestMapping(value = "/find", method = RequestMethod.POST)
 	public String findId(MemberDTO mDto, Model model) throws Exception {
-		log.info(mDto);
 		List<MemberDTO> memList = service.getMember();
 		String uri = "member/result/login_fail";
 		
@@ -168,20 +154,22 @@ public class MemberController {
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
-					uri = "member/login";
+					uri = "member/result/findid";
 				} 
 			} // for end
 		} // if end
 		
 		else if(mDto.getId() !=null && mDto.getName() == null && mDto.getEmail() != null){
+			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 			for(int i = 0; i < memList.size(); i++) {
 				if(memList.get(i).getId().equals(mDto.getId()) && memList.get(i).getEmail().equals(mDto.getEmail())) {
 					Random rnd = new Random();
 					int rndNum = rnd.nextInt(100000) + 1;
-					int code = 0;
+					String code = "";
 					if(rndNum >= 10000) {
-						code = rndNum;
+						code = String.valueOf(rndNum);
 					}
+					String bcrptCode = encoder.encode(code);
 					String host = "smtp.gmail.com";
 					final String username = "lobasketve@gmail.com";
 					final String password = "sdtcow031#";
@@ -211,10 +199,11 @@ public class MemberController {
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
-					model.addAttribute("code", code);
+					model.addAttribute("code", bcrptCode);
+					model.addAttribute("id", mDto.getId());
 					uri = "member/enterPwdCode";
 				} else {
-					log.info("아이디, 이메일 일치하는 회원 없음");
+					
 				}
 			}
 		}
@@ -223,14 +212,36 @@ public class MemberController {
 	
 	@RequestMapping(value = "/changePwd", method = RequestMethod.POST)
 	public String changepwd(@RequestParam("password") String pwd,
-							@RequestParam("passwordCheck") String pwdChk) throws Exception {
-		log.info("password AND passwordCheck >>>> " + pwd +" &&& " + pwdChk);
-		return "member/login";
+							@RequestParam("id") String id) throws Exception {
+		String url = "member/result/login_fail";
+		Map<String, String> updateMap = new HashMap<>();
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		pwd = encoder.encode(pwd);
+		updateMap.put("pwd", pwd);
+		updateMap.put("id", id);
+		int result = service.findAndUpdate(updateMap);
+		if(result > 0) {
+			url = "member/result/change_suc";
+		}
+		return url;
 	}
 	
 	@PostMapping("/update")
 	public String updateInfo(MemberDTO mDto) throws Exception {
 		log.info("update Info DTO >>>>> "+mDto);
 		return "";
+	}
+	
+	@PostMapping("codeChk")
+	public @ResponseBody String codeChk(@RequestBody JSONObject codeList) throws Exception {
+		String result = "code_fail";
+		String insertCode = (String)codeList.get("insertCode");
+		String encodedCode = (String)codeList.get("encodedCode");
+		String id = (String)codeList.get("id");
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		if(encoder.matches(insertCode, encodedCode)) {
+			result = id;
+		}
+		return result;
 	}
 }

@@ -36,7 +36,7 @@ public class MemberServiceImpl implements IMemberService{
 	}
 	@Override
 	public int id_check(String id) throws Exception {
-		return mDao.id_check(id);
+		return mapper.id_check(id);
 	}
 	
 	@Override
@@ -51,6 +51,11 @@ public class MemberServiceImpl implements IMemberService{
 	@Override
 	public MemberDTO read(String id) throws Exception {
 		return mapper.read(id);
+	}
+
+	@Override
+	public int findAndUpdate(Map<String, String> updateMap) throws Exception {
+		return mapper.findAndUpdate(updateMap);
 	}
 
 

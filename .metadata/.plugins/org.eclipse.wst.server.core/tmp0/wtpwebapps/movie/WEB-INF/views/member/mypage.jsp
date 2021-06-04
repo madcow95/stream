@@ -23,7 +23,7 @@
             <h5 class="card-title text-center">내 정보</h5>
             <form class="form-signin" name="frm" method="post" action="${ctx}/member/updateForm">
               <div class="form-label-group">
-                <input type="text" id="inputEmail" name="id" class="form-control" placeholder="Email address" autofocus value="${sessionScope.memList.id}" readonly="readonly">
+                <input type="text" id="inputEmail" name="id" class="form-control" placeholder="Email address" autofocus value="${sessionScope.mDto.id}" readonly="readonly">
                 <label for="inputEmail">ID</label>
               </div>
 

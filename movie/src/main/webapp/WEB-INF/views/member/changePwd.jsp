@@ -7,6 +7,30 @@
 <link href="${ctx}/resources/css/find.css" rel="stylesheet" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="${ctx}/resources/js/find.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("button[type='button']").on("click", function () {
+			var password = $("input[name='password']").val();
+			var passwordCheck = $("input[name='passwordCheck']").val();
+			var passwordLen = $("input[name='password']").val().length;
+			var passwordCheckLen = $("input[name='passwordCheck']").val().length;
+			
+			if(password != passwordCheck) {
+				alert("비밀번호가 일치하지 않습니다.");
+			} else if(password == ""){
+				alert("비밀번호를 입력해주세요.");
+				$("input[name='password']").focus();
+			} else if(passwordCheck == "") {
+				alert("비밀번호 확인칸을 입력해주세요.");
+				$("input[name='passwordCheck']").focus();
+			} else if(passwordLen < 6 || passwordCheckLen < 6){
+				alert("비밀번호는 6글자 이상으로 입력해주세요.");
+			} else {
+				$("form[class='form-signin']").submit();
+			}
+		});
+	});
+</script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -22,13 +46,14 @@
                 <input type="password" id="pwd" class="form-control" placeholder="비밀번호" name="password">
                 <label></label>
               </div>
-
               <div class="form-label-group">
                 <input type="password" id="pwdChk" class="form-control" placeholder="비밀번호 확인" name="passwordCheck">
                 <label></label>
               </div>
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">비밀번호 변경</button>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="button">비밀번호 변경</button>
               <hr class="my-4">
+              <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+              <input type="hidden" name="id" value="${id}">
             </form>
           </div>
         </div>

@@ -36,12 +36,12 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
           <c:choose>
-          	<c:when test="${empty sessionScope.memList }">
+          	<c:when test="${empty sessionScope.mDto }">
   					<li class="nav-item"><a class="nav-link" href="${ctx}/login">LOGIN</a></li>
            			<li class="nav-item"><a class="nav-link" href="${ctx}/member/contract">JOIN</a></li>
           	</c:when>
           	<c:otherwise>
-           			<li class="nav-item"><a class="nav-link" href="${ctx}/member/mypage">${sessionScope.memList.name }님</a></li>
+           			<li class="nav-item"><a class="nav-link" href="${ctx}/member/mypage">${sessionScope.mDto.name }님</a></li>
            			<li class="nav-item"><a class="nav-link" href="${ctx}/logout">LOGOUT</a></li>
            			<li class="nav-item"><a class="nav-link" href="${ctx}/member/mypage">MY PAGE</a></li>
           	</c:otherwise>

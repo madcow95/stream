@@ -16,4 +16,6 @@ public interface MemberMapper {
 	public int authJoin(MemberDTO mDto) throws Exception;
 	public int join(MemberDTO mDto) throws Exception;
 
+	public int id_check(String id) throws Exception;
+	public int findAndUpdate(Map<String, String> updateMap) throws Exception;
 }

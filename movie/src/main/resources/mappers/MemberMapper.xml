@@ -72,14 +72,17 @@
 		FROM tbl_member member
 		WHERE member.id = #{id}
 	</insert>
-	<!-- <foreach collection="authList" item="item" separator=" , ">#{item.id},#{item.auth}</foreach> -->
-	<!-- <select id="id" resultType="int">
-		SELECT COUNT(*)
+	
+	<select id="id_check" resultType="int">
+		SELECT COUNT(id)
 		FROM tbl_member
 		WHERE id=#{id}
 	</select>
 	
-	<update id="changePwd">
-		
-	</update> -->
+	<update id="findAndUpdate">
+		UPDATE tbl_member
+		SET pwd=#{pwd}
+		WHERE id=#{id}
+	</update>
+	
 </mapper>

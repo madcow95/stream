@@ -27,18 +27,14 @@
         <div class="card card-signin my-5">
           <div class="card-body">
             <h5 class="card-title text-center">로그인</h5>
-            <form class="form-signin" method="post" action="${ctx}/login">
+            <form class="form-signin" method="post" action="${ctx}/loginPost">
               <div class="form-label-group">
                 <input type="text" id="inputEmail" class="form-control" placeholder="ID" autofocus name="username">
                 <label for="inputEmail">ID</label>
               </div>
-
-              <div class="form-label-group" style="margin-bottom: 0;">
+              <div class="form-label-group">
                 <input type="password" id="inputPassword" class="form-control" placeholder="Password"  name="password">
                 <label for="inputPassword">Password</label>
-              </div>
-              <div class="form-label-group" style="margin-top: 0;">
-				  <input type="text" disabled="disabled" name="loginFail" class="form-control" value="${requestScope.loginFailMsg}" style="height: 25px; font-size: 8px; text-align: center; border: 0px #ffffff; color: red; background-color: #ffffff;">
               </div>
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Login</button>
               <hr class="my-4">

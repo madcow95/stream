@@ -1,0 +1,10 @@
+package com.moviestream.movie.member;
+
+import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+
+import lombok.extern.log4j.Log4j;
+
+@Log4j
+public class AuthInterceptor extends HandlerInterceptorAdapter{
+
+}

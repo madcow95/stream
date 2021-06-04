@@ -7,9 +7,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script type="text/javascript" src="${ctx}/resources/js/update.js"></script>
 <link href="${ctx}/resources/css/update.css" rel="stylesheet" />
+<script type="text/javascript">
+function findAddr() {
+    new daum.Postcode({
+        oncomplete: function(data) {
+            document.getElementById("inputAddress").value = data.roadAddress + " ("+data.jibunAddress+") " + data.buildingName;
+            document.getElementById("inputZip_num").value = data.zonecode;
+        }
+    }).open();
+}
+</script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -22,8 +32,8 @@
             <h5 class="card-title text-center">회원정보 수정</h5>
             <form class="form-signin" method="get" action="${ctx}/member/update">
               <div class="form-label-group">
-                <input type="text" id="inputId" class="form-control" placeholder="Username" value="${sessionScope.memList.id}" disabled="disabled">
-                <input type="hidden" name="originId" value="${sessionScope.memList.id}">
+                <input type="text" id="inputId" class="form-control" placeholder="Username" value="${sessionScope.mDto.id}" disabled="disabled">
+                <input type="hidden" name="originId" value="${sessionScope.mDto.id}">
                 <label for="inputID">User ID</label>
               </div>
 
@@ -39,29 +49,34 @@
               </div>
               
               <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" value="${sessionScope.memList.email}">
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" value="${sessionScope.mDto.email}">
                 <label for="inputEmail">Email address</label>
               </div>
               
               <div class="form-label-group" style="margin-bottom: 5px;">
-                <input type="text" id="inputUserame" class="form-control" placeholder="Username" value="${sessionScope.memList.name}" disabled="disabled">
+                <input type="text" id="inputUserame" class="form-control" placeholder="Username" value="${sessionScope.mDto.name}" disabled="disabled">
                 <label for="inputUsername">User Name</label>
               </div>
               
-	          <button type="button" class="btn btn-primary btn-sm" style="margin-bottom: 5px;" name="findAddr">주소찾기</button>
+	          <button type="button" class="btn btn-primary btn-sm" style="margin-bottom: 5px;" onclick="findAddr()">주소찾기</button>
 	          
               <div class="form-label-group">
-                <input type="text" id="inputZip_num" class="form-control" placeholder="Post Code" value="${sessionScope.memList.zip_num}" disabled="disabled">
+                <input type="text" id="inputZip_num" class="form-control" placeholder="Post Code" value="${sessionScope.mDto.zip_num}">
                 <label for="inputZip_num">Post Code</label>
               </div>
               
               <div class="form-label-group">
-                <input type="text" id="inputAddress" class="form-control" placeholder="Address" value="${sessionScope.memList.address}" disabled="disabled">
+                <input type="text" id="inputAddress" class="form-control" placeholder="Address" value="${sessionScope.mDto.address}">
                 <label for="inputAddress">Address</label>
               </div>
               
               <div class="form-label-group">
-                <input type="text" id="inputPhone" class="form-control" placeholder="Phone" value="${sessionScope.memList.phone}" disabled="disabled">
+                <input type="text" id="inputDetailAddress" class="form-control" placeholder="Detail Address">
+                <label for="inputDetailAddress">Detail Address</label>
+              </div>
+              
+              <div class="form-label-group">
+                <input type="text" id="inputPhone" class="form-control" placeholder="Phone" value="${sessionScope.mDto.phone}" disabled="disabled">
                 <label for="inputPhone">Phone</label>
               </div>
 
@@ -70,6 +85,7 @@
   				<button type="button" class="btn btn-warning btn-lg">취소</button>
   				<button type="button" class="btn btn-primary btn-lg">정보 수정</button>
 			  </p>
+			  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" id="token">
             </form>
           </div>
         </div>
