@@ -23,13 +23,106 @@
 	}
 </style>
 <meta charset="UTF-8">
+<meta name="_csrf" content="${_csrf.token}">
+<meta name="_csrf_header" content="${_csrf.headerName}">
 <link rel="stylesheet" href="${ctx}/resources/css/carousel.css">
 <link rel="stylesheet" href="${ctx}/resources/css/test.css">
 <link rel="stylesheet" href="${ctx}/resources/css/test1.css">
 <script type="text/javascript" src="${ctx}/resources/js/test.js"></script>
 <script type="text/javascript" src="${ctx}/resources/js/test1.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
 <script type="text/javascript">
+		/* function test(title) {
+			var token = $("meta[name='_csrf']").attr("content");
+			var header = $("meta[name='_csrf_header']").attr("content");
+			$.ajax({
+				url : "${ctx}/movie/youtube",
+				type : "post",
+				beforeSend : function(xhr) {
+					xhr.setRequestHeader(header, token);
+				},
+				data : JSON.stringify(title),
+				contentType : "application/json; charset=UTF-8",
+				success : function (result) {
+					console.log(result);
+				}
+			});
+		} */
+		var player;
+		function test(title) {
+			var key = "AIzaSyC19sN2x8XdweXrrAwD_GCAypPd3s9Gfzg";
+			var keyword = title + " 예고편";
+			console.log("검색 키워드 >>>> "+keyword);
+			$.ajax({
+				type : "GET",
+				url : "https://www.googleapis.com/youtube/v3/search?key="+key,
+				data : {
+					part : 'snippet',
+					order : 'viewCount',
+					q : keyword,
+				},
+				success : function (result) {
+					console.log(result.items[0].id.videoId);
+					onYouTubeIframeAPIReady(result.items[0].id.videoId);
+				}
+				
+			}); // ajax end
+			
+			
+			function onYouTubeIframeAPIReady(url) {
+				console.log("ready url >>>> "+url);
+				player = new YT.Player('player', {
+					videoId : url,
+					width : "560",
+					height : "349",
+					playerVars : {
+						'modestbranding' : 1,
+						'autoplay' : 1,
+						'controls' : 1,
+						'showinfo' : 0,
+						'rel' : 0,
+						'loop' : 0,
+						'playlist' : url
+					},
+					events: {
+						'onReady' : onPlayerReady,
+						'onStateChange' : onPlayerStateChange
+					}
+				});
+			} // apiready end
+		
+		function onPlayerReady(event) {
+			event.target.playVideo();
+		}
+		
+		function onPlayerStateChange() {
+			if(player.getPlayerState() == 1) console.log("재생중");
+			else if(player.getPlayerState() == 2) console.log("일시중지");
+		}
+		
+		} // test end
+		
+		
+			
+		
+	/* $(document).ready(function () {
+		let timeout;
+		var video = $("img[name='movieImg1']");
+		
+		video.mouseenter(function () {
+			timeout = window.setTimeout(() => {
+				console.log(title.title);
+			});
+		})
+		
+		
+		video.mouseout(function () {
+			window.clearTimeout(timeout);
+		});
+	}); */
+
 </script>
 <title>Insert title here</title>
 </head>
@@ -80,7 +173,7 @@
     <div class="row_posters" onscroll="getScrollVal()" style="margin-left: 20px;">
       <c:forEach items="${movieList}" var="list" begin="1" end="30" step="1">
       <div class="wrap">
-        <img src="${list.image}" alt="movieImage" class="row_poster" style="margin-left: 20px;">
+        <img src="${list.image}" alt="movieImage" class="row_poster" style="margin-left: 20px;" name="movieImg1" onclick="test('${list.title}')">
         <div class="poster_info">
         </div>
       </div>
@@ -95,12 +188,12 @@
     </div>
 </div>
 
-<div class="row1">
+<%-- <div class="row1">
     <h3 class="row_title1" style=" color: #ffffff;">평점순</h3>
     <div class="row_posters1" onscroll="getScrollVal1()" >
       <c:forEach items="${movieList}" var="list" begin="31" end="50" step="1">
       <div class="wrap1">
-        <img src="${list.image}" alt="movieImage" class="row_poster1" style="margin-left: 20px;">
+        <img src="${list.image}" alt="movieImage" class="row_poster1" style="margin-left: 20px;" name="movieImg2">
         <div class="poster_info1">
         </div>
       </div>
@@ -113,7 +206,15 @@
         <i class="arrow1 right1"></i>
       </div>
     </div>
-</div>
-</body>
+</div> --%>
+
+
+<!-- <div class="modal fade bs-example-modal-lg5" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content"> -->
+      <div id="player" style="margin-left: 15%;"></div>
+    <!-- </div>
+  </div>
+</div> -->
 </body>
 </html>

@@ -74,13 +74,18 @@ public class MemberController {
 	}
 	
 	@PostMapping("/updateForm")
-	public String change(MemberDTO mDto) throws Exception {
+	public @ResponseBody String change(@RequestBody JSONObject mDto) throws Exception {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		MemberDTO memList = service.read(mDto.getId());
-		if(encoder.matches(mDto.getPwd(), memList.getPwd())) {
-			return "redirect:/member/updateForm";
+		
+		String id = (String) mDto.get("id");
+		String pwd = (String) mDto.get("pwd");
+		String result = "updateForm";
+		MemberDTO memList = service.read(id);
+		if(encoder.matches(pwd, memList.getPwd())) {
+			return result;
 		} else {
-			return "member/result/mypage_fail";
+			result = "fail";
+			return result;
 		}
 	}
 	@GetMapping("updateForm")
@@ -211,7 +216,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "/changePwd", method = RequestMethod.POST)
-	public String changepwd(@RequestParam("password") String pwd,
+	public String changepwd(@RequestParam("password12") String pwd,
 							@RequestParam("id") String id) throws Exception {
 		String url = "member/result/login_fail";
 		Map<String, String> updateMap = new HashMap<>();

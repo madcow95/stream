@@ -2,14 +2,14 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="BoardMapper">
+<mapper namespace="com.moviestream.movie.board.mapper.BoardMapper">
 	<sql id="criteria">
 		<trim prefix="(" suffix=") AND" prefixOverrides="OR">
 			<foreach item="type" collection="typeArr">
 				<trim prefix="OR">
 					<choose>
 						<when test="type == 'T'.toString()">
-							subject LIKE '%'||#{keyword}||'%'
+							title LIKE '%'||#{keyword}||'%'
 						</when>
 						<when test="type == 'C'.toString()">
 							content LIKE '%'||#{keyword}||'%'
@@ -31,7 +31,6 @@
 				   readcount,
 				   regdate,
 				   updatedate,
-				   filename,
 				   id
 			FROM  (
 				   SELECT /*+ INDEX_DESC(board BOARD_NUM_PK) */
@@ -42,7 +41,6 @@
 				   		  readcount,
 				   		  regdate,
 				   		  updatedate,
-				   		  filename,
 				   		  id
 				   FROM	  board
 				   WHERE  
@@ -51,6 +49,7 @@
 			<![CDATA[
 				   rownum <= #{pageNum} * #{amount})
 			WHERE rn > (#{pageNum} - 1) * #{amount}
+			ORDER BY regdate desc
 			]]>
 	</select>
 	
@@ -62,7 +61,6 @@
 				   readcount,
 				   regdate,
 				   updatedate,
-				   filename,
 				   id
 			FROM  (
 				   SELECT /*+ INDEX_DESC(board BOARD_NUM_PK) */
@@ -71,16 +69,16 @@
 				   		  title,
 				   		  content,
 				   		  readcount,
-				   		  reg_date,
+				   		  regdate,
 				   		  updatedate,
-				   		  filename,
 				   		  id
 				   FROM	  freeboard
 				   WHERE  
 			]]>
 			<include refid="criteria"></include>
 			<![CDATA[
-				   rownum <= #{pageNum} * #{amount})
+				   rownum <= #{pageNum} * #{amount}
+		   		   )
 			WHERE rn > (#{pageNum} - 1) * #{amount}
 			]]>
 	</select>
@@ -101,20 +99,61 @@
 		articleno > 0
 	</select>
 	
-	<select id="read" resultType="com.moviestream.movie.board.domain.BoardDTO">
+	<select id="freeboardread" resultType="com.moviestream.movie.board.domain.BoardDTO">
 		SELECT *
-		FROM board
+		FROM freeboard
 		WHERE articleno=#{articleno}
 	</select>
 	
 	<update id="modify">
 		UPDATE board
-		SET subject=#{subject}, content=#{content}
+		SET title=#{title}, content=#{content}
 		WHERE articleno=#{articleno}
 	</update>
 	
 	<delete id="remove">
 		DELETE FROM board
 		WHERE articleno=#{articleno}
+	</delete>
+	
+	<insert id="register" parameterType="com.moviestream.movie.board.domain.BoardDTO">
+		INSERT INTO freeboard(articleno, title, content, id)
+		VALUES(freeboard_seq.NEXTVAL, #{title}, #{content}, #{id})
+		<selectKey keyProperty="articleno" resultType="Integer" order="AFTER">
+			SELECT freeboard_seq.currval
+			FROM dual
+		</selectKey>
+	</insert>
+	
+	<update id="updateViewCount" parameterType="com.moviestream.movie.board.domain.BoardDTO">
+		UPDATE freeboard
+		SET readcount = readcount + 1
+		WHERE articleno = #{articleno}
+	</update>
+	
+	<update id="modifyBoard" parameterType="com.moviestream.movie.board.domain.BoardDTO">
+		UPDATE freeboard
+		SET title=#{title}, content=#{content}, regdate=sysdate
+		WHERE articleno=#{articleno}
+	</update>
+	
+	<insert id="adminRegsiter" parameterType="com.moviestream.movie.board.domain.BoardDTO">
+		INSERT INTO board(articleno, title, content, id)
+		VALUES(board_seq.NEXTVAL, #{title}, #{content}, #{id})
+		<selectKey keyProperty="articleno" resultType="Integer" order="AFTER">
+			SELECT board_seq.currval
+			FROM dual
+		</selectKey>
+	</insert>
+	
+	<select id="adminread" resultType="com.moviestream.movie.board.domain.BoardDTO">
+		SELECT *
+		FROM board
+		WHERE articleno=#{articleno}
+	</select>
+	
+	<delete id="delFreeBoard">
+		DELETE FROM freeboard
+		WHERE articleno = #{articleno}
 	</delete>
 </mapper>

@@ -20,4 +20,5 @@ public interface MemberMapper {
 	public int findAndUpdate(Map<String, String> updateMap) throws Exception;
 	public int addrUpdate(MemberDTO mDto) throws Exception;
 	public int pwdUpdate(MemberDTO mDto) throws Exception;
+	public void lastLogin(String id) throws Exception;
 }

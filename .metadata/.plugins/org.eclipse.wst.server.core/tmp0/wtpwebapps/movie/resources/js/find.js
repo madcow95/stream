@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$("#contract").on("click", function() {
+	$("#contract1").on("click", function() {
 		location.href="contract";
 	});
 	

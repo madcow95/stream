@@ -2,9 +2,11 @@ package com.moviestream.movie.movie.service;
 
 import java.io.InputStream;
 import java.net.HttpURLConnection;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import com.google.api.services.youtube.model.SearchResult;
 import com.moviestream.movie.board.domain.MovieInfoDTO;
 import com.moviestream.movie.movie.domain.MovieDTO;
 
@@ -20,4 +22,5 @@ public interface IMovieService {
 	
 	public void delSameInfo(String link) throws Exception;
 	public List<MovieInfoDTO> search(String keyword) throws Exception;
+	public String prettyPrint(Iterator<SearchResult> iteratorSearchResults, String query);
 }

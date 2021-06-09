@@ -1,0 +1,5 @@
+package com.moviestream.movie.board.domain;
+
+public class ReplyDTO {
+
+}

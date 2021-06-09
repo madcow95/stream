@@ -19,38 +19,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-//	var result = '<c:out value="${result}"/>';
 	var result = "${result}";
 	
-	// 파라메터에 따라서 모달창을 보여주거나 내용을 수정한 뒤 보이도록 작성하기 위함.
-	//checkModal(result);
-	
-	// history 객체에 현재 저장된 데이터를 변경 (새 기록을 작성하는 대신 사용자의 동작에 따라 현재 히스토리 엔트리의 URL을 업데이트 하려고 할 때 매우 유용)
-	// window.history.replace(data, title [, url]);
-	// 사용 예) window.history.replaceState("http://example.ca", "Sample Title", "/example/path.html");
-    // 이 예제는 현재 기록, 주소 표시 줄 및 페이지 제목을 바꿉니다.
 	history.replaceState({}, null, null);
 	
-	function checkModal(result) {
-		if (result === "" || history.state) {
-			return;
-		}
-
-		if (parseInt(result) > 0) {
-			$(".modal-body").html("게시글 " + parseInt(result) + " 번이 등록되었습니다.");
-		}
-
-		$("#myModal").modal("show");
-    }
-	
-	$("#regBtn").on("click", function() {
-		self.location = "${contextPath}/board/register";
-	});
-	
-	// 페이지 번호를 클릭하면 처리하는 부분
 	var actionForm = $("#actionForm");
 	$(".page-item a").on("click", function(e) {
-		e.preventDefault(); // <a>태그를 클릭해도 페이지 이동이 없도록 처리
+		e.preventDefault();
 		
 		console.log("click");
 
@@ -63,7 +38,7 @@ $(document).ready(function() {
 		actionForm.append("<input type='hidden' name='articleno' value='"
 										+ $(this).attr("href")
 										+ "'>");
-		actionForm.attr("action", "${contextPath}/board/read");
+		actionForm.attr("action", "${ctx}/board/read");
 		actionForm.submit();
 	});
 
@@ -126,7 +101,7 @@ $(document).ready(function() {
                                 </thead>
                                 <tbody>
                                 	<c:choose>
-                                		<c:when test="${empty boardList}">
+                                		<c:when test="${empty aboardList}">
 	                                		<tr height="10">
 												<th colspan="5">
 													<p align="center">
@@ -135,26 +110,15 @@ $(document).ready(function() {
 												</th>
 											</tr>
                                 		</c:when>
-                                		<c:when test="${!empty boardList}">
-		                                	<c:forEach items="${boardList}" var="boardList" varStatus="status">
+                                		<c:when test="${!empty aboardList}">
+		                                	<c:forEach items="${aboardList}" var="boardList" varStatus="status">
 			                                	<tr class="odd gradeX">
 			                                        <td width="10%">${boardList.articleno }</td>
 			                                        <td width="15%">${boardList.id}</td>
 			                                        <td width="50%">
-			                                        <c:choose>
-				                                        <c:when test="${boardList.re_level > 1}">
-				                                        	<c:forEach begin="2" end="${boardList.re_level}" step="1">
-				                                        		<span></span>
-				                                        	</c:forEach>
-				                                        	<span style="padding-left: 10px;">[답변]</span>
-					                                        <a href="${ctx}/board/read?pageNum=${pageMaker.cri.pageNum}&articleno=${boardList.articleno}&type=${pageMaker.cri.type}&keyword=${pageMaker.cri.keyword}">${boardList.subject}</a>
-				                                        </c:when>
-				                                        <c:otherwise>
-					                                        <a href="${ctx}/board/read?pageNum=${pageMaker.cri.pageNum}&articleno=${boardList.articleno}&type=${pageMaker.cri.type}&keyword=${pageMaker.cri.keyword}">${boardList.subject}</a>
-				                                        </c:otherwise>
-			                                        </c:choose>
+			                                        <a href="${ctx}/board/adminboardread?pageNum=${pageMaker.cri.pageNum}&articleno=${boardList.articleno}&type=${pageMaker.cri.type}&keyword=${pageMaker.cri.keyword}">${boardList.title}</a>
 			                                        </td>
-			                                        <td width="15%">${boardList.reg_date}</td>
+			                                        <td width="15%"><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${boardList.regdate}"/></td>
 			                                        <td width="10%">${boardList.readcount}</td>
 			                                    </tr>
 			                                </c:forEach>
@@ -162,6 +126,11 @@ $(document).ready(function() {
                                 	</c:choose>
                                 </tbody>
                             </table>
+                            <sec:authorize access="hasRole('ROLE_ADMIN')">
+	                            <div class="panel-heading pull-right">
+				            		<a href="${ctx}/board/adminRegister" class="btn btn-default" style="border: 1px solid #000000;">글작성</a>
+				            	</div>
+                            </sec:authorize>
                             <div class='center' >
 								<ul class="pagination justify-content-center" >
 									<c:if test="${pageMaker.prev}">
@@ -190,14 +159,17 @@ $(document).ready(function() {
 										</select>
 										<input type="text" style="width: 8cm;" name="keyword" placeholder="검색어를 입력하세요" value="${pageMaker.cri.keyword}">
 										<button class="btn btn-default">검색</button>
+										<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 									</form>
 								</div>
 							</div>
+							
                             <form id='actionForm' action="${ctx}/board/list" method='get'>
 								<input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum}'>
 								<input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
 								<input type='hidden' name='type' value='${pageMaker.cri.type}'>
 								<input type='hidden' name='keyword' value='${pageMaker.cri.keyword}'>
+								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 							</form>
                             <!-- /.table-responsive -->
                         </div>

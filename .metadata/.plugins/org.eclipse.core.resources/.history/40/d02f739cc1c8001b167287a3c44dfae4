@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moviestream.movie.board.mapper.BoardMapper">
+	<sql id="criteria">
+		<trim prefix="(" suffix=") AND" prefixOverrides="OR">
+			<foreach item="type" collection="typeArr">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'T'.toString()">
+							title LIKE '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'C'.toString()">
+							content LIKE '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'W'.toString()">
+							id LIKE '%'||#{keyword}||'%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+
+	<select id="boardList" resultType="com.moviestream.movie.board.domain.BoardDTO">
+				<![CDATA[
+			SELECT articleno,
+				   title,
+				   content,
+				   readcount,
+				   regdate,
+				   updatedate,
+				   id
+			FROM  (
+				   SELECT /*+ INDEX_DESC(board BOARD_NUM_PK) */
+				   		  rownum rn,
+				   		  articleno,
+				   		  title,
+				   		  content,
+				   		  readcount,
+				   		  regdate,
+				   		  updatedate,
+				   		  id
+				   FROM	  board
+				   WHERE  
+			]]>
+			<include refid="criteria"></include>
+			<![CDATA[
+				   rownum <= #{pageNum} * #{amount})
+			WHERE rn > (#{pageNum} - 1) * #{amount}
+			ORDER BY regdate desc
+			]]>
+	</select>
+	
+	<select id="freeBoardList" resultType="com.moviestream.movie.board.domain.BoardDTO">
+				<![CDATA[
+			SELECT articleno,
+				   title,
+				   content,
+				   readcount,
+				   regdate,
+				   updatedate,
+				   id
+			FROM  (
+				   SELECT /*+ INDEX_DESC(board BOARD_NUM_PK) */
+				   		  rownum rn,
+				   		  articleno,
+				   		  title,
+				   		  content,
+				   		  readcount,
+				   		  regdate,
+				   		  updatedate,
+				   		  id
+				   FROM	  freeboard
+				   WHERE  
+			]]>
+			<include refid="criteria"></include>
+			<![CDATA[
+				   rownum <= #{pageNum} * #{amount})
+			WHERE rn > (#{pageNum} - 1) * #{amount}
+			ORDER BY reg desc
+			]]>
+	</select>
+	
+	<select id="getTotalCnt" resultType="int">
+		SELECT COUNT(*)
+		FROM board
+		WHERE
+		<include refid="criteria"></include> 
+		articleno > 0
+	</select>
+	
+	<select id="getFreeTotalCnt" resultType="int">
+		SELECT COUNT(*)
+		FROM freeboard
+		WHERE
+		<include refid="criteria"></include> 
+		articleno > 0
+	</select>
+	
+	<select id="freeboardread" resultType="com.moviestream.movie.board.domain.BoardDTO">
+		SELECT *
+		FROM freeboard
+		WHERE articleno=#{articleno}
+	</select>
+	
+	<update id="modify">
+		UPDATE board
+		SET title=#{title}, content=#{content}
+		WHERE articleno=#{articleno}
+	</update>
+	
+	<delete id="remove">
+		DELETE FROM board
+		WHERE articleno=#{articleno}
+	</delete>
+	
+	<insert id="register" parameterType="com.moviestream.movie.board.domain.BoardDTO">
+		INSERT INTO freeboard(articleno, title, content, id)
+		VALUES(freeboard_seq.NEXTVAL, #{title}, #{content}, #{id})
+		<selectKey keyProperty="articleno" resultType="Integer" order="AFTER">
+			SELECT freeboard_seq.currval
+			FROM dual
+		</selectKey>
+	</insert>
+	
+	<update id="updateViewCount" parameterType="com.moviestream.movie.board.domain.BoardDTO">
+		UPDATE freeboard
+		SET readcount = readcount + 1
+		WHERE articleno = #{articleno}
+	</update>
+	
+	<update id="modifyBoard" parameterType="com.moviestream.movie.board.domain.BoardDTO">
+		UPDATE freeboard
+		SET title=#{title}, content=#{title}, regdate=sysdate
+		WHERE articleno=#{articleno}
+	</update>
+	
+	<insert id="adminRegsiter" parameterType="com.moviestream.movie.board.domain.BoardDTO">
+		INSERT INTO board(articleno, title, content, id)
+		VALUES(board_seq.NEXTVAL, #{title}, #{content}, #{id})
+		<selectKey keyProperty="articleno" resultType="Integer" order="AFTER">
+			SELECT board_seq.currval
+			FROM dual
+		</selectKey>
+	</insert>
+	
+	<select id="adminread" resultType="com.moviestream.movie.board.domain.BoardDTO">
+		SELECT *
+		FROM board
+		WHERE articleno=#{articleno}
+	</select>
+</mapper>

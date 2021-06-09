@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath == '/' ? '' : pageContext.request.contextPath }" scope="application"></c:set>
 <!DOCTYPE html>
 <html>
@@ -16,7 +16,7 @@ $(document).ready(function () {
 		$(".chkA").prop("checked", this.checked);
 	});
 	
-	$("#toJoin").on("click", function () {
+	$("#toJoin1").on("click", function () {
 		if(document.getElementById("chk1").checked == true && document.getElementById("chk2").checked == true){
 			document.getElementById("joinForm").action = "${ctx}/member/join";
 			document.getElementById("joinForm").submit();
@@ -63,8 +63,8 @@ OOO 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사�
 			</li>
 		</ul>
 		<p style="margin: 0 auto; text-align: center;">
- 		 <button type="button" class="btn btn-default btn-lg" id="toHome" style="border: 1px solid #000000;">비동의</button>
-		 <button type="button" class="btn btn-primary btn-lg" id="toJoin" >동의</button>
+ 		 <button type="button" class="btn btn-default btn-lg" id="toHome1" style="border: 1px solid #000000;">비동의</button>
+		 <button type="button" class="btn btn-primary btn-lg" id="toJoin1" >동의</button>
 		</p>
 	</form>
 </body>

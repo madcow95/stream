@@ -19,7 +19,7 @@ public class LoginDeniedHandler implements AccessDeniedHandler{
 			throws IOException, ServletException {
 		log.error("Access denied");
 		
-		response.sendRedirect("/member/login_fail");
+		response.sendRedirect("/member/result/login_fail");
 	}
 
 }

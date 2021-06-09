@@ -43,28 +43,28 @@
         			<input type="text" id="uid" class="int" maxlength="15" name="id" placeholder="4 ~ 15글자의 영어 + 숫자만 입력해주세요" style="font-size: 12px;" onkeyup="txtblock(this)" >
     				<input type="hidden" name="reid" id="reid">
 				</span>
-				<input type="text" id="idmessage" style="border: 0; width: 15cm; background-color: #ffffff;" disabled="disabled"><!-- <span id="idmessage"></span> -->
+				<input type="text" id="idmessage" style="border: 0; width: 15cm; background-color: #f7f7f7;" disabled="disabled"><!-- <span id="idmessage"></span> -->
 			</div>
 			<div>
     			<h3 class="join_title"><label for="pswd1">비밀번호</label></h3>
     			<span class="box int_pass">
         			<input type="password" id="pwd" class="int" maxlength="20" name="pwd" style="font-size: 12px;" placeholder="6 ~ 20글자의 문자 + 숫자를 조합하면 좋아요">
 				</span>
- 				<input type="text" id="pwdmessage" style="border: 0; width: 15cm; background-color: #ffffff;" disabled="disabled">
+ 				<input type="text" id="pwdmessage" style="border: 0; width: 15cm; background-color: #f7f7f7;" disabled="disabled">
 			</div>
 			<div>
     			<h3 class="join_title"><label for="pswd2">비밀번호 재확인</label></h3>
     			<span class="box int_pass_check">
         			<input type="password" id="pwdChk" class="int" maxlength="20" name="pwdChk" style="font-size: 12px;">
 				</span>
- 				<input type="text" id="pwdchkmessage" style="border: 0; width: 15cm; background-color: #ffffff;" disabled="disabled">
+ 				<input type="text" id="pwdchkmessage" style="border: 0; width: 15cm; background-color: #f7f7f7;" disabled="disabled">
 			</div>
 			<div>
     			<h3 class="join_title"><label for="name">이름</label></h3>
     			<span class="box int_name">
         			<input type="text" id="iname" class="int" maxlength="8" name="name" style="font-size: 12px;" onkeyup="engBlock(this)" placeholder="한글만 입력해주세요">
 				</span>
-				<input type="text" id="4" style="border: 0; width: 15cm; background-color: #ffffff;" disabled="disabled">
+				<input type="text" id="4" style="border: 0; width: 15cm; background-color: #f7f7f7;" disabled="disabled">
     			<span class="error_next_box"></span>
 			</div>
 			<div class="btn-group">
@@ -73,7 +73,7 @@
 	    			<span class="box int_email">
 	        			<input type="text" id="email" class="int" maxlength="100" name="email" style="font-size: 12px; width: 460px;">
 					</span>
-					<input type="text" id="1" style="border: 0; width: 15cm; background-color: #ffffff;" disabled="disabled">
+					<input type="text" id="1" style="border: 0; width: 15cm; background-color: #f7f7f7;" disabled="disabled">
 	            </div>
             </div>
 			<div>
@@ -81,7 +81,7 @@
 				<span class="box int_zip_num">
     				<input type="text" id="zip_num" class="int" maxlength="7" name="zip_num" style="font-size: 12px;">
 				</span>
-				<input type="text" id="2" style="border: 0; width: 15cm; background-color: #ffffff;" disabled="disabled">
+				<input type="text" id="2" style="border: 0; width: 15cm; background-color: #f7f7f7;" disabled="disabled">
                 <span class="error_next_box"></span>    
             </div>
 			<div>
@@ -89,7 +89,7 @@
             	    <span class="box int_addr">
 	                    <input type="text" id="address" class="int" maxlength="100" name="address" style="font-size: 12px;">
 					</span>
-					<input type="text" id="3" style="border: 0; width: 15cm; background-color: #ffffff;" disabled="disabled">
+					<input type="text" id="3" style="border: 0; width: 15cm; background-color: #f7f7f7;" disabled="disabled">
    				<span class="error_next_box"></span>    
 			</div>
 			<div>
@@ -97,7 +97,7 @@
             	    <span class="box int_addr">
 	                    <input type="text" id="DetailAddress" class="int" maxlength="100" name="DetailAddress" style="font-size: 12px;">
 					</span>
-					<input type="text" id="5" style="border: 0; width: 15cm; background-color: #ffffff;" disabled="disabled">
+					<input type="text" id="5" style="border: 0; width: 15cm; background-color: #f7f7f7;" disabled="disabled">
    				<span class="error_next_box"></span>    
 			</div>
 			<div>

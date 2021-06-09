@@ -8,6 +8,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="_csrf" content="${_csrf.token}">
+<meta name="_csrf_header" content="${_csrf.headerName}">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="${ctx}/resources/js/mypage.js"></script>
 <link href="${ctx}/resources/css/mypage.css" rel="stylesheet" />
@@ -24,11 +26,11 @@
             <h5 class="card-title text-center">내 정보</h5>
             <form class="form-signin" name="frm" method="post" action="${ctx}/member/updateForm">
               <div class="form-label-group">
-                <input type="text" id="inputEmail" name="id" class="form-control" placeholder="Email address" autofocus value="${sessionScope.mDto.id}" readonly="readonly">
-                <label for="inputEmail">ID</label>
+                <input type="text" id="inputId" name="id1" class="form-control" placeholder="Email address" value="${sessionScope.mDto.id}" readonly="readonly">
+                <label for="inputId">ID</label>
               </div>
               <div class="form-label-group">
-                <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" required maxlength="15">
+                <input type="password" name="pwd" id="password12" class="form-control" autofocus maxlength="15">
                 <label for="inputPassword">Password</label>
               </div>
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="button" name="change">정보 변경</button>

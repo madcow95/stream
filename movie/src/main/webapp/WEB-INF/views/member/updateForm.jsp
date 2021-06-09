@@ -23,7 +23,7 @@ function findAddr() {
 </script>
 <title>Insert title here</title>
 </head>
-<body>
+<body style="background-color: #ffffff;">
 <%@ include file="../header.jsp" %>
   <div class="container">
     <div class="row">
@@ -38,10 +38,9 @@ function findAddr() {
                 <label for="inputID">User ID</label>
               </div>
 
-              
               <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" maxlength="15" name="pwd">
-                <label for="inputPassword">Password</label>
+                <input type="password" id="inputPassword1" class="form-control" placeholder="Password" maxlength="15" name="pwd">
+                <label for="inputPassword1">Password</label>
               </div>
               
               <div class="form-label-group">
@@ -50,8 +49,8 @@ function findAddr() {
               </div>
               
               <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" value="${sessionScope.mDto.email}" name="email">
-                <label for="inputEmail">Email address</label>
+                <input type="email" id="inputEmail1" class="form-control" placeholder="Email address" value="${sessionScope.mDto.email}" name="email">
+                <label for="inputEmail1">Email address</label>
               </div>
               
               <div class="form-label-group" style="margin-bottom: 5px;">

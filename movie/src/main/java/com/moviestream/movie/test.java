@@ -30,7 +30,7 @@ public class test {
 	
 	private static final JsonFactory JSON_FACTORY = new JacksonFactory();
 	
-	private static final long NUMBER_OF_VIDEOS_RETURNED = 25;
+	private static final long NUMBER_OF_VIDEOS_RETURNED = 5;
 	
 	private static YouTube youtube;
 	
@@ -50,7 +50,7 @@ public class test {
 		        public void initialize(HttpRequest request) throws IOException {}
 		      }).setApplicationName("youtube-cmdline-search-sample").build();
 			
-			String queryTerm = getInputQuery();
+			String queryTerm = "극한직업예고편";
 			
 			System.out.println("queryTerm"+queryTerm);
 			YouTube.Search.List search = youtube.search().list("id,snippet");
@@ -59,7 +59,7 @@ public class test {
 			search.setKey(apiKey);
 			search.setQ(queryTerm);
 			search.setType("video");
-			search.setFields("items(id/kind,id/videoId,snippet/title,snippet/thumbnails/default/url)");
+			search.setFields("items(id/kind,id/videoId,snippet/title,snippet/thumbnails/high/url)");
 			search.setMaxResults(NUMBER_OF_VIDEOS_RETURNED);
 			SearchListResponse searchResponse = search.execute();
 			
@@ -79,18 +79,17 @@ public class test {
 		
 	}
 	
-	private static String getInputQuery() throws IOException{
-		String inputQuery = "";
-		System.out.print("Please enter a search term: "+inputQuery);
-		BufferedReader bReader = new BufferedReader(new InputStreamReader(System.in));
-		inputQuery = bReader.readLine();
-		
-		if(inputQuery.length() < 1) {
-			inputQuery = "YouTube Developers Live";
-		}
-		System.out.print("Please enter a search term: "+inputQuery);
-		return inputQuery;
-	}
+//	private static String getInputQuery() throws IOException{
+//		String inputQuery = "";
+//		System.out.print("Please enter a search term: "+inputQuery);
+//		BufferedReader bReader = new BufferedReader(new InputStreamReader(System.in));
+//		inputQuery = bReader.readLine();
+//		System.out.println("bReader readline"+inputQuery);
+//		if(inputQuery.length() < 1) {
+//			inputQuery = "YouTube Developers Live";
+//		}
+//		return inputQuery;
+//	}
 	
 	private static void prettyPrint(Iterator<SearchResult> iteratorSearchResults, String query) {
 		System.out.println("\n=============================================================");
@@ -107,11 +106,11 @@ public class test {
 	    	ResourceId rId = singleVideo.getId();
 	    	
 	    	if(rId.getKind().equals("youtube#video")) {
-	    		Thumbnail thumbnail = singleVideo.getSnippet().getThumbnails().getHigh();
+	    		Thumbnail thumbnail = (Thumbnail) singleVideo.getSnippet().getThumbnails().get("high");
 	    		
-	    		System.out.println(" Video Id" + rId.getVideoId());
-	            System.out.println(" Title: " + singleVideo.getSnippet().getTitle());
-	            System.out.println(" Thumbnail: " + thumbnail.getUrl());
+	    		System.out.println(" Video Id >>>>> " + rId.getVideoId());
+	            System.out.println(" Title: >>>> " + singleVideo.getSnippet().getTitle());
+	            System.out.println(" Thumbnail:  >>>> " + thumbnail.getUrl());
 	            System.out.println("\n-------------------------------------------------------------\n");
 	    	}
 	    }

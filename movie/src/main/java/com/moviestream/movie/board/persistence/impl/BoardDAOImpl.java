@@ -29,7 +29,7 @@ public class BoardDAOImpl implements IBoardDAO{
 
 	@Override
 	public BoardDTO read(int articleno) throws Exception {
-		return session.selectOne("read", articleno);
+		return session.selectOne("freeboardread", articleno);
 	}
 
 	@Override
@@ -50,6 +50,17 @@ public class BoardDAOImpl implements IBoardDAO{
 	@Override
 	public int getFreeTotalCnt(FreeCriteria cri) throws Exception {
 		return session.selectOne("getFreeTotalCnt", cri);
+	}
+
+	@Override
+	public void create(BoardDTO bDto) throws Exception {
+		session.insert("register", bDto);
+		
+	}
+
+	@Override
+	public void updateViewCount(BoardDTO bDto) throws Exception {
+		session.update("updateViewCount",bDto);
 	}
 
 

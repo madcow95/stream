@@ -1,0 +1,24 @@
+package com.moviestream.movie.board;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.moviestream.movie.board.domain.Criteria;
+
+@Controller
+@RequestMapping("/replies")
+public class ReplyController {
+
+	@GetMapping(value = "/pages/{bno}/{page}", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE })
+	public ResponseEntity<ReplyPageDTO> getlist(@PathVariable("bno") int bno, @PathVariable("page") int page)
+			throws Exception {
+		Criteria cri = new Criteria(page, 10);
+
+		return new ResponseEntity<>(service.getListPage(cri, bno), HttpStatus.OK);
+	}
+}

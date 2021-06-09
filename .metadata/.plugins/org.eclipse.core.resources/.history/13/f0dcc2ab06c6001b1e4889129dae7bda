@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+ $(document).ready(function() {
+	var change = $("button[name='change']");
+	
+	change.on("click", function() {
+		var id = document.getElementById("inputId").value;
+		var pwd = document.getElementById("inputPassword").value;
+		if(pwd== "") {
+			alert("비밀번호를 입력해주세요");
+		} else {
+			
+		}
+	}); // on end
+	
+	
+	
+}); // ready end

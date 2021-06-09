@@ -32,6 +32,7 @@ public class MemberServiceImpl implements IMemberService{
 
 	@Override
 	public MemberDTO login(Map<String, String> loginMap) throws Exception {
+		mapper.lastLogin(loginMap.get("id"));
 		return mapper.login(loginMap);
 	}
 	@Override
@@ -67,6 +68,7 @@ public class MemberServiceImpl implements IMemberService{
 	public int pwdUpdate(MemberDTO mDto) throws Exception {
 		return mapper.pwdUpdate(mDto);
 	}
+
 
 
 }

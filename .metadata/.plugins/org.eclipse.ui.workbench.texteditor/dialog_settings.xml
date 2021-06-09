@@ -1,30 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="update"/>
+		<item key="selection" value="modify Board bDto"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="update"/>
-			<item value="button"/>
-			<item value="find"/>
-			<item value="disa"/>
-			<item value="hidden"/>
-			<item value="sec"/>
-			<item value="updateform"/>
-			<item value="logout"/>
-			<item value="setds"/>
-			<item value="spring-test"/>
-			<item value="actor"/>
-			<item value="예이츠"/>
-			<item value="poster"/>
-			<item value="still"/>
-			<item value="Url"/>
+			<item value="modify board bdto"/>
+			<item value="modify board dto"/>
+			<item value="remove"/>
+			<item value="asdf"/>
+			<item value="adminmodify"/>
+			<item value="domwindow"/>
+			<item value="boardList"/>
+			<item value="read"/>
+			<item value="modify"/>
+			<item value="operform"/>
+			<item value="inputEmail"/>
+			<item value="subject"/>
+			<item value="add"/>
+			<item value="ㅁㅇㅇ"/>
+			<item value="show"/>
 		</list>
 		<list key="replacehistory">
+			<item value="aboardList"/>
+			<item value="articleno"/>
+			<item value="bno"/>
+			<item value="f7f7f7"/>
 			<item value="form-control"/>
 			<item value="sessionScope.boardList"/>
 			<item value="boardList"/>
@@ -33,8 +37,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1522"/>
-		<item key="DIALOG_Y_ORIGIN" value="303"/>
+		<item key="DIALOG_X_ORIGIN" value="52"/>
+		<item key="DIALOG_Y_ORIGIN" value="453"/>
 		<item key="DIALOG_WIDTH" value="340"/>
 		<item key="DIALOG_HEIGHT" value="454"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>

@@ -20,8 +20,9 @@
 			} else if (email == "") {
 				alert("이메일을 입력해주세요");
 				$("input[name='email']").focus();
+			} else {
+				$("form[name=frm]").submit();
 			}
-			document.frm.submit();
 		});
 	});
 </script>
@@ -36,20 +37,18 @@
           <div class="card-body">
             <h5 class="card-title text-center">아이디 찾기</h5>
             <form class="form-signin" action="${ctx}/member/find" method="post" name="frm">
-              <div class="form-label-group">
-                <input type="text" id="inputName" class="form-control" placeholder="이름" name="name">
-                <label></label>
+              <div class="form-group">
+                <input type="text" id="inputName" class="form-control" placeholder="이름" autofocus name="name">
               </div>
-              <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="이메일" name="email">
-                <label></label>
+              <div class="form-group">
+                <input type="email" id="inputEmail2" class="form-control" placeholder="이메일" name="email">
               </div>
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="button" name="findId">아이디 찾기</button>
               <hr class="my-4">
               <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
-            </form>
-              <button class="btn btn-lg btn-google btn-block text-uppercase" id="contract" style="border: 2px solid #000000;">회원가입</button>
+              <button type="button" class="btn btn-lg btn-success btn-block text-uppercase" id="contract1">회원가입</button>
               <div class="text-center"><a class="small" href="${ctx}/member/findPwd">비밀번호 찾기</a></div>
+            </form>
           </div>
         </div>
       </div>

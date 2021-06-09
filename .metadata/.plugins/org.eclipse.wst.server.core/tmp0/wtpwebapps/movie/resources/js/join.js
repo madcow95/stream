@@ -1,6 +1,7 @@
 
 	
 	$(document).ready(function () {
+	
 		$("#uid").on("change keyup paste", function () {
 			var len = document.getElementById("uid").value.length;
 			var textChk = document.getElementById("uid").value;

@@ -14,3 +14,7 @@
 1622648812966	Delete element
 1622694204888	Delete element
 1622825687694	Rename resource 'update.js'
+1622898826553	Rename type 'BoardAttachDTO'
+1622898849317	Rename type 'AttachFileDTO'
+1622898890245	Rename type 'BoardAttachFileDTO'
+1622900360324	Rename type 'BoardAttachDTO'

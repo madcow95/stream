@@ -43,34 +43,34 @@
       <!-- /.panel-heading -->
       <div class="panel-body">
 
-        <form role="form" action="${ctx}/board/modify" method="post" id="frm">
+        
           <div class="form-group">
-            <label>Articleno</label> <input class="form-control" name='articleno' value="${boardList.articleno }" disabled="disabled">
+            <label>Articleno</label> <input class="form-control" name='articleno' value="${aboardList.articleno }" disabled="disabled">
           </div>
           <div class="form-group">
-            <label>Subject</label> <input class="form-control" name='subject' value="${boardList.subject }" >
+            <label>Subject</label> <input class="form-control" name='subject' value="${aboardList.title }" >
           </div>
 
           <div class="form-group">
             <label>Content</label>
-            <textarea class="form-control" rows="3" name='content' >${boardList.content }</textarea>
+            <textarea class="form-control" rows="3" name='content' >${aboardList.content }</textarea>
           </div>
 
           <div class="form-group">
-            <label>ID</label> <input class="form-control" name='id' value="${boardList.id }" disabled="disabled">
+            <label>ID</label> <input class="form-control" name='id' value="${aboardList.id }" disabled="disabled">
           </div>
           <div class="form-group">
-            <label>RegDate</label> <input class="form-control" name='reg_date' value="${boardList.reg_date }" disabled="disabled">
+            <label>RegDate</label> <input class="form-control" name='reg_date' value="${aboardList.regdate }" disabled="disabled">
           </div>
           <div class="form-group" style="margin: 0 auto; text-align: center;">
 	          <button class="btn btn-primary" data-oper="modify">Modify</button>
 	          <button data-oper="remove" class="btn btn-danger">Remove</button>
 	          <button data-oper="list" class="btn btn-default">List</button>
           </div>
-          	<input type="hidden" id="articleno" name="articleno" value="${boardList.articleno}">
-          	<input type="hidden" id="readcount" name="readcount" value="${boardList.readcount}">
-          	<input type="hidden" id="filename" name="filename" value="${boardList.filename}">
-          	<input type="hidden" id="id" name="id" value="${boardList.id}">
+          <form role="form" action="${ctx}/board/adminmodify" method="post" id="frm">
+          	<input type="hidden" id="articleno" name="articleno" value="${aboardList.articleno}">
+          	<input type="hidden" id="readcount" name="readcount" value="${aboardList.readcount}">
+          	<input type="hidden" id="id" name="id" value="${aboardList.id}">
           	<input type="hidden" id="pageNum" name="pageNum" value="${cri.pageNum}">
           	<input type="hidden" id="type" name="type" value="${cri.type}">
           	<input type="hidden" id="keyword" name="keyword" value="${cri.keyword}">

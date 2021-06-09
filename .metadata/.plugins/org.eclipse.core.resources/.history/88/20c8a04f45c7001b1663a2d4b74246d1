@@ -1,0 +1,7 @@
+package com.moviestream.movie.board.service.impl;
+
+import com.moviestream.movie.board.service.IReplyService;
+
+public class ReplyServiceImpl implements IReplyService{
+
+}

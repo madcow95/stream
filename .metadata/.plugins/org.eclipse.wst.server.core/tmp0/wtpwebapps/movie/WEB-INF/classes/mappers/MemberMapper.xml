@@ -61,6 +61,12 @@
 		AND mem.pwd = #{pwd}
 	</select>
 	
+	<update id="lastLogin" parameterType="String">
+		UPDATE tbl_member
+		SET lastlogin = sysdate
+		WHERE id = #{id}
+	</update>
+	
 	<insert id="join" parameterType="com.moviestream.movie.member.domain.MemberDTO">
 		INSERT INTO tbl_member(id, pwd, name, email, zip_num, address, phone)
 		VALUES(#{id}, #{pwd}, #{name}, #{email}, #{zip_num}, #{address}, #{phone})

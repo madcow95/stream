@@ -12,16 +12,18 @@
 	<bean id="LoginFailHandler" class="com.moviestream.movie.member.security.LoginFailHandler"></bean>
 	
 	<security:http>
+		<security:intercept-url pattern="/board/register" access="hasRole('ROLE_MEMBER')"/>
+		<security:intercept-url pattern="/board/boardregister" access="hasRole('ROLE_ADMIN')"/>
 		<security:intercept-url pattern="/admin/adminhome" access="hasRole('ROLE_ADMIN')"/>
-		<security:form-login login-page="/member/login" authentication-success-handler-ref="customLoginSuccess" authentication-failure-handler-ref="LoginFailHandler"/>
+		<security:form-login login-page="/login" authentication-success-handler-ref="customLoginSuccess" authentication-failure-handler-ref="LoginFailHandler"/>
 		<!-- <security:access-denied-handler ref="accessDenied"/> -->
 		<security:logout logout-url="/logout" invalidate-session="true" delete-cookies="remember-me, JSESSION_ID"/>
 	</security:http>
 	
 	<security:authentication-manager>
-		<!-- <security:authentication-provider user-service-ref="userDetailService">
+		<security:authentication-provider user-service-ref="userDetailService">
 			<security:password-encoder ref="bcryptPasswordEncoder"/>
-		</security:authentication-provider> -->
+		</security:authentication-provider>
 	</security:authentication-manager>
 
 </beans>

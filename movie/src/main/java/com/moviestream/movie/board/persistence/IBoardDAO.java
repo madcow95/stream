@@ -15,4 +15,7 @@ public interface IBoardDAO {
 	public BoardDTO read(int articleno) throws Exception;
 	public int modify(BoardDTO bDto) throws Exception;
 	public int remove(BoardDTO bDto) throws Exception;
+	
+	public void create(BoardDTO bDto) throws Exception;
+	public void updateViewCount(BoardDTO bDto) throws Exception;
 }

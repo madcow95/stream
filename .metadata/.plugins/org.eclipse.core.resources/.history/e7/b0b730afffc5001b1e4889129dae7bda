@@ -1,0 +1,42 @@
+package com.moviestream.movie.board;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.multipart.MultipartFile;
+
+import lombok.extern.log4j.Log4j;
+
+@Controller
+@Log4j
+public class UploadController {
+	
+	private String uploadPath = "C:\\Users\\choi\\Desktop\\realmovie\\movie\\src\\main\\webapp\\resources\\fileUpload";
+	
+	@GetMapping("/uploadForm")
+	public void uploadForm() {
+		log.info("upload Form");
+	}
+	
+	@PostMapping("/uploadFormAction")
+	public void uploadFormPost(MultipartFile[] uploadFile, Model model) throws Exception {
+		for (MultipartFile multipartFile : uploadFile) {
+			log.info("---------------------------------------------------");
+			log.info("Upload File Name : " + multipartFile.getName());
+			log.info("Upload File Size : " + multipartFile.getSize());
+			log.info("Upload File ContentType : " + multipartFile.getContentType());
+		}
+	}
+	
+	private String getFolder() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		
+//		Date date = new Date(0);
+		java.util.Date date = new java.util.Date();
+		String str = sdf.format(date);
+		log.info("str =============== "+str);
+		return str.replace("-", File.separator);
+	}
+
+}

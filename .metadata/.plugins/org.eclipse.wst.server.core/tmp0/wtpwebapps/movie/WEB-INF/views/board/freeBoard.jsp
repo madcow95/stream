@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <c:set var="ctx" value="${pageContext.request.contextPath == '/' ? '' : pageContext.request.contextPath }" scope="application"></c:set>
 <!DOCTYPE html>
 <html>
@@ -22,32 +23,12 @@ $(document).ready(function() {
 //	var result = '<c:out value="${result}"/>';
 	var result = "${result}";
 	
-	// 파라메터에 따라서 모달창을 보여주거나 내용을 수정한 뒤 보이도록 작성하기 위함.
-	//checkModal(result);
-	
-	// history 객체에 현재 저장된 데이터를 변경 (새 기록을 작성하는 대신 사용자의 동작에 따라 현재 히스토리 엔트리의 URL을 업데이트 하려고 할 때 매우 유용)
-	// window.history.replace(data, title [, url]);
-	// 사용 예) window.history.replaceState("http://example.ca", "Sample Title", "/example/path.html");
-    // 이 예제는 현재 기록, 주소 표시 줄 및 페이지 제목을 바꿉니다.
 	history.replaceState({}, null, null);
 	
-	function checkModal(result) {
-		if (result === "" || history.state) {
-			return;
-		}
-
-		if (parseInt(result) > 0) {
-			$(".modal-body").html("게시글 " + parseInt(result) + " 번이 등록되었습니다.");
-		}
-
-		$("#myModal").modal("show");
-    }
-	
 	$("#regBtn").on("click", function() {
-		self.location = "${contextPath}/board/register";
+		self.location = "${ctx}/board/register";
 	});
 	
-	// 페이지 번호를 클릭하면 처리하는 부분
 	var actionForm = $("#actionForm");
 	$(".page-item a").on("click", function(e) {
 		e.preventDefault(); // <a>태그를 클릭해도 페이지 이동이 없도록 처리
@@ -63,7 +44,7 @@ $(document).ready(function() {
 		actionForm.append("<input type='hidden' name='articleno' value='"
 										+ $(this).attr("href")
 										+ "'>");
-		actionForm.attr("action", "${contextPath}/board/read");
+		actionForm.attr("action", "${ctx}/board/read");
 		actionForm.submit();
 	});
 
@@ -87,14 +68,6 @@ $(document).ready(function() {
 		e.preventDefault();
 
 		searchForm.submit();
-	});
-	
-	var user = document.getElementById("id").value;
-	$("#regBtn").on("click", function () {
-		if(user == "") {
-			alert("로그인이 필요한 서비스입니다.");
-			location.href="${ctx}/member/login";
-		}
 	});
 	
 });
@@ -128,13 +101,13 @@ $(document).ready(function() {
                                         <th>번호</th>
                                         <th>작성자</th>
                                         <th>제목</th>
-                                        <th>날짜</th>
+                                        <th>최초작성일</th>
                                         <th>조회수</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 	<c:choose>
-                                		<c:when test="${empty freeBaord}">
+                                		<c:when test="${empty freeBoard}">
 	                                		<tr height="10">
 												<th colspan="5">
 													<p align="center">
@@ -143,48 +116,37 @@ $(document).ready(function() {
 												</th>
 											</tr>
                                 		</c:when>
-                                		<c:when test="${!empty freeBaord}">
-		                                	<c:forEach items="${freeBaord}" var="boardList" varStatus="status">
+                                		<c:when test="${!empty freeBoard}">
+		                                	<c:forEach items="${freeBoard}" var="fboardList" varStatus="status">
 			                                	<tr class="odd gradeX">
-			                                        <td width="10%">${boardList.articleno }</td>
-			                                        <td width="15%">${boardList.id}</td>
+			                                        <td width="10%">${fboardList.articleno }</td>
+			                                        <td width="15%">${fboardList.id}</td>
 			                                        <td width="50%">
-			                                        <c:choose>
-				                                        <c:when test="${boardList.re_level > 1}">
-				                                        	<c:forEach begin="2" end="${boardList.re_level}" step="1">
-				                                        		<span></span>
-				                                        	</c:forEach>
-				                                        	<span style="padding-left: 10px;">[답변]</span>
-					                                        <a href="${ctx}/board/read?pageNum=${pageMaker.cri.pageNum}&articleno=${boardList.articleno}&type=${pageMaker.cri.type}&keyword=${pageMaker.cri.keyword}">${boardList.subject}</a>
-				                                        </c:when>
-				                                        <c:otherwise>
-					                                        <a href="${ctx}/board/read?pageNum=${pageMaker.cri.pageNum}&articleno=${boardList.articleno}&type=${pageMaker.cri.type}&keyword=${pageMaker.cri.keyword}">${boardList.subject}</a>
-				                                        </c:otherwise>
-			                                        </c:choose>
+			                                        <a href="${ctx}/board/freeboardread?articleno=${fboardList.articleno}&pageNum=${pageMaker2.cri2.pageNum}&type=${pageMaker2.cri2.type}&keyword=${pageMaker2.cri2.keyword}">${fboardList.title}</a>
 			                                        </td>
-			                                        <td width="15%">${boardList.reg_date}</td>
-			                                        <td width="10%">${boardList.readcount}</td>
+			                                        <td width="15%"><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${fboardList.regdate}"/></td>
+			                                        <td width="10%">${fboardList.readcount}</td>
 			                                    </tr>
 			                                </c:forEach>
                                 		</c:when>
                                 	</c:choose>
                                 </tbody>
                             </table>
-                            <div class="panel-heading">
-			            		<button id="regBtn" type="button" class="btn btn-default pull-right" style="border: 1px solid #000000;">글등록</button>
-			            	</div>
+	                            <div class="panel-heading pull-right">
+				            		<a href="${ctx}/board/register" id="regBtn" class="btn btn-default pull-right" style="border: 1px solid #000000;">글등록</a>
+				            	</div>
                             <div class='center' >
 								<ul class="pagination justify-content-center" >
-									<c:if test="${pageMaker.prev}">
-										<li class="page-item previous"><a class="page-link" href="${pageMaker.startPage -1}">Previous</a></li>
+									<c:if test="${pageMaker2.prev2}">
+										<li class="page-item previous"><a class="page-link" href="${pageMaker2.startPage2 -1}">Previous</a></li>
 									</c:if>
-									<c:forEach var="num" begin="${pageMaker.startPage}"	end="${pageMaker.endPage}">
-										<li class="page-item  ${pageMaker.cri.pageNum == num ? "active":""} ">
+									<c:forEach var="num" begin="${pageMaker2.startPage2}" end="${pageMaker2.endPage2}">
+										<li class="page-item  ${pageMaker2.cri2.pageNum == num ? "active":""} ">
 											<a href="${num}" class="page-link">${num}</a>
 										</li>
 									</c:forEach>
-									<c:if test="${pageMaker.next}">
-										<li class="page-item next"><a class="page-link" href="${pageMaker.endPage +1 } ">Next</a></li>
+									<c:if test="${pageMaker2.next2}">
+										<li class="page-item next"><a class="page-link" href="${pageMaker2.endPage2 +1 } ">Next</a></li>
 									</c:if>
 								</ul>
 							</div>
@@ -192,36 +154,32 @@ $(document).ready(function() {
 								<div class="col-lg-12">
 									<form id="searchForm" action="${ctx}/board/freeBoard" method="get">
 										<select name="type" >
-											<option value="" <c:out value="${pageMaker.cri.type == null?'selected':''}"/>>선택</option>
-											<option value="T" <c:out value="${pageMaker.cri.type eq 'T'?'selected':''}"/>>제목</option>
-											<option value="C" <c:out value="${pageMaker.cri.type eq 'C'?'selected':''}"/>>내용</option>
-											<option value="W" <c:out value="${pageMaker.cri.type eq 'W'?'selected':''}"/>>작성자</option>
-											<option value="TC" <c:out value="${pageMaker.cri.type eq 'TC'?'selected':''}"/>>제목 + 내용</option>
-											<option value="TW" <c:out value="${pageMaker.cri.type eq 'TW'?'selected':''}"/>>제목 + 작성자</option>
+											<option value="" <c:out value="${pageMaker2.cri2.type == null?'selected':''}"/>>선택</option>
+											<option value="T" <c:out value="${pageMaker2.cri2.type eq 'T'?'selected':''}"/>>제목</option>
+											<option value="C" <c:out value="${pageMaker2.cri2.type eq 'C'?'selected':''}"/>>내용</option>
+											<option value="W" <c:out value="${pageMaker2.cri2.type eq 'W'?'selected':''}"/>>작성자</option>
+											<option value="TC" <c:out value="${pageMaker2.cri2.type eq 'TC'?'selected':''}"/>>제목 + 내용</option>
+											<option value="TW" <c:out value="${pageMaker2.cri2.type eq 'TW'?'selected':''}"/>>제목 + 작성자</option>
 										</select>
-										<input type="text" style="width: 8cm;" name="keyword" placeholder="검색어를 입력하세요" value="${pageMaker.cri.keyword}">
+										<input type="text" style="width: 8cm;" name="keyword" placeholder="검색어를 입력하세요" value="${pageMaker2.cri2.keyword}">
 										<button class="btn btn-default">검색</button>
 									</form>
 								</div>
 							</div>
                             <form id='actionForm' action="${ctx}/board/freeBoard" method='get'>
-								<input type='hidden' name='id' value='${sessionScope.memList.id}' id="id">
-								<input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum}'>
-								<input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
-								<input type='hidden' name='type' value='${pageMaker.cri.type}'>
-								<input type='hidden' name='keyword' value='${pageMaker.cri.keyword}'>
+								<input type='hidden' name='id' value='${sessionScope.mDto.id}' id="id">
+								<input type='hidden' name='pageNum' value='${pageMaker2.cri2.pageNum}'>
+								<input type='hidden' name='amount' value='${pageMaker2.cri2.amount}'>
+								<input type='hidden' name='type' value='${pageMaker2.cri2.type}'>
+								<input type='hidden' name='keyword' value='${pageMaker2.cri2.keyword}'>
+								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" id="token">
 							</form>
-                            <!-- /.table-responsive -->
                         </div>
-                        <!-- /.panel-body -->
                     </div>
-                    <!-- /.panel -->
                 </div>
-                <!-- /.col-lg-12 -->
             </div>
-            <!-- /.row -->
         </div>
-        <!-- /#page-wrapper -->
     </div>
+    
 </body>
 </html>

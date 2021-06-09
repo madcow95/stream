@@ -1,6 +1,0 @@
-/**
- * 
- */
- $(document).ready(function() {
-	var change = $("button[name='change']");
-});

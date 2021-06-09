@@ -7,12 +7,16 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.google.api.services.youtube.model.ResourceId;
+import com.google.api.services.youtube.model.SearchResult;
+import com.google.api.services.youtube.model.Thumbnail;
 import com.moviestream.movie.board.domain.MovieInfoDTO;
 import com.moviestream.movie.movie.domain.MovieDTO;
 import com.moviestream.movie.movie.persistence.IMovieDAO;
@@ -23,6 +27,8 @@ import lombok.extern.log4j.Log4j;
 @Service
 @Log4j
 public class MovieServiceImpl implements IMovieService{
+	
+	private static final long NUMBER_OF_VIDEOS_RETURNED = 1;
 	
 	@Autowired
 	private IMovieDAO mDao;
@@ -99,6 +105,33 @@ public class MovieServiceImpl implements IMovieService{
 	@Override
 	public List<MovieInfoDTO> search(String keyword) throws Exception {
 		return mDao.search(keyword);
+	}
+
+	@Override
+	public String prettyPrint(Iterator<SearchResult> iteratorSearchResults, String query) {
+		System.out.println("\n=============================================================");
+	    System.out.println(
+	        "   First " + NUMBER_OF_VIDEOS_RETURNED + " videos for search on \"" + query + "\".");
+	    System.out.println("=============================================================\n");
+	    
+	    if (!iteratorSearchResults.hasNext()) {
+	        System.out.println(" There aren't any results for your query.");
+	      }
+	    
+//	    while (iteratorSearchResults.hasNext()) {
+	    	SearchResult singleVideo = iteratorSearchResults.next();
+	    	ResourceId rId = singleVideo.getId();
+	    	
+	    	if(rId.getKind().equals("youtube#video")) {
+	    		Thumbnail thumbnail = (Thumbnail) singleVideo.getSnippet().getThumbnails().get("high");
+	    		
+	    		System.out.println(" Video Id >>>>> " + rId.getVideoId());
+	            System.out.println(" Title: >>>> " + singleVideo.getSnippet().getTitle());
+	            System.out.println(" Thumbnail:  >>>> " + thumbnail.getUrl());
+	            System.out.println("\n-------------------------------------------------------------\n");
+	    	}
+//	    }
+		return rId.getVideoId();
 	}
 	
 }
