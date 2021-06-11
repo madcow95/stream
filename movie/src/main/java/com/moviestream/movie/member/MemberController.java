@@ -12,6 +12,7 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONObject;
@@ -264,7 +265,7 @@ public class MemberController {
 		return url;
 	}
 	
-	@PostMapping("codeChk")
+	@PostMapping("/codeChk")
 	public @ResponseBody String codeChk(@RequestBody JSONObject codeList) throws Exception {
 		String result = "code_fail";
 		String insertCode = (String)codeList.get("insertCode");
@@ -275,5 +276,53 @@ public class MemberController {
 			result = id;
 		}
 		return result;
+	}
+	
+	@PostMapping("/exit")
+	public @ResponseBody String exit(@RequestBody JSONObject exit) throws Exception {
+		String result = "fail";
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		log.info(exit);
+		String id = (String) exit.get("id");
+		String pwd = (String) exit.get("pwd");
+		MemberDTO mDto = service.read(id);
+		Map<String, String> exitMap = new HashMap<String, String>();
+		exitMap.put("id", id);
+		exitMap.put("pwd", pwd);
+		if(encoder.matches(pwd, mDto.getPwd())) {
+			log.info("same pwd");
+			int exitNum = service.exitMem(exitMap);
+			log.info("exit result >>> "+ exitNum);
+			result = "exitSucc";
+		}
+		return result;
+	}
+	
+	@GetMapping("/exitResult")
+	public String exitResult(HttpSession session, HttpServletRequest request) throws Exception {
+		session = request.getSession();
+		session.invalidate();
+		return "redirect:/";
+	}
+	
+	@PostMapping("/exitCancel")
+	public String realExit(@RequestParam("cancleId") String id, @RequestParam("canclePwd") String pwd, HttpSession session, HttpServletRequest request) throws Exception {
+		log.info("cancel id & cancel pwd >>> " + id + pwd);
+		String returnUrl = "member/result/login_fail";
+		session = request.getSession();
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		MemberDTO mDto = service.read(id);
+		int result = 0;
+		log.info("idcheck >>> " + mDto);
+		if(encoder.matches(pwd, mDto.getPwd())) {
+			result = service.recoverAuth(mDto);
+			log.info("encoder check result >>> "+ result);
+			if(result > 0) {
+				session.invalidate();
+				returnUrl = "redirect:/logout";
+			}
+		}
+ 		log.info("before return url >>> " + returnUrl);
+		return returnUrl;
 	}
 }

@@ -1,7 +1,0 @@
-package com.moviestream.movie.member.security;
-
-import org.springframework.security.web.authentication.AuthenticationFailureHandler;
-
-public class LoginFailHandler implements AuthenticationFailureHandler{
-
-}

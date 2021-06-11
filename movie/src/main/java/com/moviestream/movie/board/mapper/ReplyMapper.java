@@ -14,5 +14,6 @@ public interface ReplyMapper {
 	public int register1(ReplyDTO rDto) throws Exception;
 	public int replyDelete(int rno) throws Exception;
 	public ReplyDTO getReply(int articleno) throws Exception;
+	public int boardDel(int articleno) throws Exception;
 
 }

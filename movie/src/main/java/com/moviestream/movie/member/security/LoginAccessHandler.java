@@ -47,6 +47,11 @@ public class LoginAccessHandler implements AuthenticationSuccessHandler{
 			return;
 		}
 		
+		if(roleNames.contains("ROLE_EXIT")) {
+			response.sendRedirect("/secLogin");
+			return;
+		}
+		
 		response.sendRedirect("/member/result/login_fail");
 	}
 

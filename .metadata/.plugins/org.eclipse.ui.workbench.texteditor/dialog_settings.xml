@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="modify Board bDto"/>
+		<item key="selection" value=""/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="reply"/>
+			<item value="json"/>
+			<item value="login"/>
+			<item value="regBtn"/>
+			<item value="scope"/>
 			<item value="modify board bdto"/>
 			<item value="modify board dto"/>
 			<item value="remove"/>
@@ -18,11 +23,6 @@
 			<item value="read"/>
 			<item value="modify"/>
 			<item value="operform"/>
-			<item value="inputEmail"/>
-			<item value="subject"/>
-			<item value="add"/>
-			<item value="ㅁㅇㅇ"/>
-			<item value="show"/>
 		</list>
 		<list key="replacehistory">
 			<item value="aboardList"/>

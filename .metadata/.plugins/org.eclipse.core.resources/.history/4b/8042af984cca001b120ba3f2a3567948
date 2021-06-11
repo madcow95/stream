@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moviestream.movie.board.mapper.BoardAttachMapper">
+	<insert id="insert">
+		INSERT INTO tbl_free_attach(uuid, uploadPath, fileName, filetype, articleno)
+		VALUES(#{uuid}, #{uploadPath}, #{fileName}, #{filetype}, #{articleno})
+	</insert>
+	
+	<select id="findByArticleno" resultType="com.moviestream.movie.board.domain.BoardAttachDTO">
+		SELECT *
+		FROM tbl_free_attach
+		WHERE articleno = #{articleno}
+	</select>
+	
+	<delete id="delFreeBoard">
+		DELETE FROM tbl_free_attach
+		WHERE articleno = #{articleno}
+	</delete>
+	
+	<select id="getOldFiles" resultType="com.moviestream.movie.board.domain.BoardAttachDTO">
+		SELECT *
+		FROM tbl_free_attach
+		WHERE uploadpath = to_char(sysdate -1, 'yyyy\mm\dd')
+	</select>
+</mapper>

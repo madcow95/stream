@@ -128,14 +128,9 @@
 		showList(1);
 		
 		function showList(page) {
-			console.log("show list " + page);
-			console.log("articleno " + articleno);
-			
 			replyService.getList(
 					{articleno:articleno, contextPath:"${ctx}", page: page || 1 }, 
 					function(replyCnt, list) {
-						console.log("replyCnt: "+ replyCnt );
-						console.log("list: " + list);
 						if(page == -1){
 							pageNum = Math.ceil(replyCnt/10.0);
 							showList(pageNum);
@@ -149,8 +144,7 @@
 						}
 						for (var i = 0, len = list.length || 0; i < len; i++) {
 							str +="<sec:authentication property='principal' var='sec'/><li class='left clearfix' data-rno='"+list[i].rno+"'>";
-							str +="  <div><div class='header'><strong class='primary-font'>["
-								+ list[i].rno+"] "+list[i].id+"</strong>&nbsp;&nbsp;<button class='btn btn-danger' type='button'";														
+							str +="  <div><div class='header'><strong class='primary-font'> "+list[i].id+"</strong>&nbsp;&nbsp;<button class='btn btn-danger' type='button'";														
 							str	+=' onclick="replyDel('+list[i].rno+', ' + '\'' + list[i].id +'\'' + ')">삭제</button>&nbsp;&nbsp;<button type="button" style="display: none;" data-toggle="modal" data-target=".bs-example-modal-lg2" class="btn btn-warning" >수정</button>';
 							str +="    <small class='pull-right text-muted'>"
 								+ replyService.displayTime(list[i].updatedate)+"</small></div>";
@@ -233,7 +227,6 @@
 	    });
 	    
 	    $("#addReplyBtn").on("click", function(e){
-	    	modal.find("input").val("");
 	    	modalInputReplyDate.closest("div").hide();
 	    	modal.find("button[id !='modalCloseBtn']").hide();
 	    	
@@ -246,18 +239,15 @@
 	    modalRegisterBtn.on("click", function(e) {
 	    	var replytext = $("input[name='replytext']").val();
 	    	var id = $("input[name='replyId']").val();
-	    	console.log("replytext >> " + replytext + "id >> " + id);
 	    	var reply = {
 	    			replytext: replytext,
 	    			id:id,
 	    			contextPath:"${ctx}",
 	    			articleno:articleno
 	    		};
-	    	console.log("reply set >>> " + reply)
-	        replyService.add(reply, function(result){
-	        	/* alert(result); */
+	        replyService.add(reply, function(){
 	        	
-	        	modal.find("input").val("");
+	        	modal.find("input[name='replytext']").val("");
 	        	modal.modal("hide"); 
 	        	
 	        	showList(-1);
@@ -476,7 +466,6 @@ $(document).ready(function() {
 <!-- /.row -->
 <div class='row'>
   <div class="col-lg-12">
-
     <!-- /.panel -->
     <div class="panel panel-default">
       <div class="panel-heading">

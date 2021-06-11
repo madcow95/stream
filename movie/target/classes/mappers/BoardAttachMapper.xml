@@ -13,4 +13,15 @@
 		FROM tbl_free_attach
 		WHERE articleno = #{articleno}
 	</select>
+	
+	<delete id="delFreeBoard">
+		DELETE FROM tbl_free_attach
+		WHERE articleno = #{articleno}
+	</delete>
+	
+	<select id="getOldFiles" resultType="com.moviestream.movie.board.domain.BoardAttachDTO">
+		SELECT *
+		FROM tbl_free_attach
+		WHERE uploadpath = to_char(sysdate -2, 'yyyy\mm\dd')
+	</select>
 </mapper>

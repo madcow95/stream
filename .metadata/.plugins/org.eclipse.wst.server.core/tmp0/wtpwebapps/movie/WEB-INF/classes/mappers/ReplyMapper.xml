@@ -51,4 +51,9 @@
 		FROM free_tbl_reply
 		WHERE rno=#{articleno}
 	</select>
+	
+	<delete id="boardDel">
+		DELETE FROM free_tbl_reply
+		WHERE articleno = #{articleno}
+	</delete>
 </mapper>

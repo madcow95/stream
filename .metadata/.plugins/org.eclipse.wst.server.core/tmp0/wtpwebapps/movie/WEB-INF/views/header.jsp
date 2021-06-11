@@ -77,6 +77,7 @@
 					},
 					data : "username="+id+"&password="+pwd,
 					success : function (result) {
+						console.log("ajax result >>> " + result);
 						if(result == "loginsuccess"){
 							location.href="/";
 						} else {
@@ -90,24 +91,32 @@
 	}); // on end
 </script>
 <body>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
       <a class="navbar-brand" href="${ctx}/">MOVIE</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
+          <sec:authentication property="principal" var="sec"/>
           <c:choose>
           	<c:when test="${empty sessionScope.mDto}">
           		<li class="nav-item"><button class="nav-link" style="border: 0px; background-color: #343A40;" data-toggle="modal" data-target=".bs-example-modal-lg">LOGIN</button></li>
   				<li class="nav-item"><button class="nav-link" style="border: 0px; background-color: #343A40;" data-toggle="modal" data-target=".bs-example-modal-lg1">JOIN</button></li>
           	</c:when>
           	<c:otherwise>
-          		<li class="nav-item"><a class="nav-link" href="${ctx}/member/mypage">${sessionScope.mDto.name}님</a></li>
+          		<sec:authorize access="hasAnyRole('ROLE_MEMBER', 'ROLE_ADMIN')">
+	          		<li class="nav-item"><a class="nav-link" href="${ctx}/member/mypage">${sessionScope.mDto.name}님</a></li>
+          		</sec:authorize>
 	   			<li class="nav-item"><a class="nav-link" href="${ctx}/logout">LOGOUT</a></li>
-	   			<li class="nav-item"><a class="nav-link" href="${ctx}/member/mypage">MY PAGE</a></li>
+	   			<sec:authorize access="hasAnyRole({'ROLE_MEMBER', 'ROLE_ADMIN'})">
+		   			<li class="nav-item"><a class="nav-link" href="${ctx}/member/mypage">MY PAGE</a></li>
+          		</sec:authorize>
           	</c:otherwise>
           </c:choose>
-	           	<li class="nav-item"><a href="${ctx}/board/list" class="nav-link" >BOARD</a></li>
+	   			<sec:authorize access="hasAnyRole({'ROLE_MEMBER', 'ROLE_ADMIN'})">
+		           	<li class="nav-item"><a href="${ctx}/board/list" class="nav-link" >BOARD</a></li>
+          		</sec:authorize>
             </ul>
         </div>
     </div>

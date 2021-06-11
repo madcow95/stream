@@ -22,8 +22,9 @@ import com.moviestream.movie.board.domain.BoardDTO;
 import com.moviestream.movie.board.domain.Criteria;
 import com.moviestream.movie.board.domain.FreeCriteria;
 import com.moviestream.movie.board.domain.PageDTO;
+import com.moviestream.movie.board.mapper.BoardAttachMapper;
+import com.moviestream.movie.board.mapper.ReplyMapper;
 import com.moviestream.movie.board.service.IBoardService;
-import com.moviestream.movie.board.service.IReplyService;
 
 import lombok.extern.log4j.Log4j;
 
@@ -32,13 +33,14 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class BoardController {
 	
-	private String uploadPath = "C:\\Users\\choi\\Desktop\\spring\\springstudy\\src\\main\\webapp\\resources\\fileUpload";
-	
 	@Autowired
 	private IBoardService service;
 	
 	@Autowired
-	private IReplyService replyService;
+	private ReplyMapper replyMapper;
+	
+	@Autowired
+	private BoardAttachMapper attachMapper;
 	
 	@GetMapping("/register")
 	public void registerGet() {
@@ -88,11 +90,20 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/freeboarddel")
-	public void delFreeBoard(BoardDTO bDto, Criteria cri) throws Exception {
+	public String delFreeBoard(BoardDTO bDto, Criteria cri) throws Exception {
 		log.info("자유게시판 삭제 테스트 >>> " + bDto + "cri >>> " + cri);
 		
-		int result = service.delFreeBoard(bDto.getArticleno());
-		
+		int result = replyMapper.boardDel(bDto.getArticleno());
+		log.info("댓글 삭제 결과 >>>> " + result);
+		if (result >= 0) {
+			result = attachMapper.delFreeBoard(bDto.getArticleno());
+			log.info("첨부파일 삭제 결과 >>>> " + result);
+			if(result >= 0) {
+				result = service.delFreeBoard(bDto.getArticleno());
+				log.info("게시글 삭제 결과 >>>> " + result);
+			}
+		}
+		return "redirect:/board/freeBoard?pageNum="+cri.getPageNum();
 	}
 	
 	@RequestMapping({"/read","/modify"})

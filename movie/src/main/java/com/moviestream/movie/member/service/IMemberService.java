@@ -16,4 +16,6 @@ public interface IMemberService {
 	public int findAndUpdate(Map<String, String> updateMap) throws Exception;
 	public int addrUpdate(MemberDTO mDto) throws Exception;
 	public int pwdUpdate(MemberDTO mDto) throws Exception;
+	public int exitMem(Map<String, String> exitMap) throws Exception;
+	public int recoverAuth(MemberDTO mDto) throws Exception;
 }

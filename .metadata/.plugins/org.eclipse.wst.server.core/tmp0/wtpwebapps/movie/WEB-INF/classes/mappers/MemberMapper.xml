@@ -103,4 +103,28 @@
 		WHERE id=#{id}
 	</update>
 	
+	<update id="exitMem">
+		UPDATE tbl_member
+		SET enabled = 0
+		WHERE id=#{id}
+	</update>
+	
+	<update id="exitAuth">
+		UPDATE tbl_auth
+		SET auth = 'ROLE_EXIT'
+		WHERE id=#{id}
+	</update>
+	
+	<update id="recoverAuth" parameterType="com.moviestream.movie.member.domain.MemberDTO">
+		UPDATE tbl_auth
+		SET auth = 'ROLE_MEMBER'
+		WHERE id=#{id}
+	</update>
+	
+	<update id="recoverEnable" parameterType="com.moviestream.movie.member.domain.MemberDTO">
+		UPDATE tbl_member
+		SET enabled = 1
+		WHERE id=#{id}
+	</update>
+	
 </mapper>

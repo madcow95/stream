@@ -74,6 +74,7 @@
           	<input type="hidden" id="pageNum" name="pageNum" value="${cri.pageNum}">
           	<input type="hidden" id="type" name="type" value="${cri.type}">
           	<input type="hidden" id="keyword" name="keyword" value="${cri.keyword}">
+          	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
         </form>
 
       </div>

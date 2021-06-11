@@ -69,6 +69,18 @@ public class MemberServiceImpl implements IMemberService{
 		return mapper.pwdUpdate(mDto);
 	}
 
+	@Override
+	public int exitMem(Map<String, String> exitMap) throws Exception {
+		mapper.exitAuth(exitMap);
+		return mapper.exitMem(exitMap);
+	}
+
+	@Override
+	public int recoverAuth(MemberDTO mDto) throws Exception {
+		mapper.recoverEnable(mDto);
+		return mapper.recoverAuth(mDto);
+	}
+
 
 
 }

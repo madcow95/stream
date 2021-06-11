@@ -1,0 +1,34 @@
+package com.moviestream.movie.admin;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.moviestream.movie.board.service.IBoardService;
+import com.moviestream.movie.member.domain.MemberDTO;
+import com.moviestream.movie.member.service.IMemberService;
+
+@Controller
+@RequestMapping("/admin")
+public class AdminController {
+	
+	@Autowired
+	private IMemberService memberService;
+	
+	@Autowired
+	private IBoardService boardService;
+
+	@RequestMapping("/memberManager")
+	public void memberManager(Model model) throws Exception{
+		List<MemberDTO> memList = memberService.getMember();
+		model.addAttribute("memList", memList);
+	}
+	
+	@RequestMapping("/boardManager")
+	public void boardManager() throws Exception{
+		
+	}
+}

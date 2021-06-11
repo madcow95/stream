@@ -127,7 +127,7 @@
 		var articleno = "${aboardList.articleno}";
 		var replyUL = $(".chat");
 		  
-		showList(1);
+		/* showList(1);
 		
 		function showList(page) {
 			console.log("show list " + page);
@@ -164,9 +164,9 @@
 						showReplyPage(replyCnt);
 						
 			});//end function
-		}//end showList
+		}//end showList */
 		
-	    var pageNum = 1;
+	    /* var pageNum = 1;
 	    var replyPageFooter = $(".panel-footer");
 	    
 	    function showReplyPage(replyCnt) {
@@ -216,7 +216,7 @@
 	    	pageNum = targetPageNum;
 	    	
 	    	showList(pageNum);
-	     });     
+	     });     */ 
 		
 	    var modal = $(".modal");
 	    var modalInputReplyText = modal.find("input[name='replytext']");
@@ -245,7 +245,7 @@
 	    });
 	    
 	    // 새로운 댓글 처리
-	    modalRegisterBtn.on("click", function(e) {
+	    /* modalRegisterBtn.on("click", function(e) {
 	    	var replytext = $("input[name='replytext']").val();
 	    	var id = $("input[name='replyId']").val();
 	    	console.log("replytext >> " + replytext + "id >> " + id);
@@ -264,7 +264,7 @@
 	        	
 	        	showList(-1);
 	        });
-		});
+		}); */
 	    
 	    /* $(".chat").on("click", "li", function(e){
 	    	var reply = {
@@ -405,6 +405,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
+<%@ include file="../header.jsp" %>
 <%-- <%@ include file="../header.jsp" %> --%>
 <div class="row">
   <div class="col-lg-12">
@@ -481,35 +482,6 @@ $(document).ready(function() {
   <!-- end panel -->
 </div>
 <!-- /.row -->
-<div class='row'>
-  <div class="col-lg-12">
-
-    <!-- /.panel -->
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <i class="fa fa-comments fa-fw"></i> Reply
-        <sec:authorize access="hasRole('ROLE_MEMBER')">
-	        <!-- <button id='addReplyBtn' class='btn btn-primary btn-xs pull-right'>New Reply</button> -->
-	        <button type="button" class="btn btn-primary btn-xs pull-right" data-toggle="modal" data-target=".bs-example-modal-lg">댓글작성</button>
-        </sec:authorize>
-        <sec:authorize access="isAnonymous()">
-	        <button type="button" class="btn btn-primary btn-xs pull-right">로그인이 필요한 기능입니다.</button>
-        </sec:authorize>
-      </div>      
-      
-      <!-- /.panel-heading -->
-      <div class="panel-body">        
-        <ul class="chat">
-        </ul>
-        <!-- ./ end ul -->
-      </div>
-      <!-- /.panel .chat-panel -->
-
-	  <div class="panel-footer"></div>
-	</div>
-  </div>
-  <!-- ./ end row -->
-</div>
 
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">

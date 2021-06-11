@@ -20,6 +20,7 @@ var replyService = (function() {
 			contentType : "application/json; charset=utf-8",
 			success : function(result, status, xhr) {
 				if (callback) {
+					console.log("댓글 작성 후 결과 >>>" + result);
 					callback(result);
 				}
 			},

@@ -9,6 +9,8 @@ C:\Users\choi\Desktop\springMovie\.metadata\.plugins\org.eclipse.jst.jsp.core\js
 \movie\src\main\java
 C:\Users\choi\Desktop\realmovie\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\217009651.index
 \movie\src\main\java
+C:\Users\choi\Desktop\realmovie\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\248268652.index
+\movie\src\main\java
 C:\Users\choi\Desktop\realmovie\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\787329115.index
 \movie\src\main\java
 C:\Users\choi\Desktop\realmovie\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2577895952.index

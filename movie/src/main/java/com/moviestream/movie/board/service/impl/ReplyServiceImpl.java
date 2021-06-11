@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import com.moviestream.movie.board.domain.Criteria;
 import com.moviestream.movie.board.domain.ReplyDTO;
 import com.moviestream.movie.board.domain.ReplyPageDTO;
-import com.moviestream.movie.board.mapper.BoardMapper;
 import com.moviestream.movie.board.mapper.ReplyMapper;
 import com.moviestream.movie.board.service.IReplyService;
 
@@ -16,9 +15,6 @@ public class ReplyServiceImpl implements IReplyService{
 	@Autowired
 	private ReplyMapper replyMapper;
 	
-	@Autowired
-	private BoardMapper boardMapper;
-
 	@Override
 	public ReplyPageDTO getListPage(Criteria cri, int articleno) {
 		
@@ -41,6 +37,5 @@ public class ReplyServiceImpl implements IReplyService{
 		
 		return replyMapper.getReply(articleno);
 	}
-
 
 }

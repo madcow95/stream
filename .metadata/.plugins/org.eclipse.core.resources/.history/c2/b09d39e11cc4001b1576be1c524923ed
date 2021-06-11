@@ -1,7 +1,0 @@
-package com.moviestream.movie.member.security;
-
-import org.springframework.security.crypto.password.PasswordEncoder;
-
-public class PwdEncoder implements PasswordEncoder{
-
-}

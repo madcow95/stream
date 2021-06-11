@@ -151,4 +151,9 @@
 		FROM board
 		WHERE articleno=#{articleno}
 	</select>
+	
+	<delete id="delFreeBoard">
+		DELETE FROM freeboard
+		WHERE articleno = #{articleno}
+	</delete>
 </mapper>

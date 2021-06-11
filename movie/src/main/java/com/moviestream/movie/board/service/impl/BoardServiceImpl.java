@@ -113,7 +113,7 @@ public class BoardServiceImpl implements IBoardService{
 
 	@Override
 	public int delFreeBoard(int articleno) throws Exception {
-		return 0;
+		return mapper.delFreeBoard(articleno);
 	}
 
 }

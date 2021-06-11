@@ -114,6 +114,11 @@ public class HomeController {
 				loginMap.put("id", id);
 				loginMap.put("pwd", mDto.getPwd());
 				MemberDTO memList = memberService.login(loginMap);
+				if(memList.isEnabled()) {
+					log.info("enabled >>>>> 1");
+				} else {
+					log.info("enabled >>>>> 0");
+				}
 				model.addAttribute("memInfo", memList);
 				returnUrl = "index";
 			} else {
@@ -161,6 +166,11 @@ public class HomeController {
 	@PostMapping("/login")
 	public String secLoginPost() {
 		return "member/login";
+	}
+	
+	@GetMapping("/exitMem")
+	public void exitMem(@RequestParam("id") String id) throws Exception {
+		log.info("exit Mem id >>>> " + id);
 	}
 	
 }

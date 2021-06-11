@@ -9,3 +9,8 @@
 1623197190405	Rename resource 'adminregister.jsp'
 1623197673276	Rename resource 'read.jsp'
 1623197679899	Copy file
+1623247386199	Move compilation unit
+1623247460826	Move 'admin' to 'views'
+1623247491754	Rename resource 'adminhome.jsp'
+1623247498152	Copy file
+1623322426277	Delete element

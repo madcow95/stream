@@ -1,0 +1,29 @@
+package com.moviestream.movie.board.task;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
+
+import com.moviestream.movie.board.domain.BoardAttachDTO;
+import com.moviestream.movie.board.mapper.BoardAttachMapper;
+
+import lombok.extern.log4j.Log4j;
+
+@Component
+@Log4j
+public class FileCheckTask {
+	
+	@Autowired
+	private BoardAttachMapper mapper;
+	
+	@Scheduled(cron = "0 * * * * *")
+	public void checkFiles() throws Exception {
+		log.warn("File check task running >>>>>>>>>>>>>>>>>>>>>>.");
+		log.warn("=================================================");
+		List<BoardAttachDTO> oldFileList = mapper.getOldFiles();
+		log.info(oldFileList);
+	}
+
+}
