@@ -127,4 +127,10 @@
 		WHERE id=#{id}
 	</update>
 	
+	<select id="emailCheck" resultType="int">
+		SELECT COUNT(email)
+		FROM tbl_member
+		WHERE email=#{email}
+	</select>
+	
 </mapper>

@@ -48,7 +48,6 @@
 					maxResults:1,
 				},
 				success : function (result) {
-					console.log(result.items[0].id.videoId);
 					onYouTubeIframeAPIReady(result.items[0].id.videoId);
 					change(title, rating);
 				}
@@ -60,7 +59,6 @@
 			}
 			
 			function onYouTubeIframeAPIReady(url) {
-				console.log("ready url >>>> "+url);
 				player = new YT.Player('player', {
 					videoId : url,
 					width : "600",

@@ -64,10 +64,10 @@
 			loginInfo.pwd = pwd;
 			if(id == "") {
 				alert("아이디를 입력해주세요.");
-				id.focus();
+				$("input[name=username]").focus();
 			} else if(pwd == "") {
 				alert("비밀번호를 입력해주세요.");
-				pwd.focus();
+				$("input[name=password]").focus();
 			} else {
 				$.ajax({
 					url : "${ctx}/login",
@@ -198,7 +198,7 @@ OOO 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사�
 			</li>
 		</ul>
 		<p style="margin: 0 auto; text-align: center;">
- 		 <button type="button" class="btn btn-default btn-lg" id="toHome" style="border: 1px solid #000000;">비동의</button>
+ 		 <button type="button" class="btn btn-default btn-lg" class="close" data-dismiss="modal" aria-label="Close" style="border: 1px solid #000000;">비동의</button>
 		 <button type="button" class="btn btn-primary btn-lg" id="toJoin" >동의</button>
 		</p>
 	</form>

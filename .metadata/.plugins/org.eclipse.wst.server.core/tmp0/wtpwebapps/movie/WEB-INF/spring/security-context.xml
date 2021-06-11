@@ -12,11 +12,24 @@
 	<bean id="LoginFailHandler" class="com.moviestream.movie.member.security.LoginFailHandler"></bean>
 	
 	<security:http>
-		<security:intercept-url pattern="/board/register" access="hasRole('ROLE_MEMBER')"/>
-		<security:intercept-url pattern="/board/boardregister" access="hasRole('ROLE_ADMIN')"/>
-		<security:intercept-url pattern="/admin/adminhome" access="hasRole('ROLE_ADMIN')"/>
+		<security:intercept-url pattern="/board/register" access="hasAnyRole('ROLE_MEMBER', 'ROLE_ADMIN')"/>
+		<security:intercept-url pattern="/board/list" access="hasAnyRole('ROLE_MEMBER', 'ROLE_ADMIN')"/>
+		<security:intercept-url pattern="/board/read" access="hasAnyRole('ROLE_MEMBER', 'ROLE_ADMIN')"/>
+		<security:intercept-url pattern="/board/modify" access="hasAnyRole('ROLE_MEMBER', 'ROLE_ADMIN')"/>
+		<security:intercept-url pattern="/board/freeBoard" access="hasAnyRole('ROLE_MEMBER', 'ROLE_ADMIN')"/>
+		<security:intercept-url pattern="/board/freeboardread" access="hasAnyRole('ROLE_MEMBER', 'ROLE_ADMIN')"/>
+		<security:intercept-url pattern="/board/freeboardmodify" access="hasAnyRole('ROLE_MEMBER', 'ROLE_ADMIN')"/>
+		<security:intercept-url pattern="/member/changePwd" access="hasAnyRole('ROLE_MEMBER', 'ROLE_ADMIN')"/>
+		<security:intercept-url pattern="/member/updateForm" access="hasAnyRole('ROLE_MEMBER', 'ROLE_ADMIN')"/>
+		<security:intercept-url pattern="/member/update" access="hasAnyRole('ROLE_MEMBER', 'ROLE_ADMIN')"/>
+		<security:intercept-url pattern="/member/exit" access="hasAnyRole('ROLE_MEMBER', 'ROLE_ADMIN')"/>
+		<security:intercept-url pattern="/admin/memberManager" access="hasRole('ROLE_ADMIN')"/>
+		<security:intercept-url pattern="/board/adminRegister" access="hasRole('ROLE_ADMIN')"/>
+		<security:intercept-url pattern="/board/adminregister" access="hasRole('ROLE_ADMIN')"/>
+		<security:intercept-url pattern="/board/adminmodify" access="hasRole('ROLE_ADMIN')"/>
+		<security:intercept-url pattern="/board/adminboardread" access="hasAnyRole('ROLE_ADMIN', 'ROLE_MEMBER')"/>
 		<security:form-login login-page="/login" authentication-success-handler-ref="customLoginSuccess" authentication-failure-handler-ref="LoginFailHandler"/>
-		<!-- <security:access-denied-handler ref="accessDenied"/> -->
+		<security:access-denied-handler ref="accessDenied"/>
 		<security:logout logout-url="/logout" invalidate-session="true" delete-cookies="remember-me, JSESSION_ID"/>
 	</security:http>
 	

@@ -64,6 +64,8 @@
 			var email = $("input[name='email']").val();
 			var idLen = $("input[name='id']").val().length;
 			var pwdLen = $("input[name='pwd']").val().length;
+			var emailCheck = $("input[name='emailCheck1']").val();
+			var reid = $("input[name='reid']").val();
 			if(id == "") {
 				alert("아이디는 필수 입력사항입니다.");
 				$("input[name='id']").focus();
@@ -88,6 +90,15 @@
 			} else if(pwdLen < 6) {
 				alert("비밀번호는 6글자 이상 입력해주세요");
 				$("input[name='pwd']").focus();
+			} else if(emailCheck != 3) {
+				alert("이메일 중복체크를 확인주세요");
+				$("button[name='emailCheck1']").focus();
+			} else if(email == "") {
+				alert("이메일을 입력해주세요");
+				$("input[name='email']").focus();
+			} else if(reid == 1) {
+				alert("아이디 중복체크를 확인해주세요");
+				$("input[name='id']").focus();
 			} else {
 				document.getElementById("frm").submit();
 			}
@@ -95,7 +106,7 @@
 		
 		/* $("#name").on("change keyup paste", function () {
 			var name = document.getElementById("name").value;
-			name = name.replace(/[^ㄱ-ㅎ]/gi,"");
+			name = name.replace(/[^ㄱ-ㅎㅏ-ㅣ]/gi,"");
 			
 		}); */
 	}); // ready end
@@ -105,7 +116,7 @@
 	}
 	
 	function engBlock(e) {
-		e.value=e.value.replace(/[a-z0-9A-Z!@#$%^&*()-=_+`~;:,./<>?]/gi,"");
+		e.value=e.value.replace(/[a-z0-9A-Z!@#$%^&\]*()-=_+`~;:,\\\|\}{./<>?\"\[']/gi,"");
 	}
 	
 	/*function findAddr(){

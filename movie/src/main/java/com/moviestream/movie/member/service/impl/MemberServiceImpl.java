@@ -81,6 +81,11 @@ public class MemberServiceImpl implements IMemberService{
 		return mapper.recoverAuth(mDto);
 	}
 
+	@Override
+	public int emailCheck(String email) throws Exception {
+		return mapper.emailCheck(email);
+	}
+
 
 
 }

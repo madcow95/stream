@@ -14,10 +14,60 @@
 <script src="${ctx}/resources/js/join.js"></script>
 <script type="text/javascript">
 	$(document).ready(function () {
+		
+		$("#email").on("change keyup paste", function () {
+			var email = this.value;
+			var emailRule = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+			if(!emailRule.test(email)){
+				$("#emailMessage").val("이메일 형식이 올바르지 않습니다.").css("color", "red").css("font-size", "10px")
+				document.getElementById("emailCheck1").value = 0;
+			} else {
+				$("#emailMessage").val("");
+				document.getElementById("emailCheck1").value = 1;
+			}
+		});
+		
 		$("#toList").on("click", function () {
 			location.href="${ctx}/";
 		});
+		
+		$("#emailCheck").on("click", function () {
+			var email = document.getElementById("email").value;
+			var token = $("meta[name='_csrf']").attr("content");
+			var header = $("meta[name='_csrf_header']").attr("content");
+			if(document.getElementById("emailCheck1").value != 1 || email == ""){
+				alert("이메일 형식을 확인해주세요");
+				$("#email").focus();
+			}
+			 else {
+					$.ajax({
+						url : "${ctx}/member/emailCheck",
+						type : "POST",
+						data : "email="+email,
+						beforeSend : function(xhr){
+							xhr.setRequestHeader(header, token);
+						},
+						success : function (result) {
+							if (result == "used") {
+								$("#emailMessage").val("이미 사용중인 이메일입니다.").css("color", "red").css("font-size", "10px");
+								document.getElementById("emailCheck1").value = 2;
+							} else {
+								$("#emailMessage").val("사용가능한 이메일입니다.").css("color", "blue").css("font-size", "10px");
+								document.getElementById("emailCheck1").value = 3;
+								/* change(result); */
+							}
+							
+						}
+					}); // ajax end
+			}
+		});
 	});
+	
+	function change(result) {
+		if(result == "canuse"){
+			document.getElementById("emailCheck1").value = 1;
+		}
+	}
 	
 	function findAddr() {
 	    new daum.Postcode({
@@ -67,19 +117,18 @@
 				<input type="text" id="4" style="border: 0; width: 15cm; background-color: #f7f7f7;" disabled="disabled">
     			<span class="error_next_box"></span>
 			</div>
-			<div class="btn-group">
-				<div>
-	    			<h3 class="join_title"><label for="email">본인확인 이메일</label></h3>
-	    			<span class="box int_email">
-	        			<input type="text" id="email" class="int" maxlength="100" name="email" style="font-size: 12px; width: 460px;">
-					</span>
-					<input type="text" id="1" style="border: 0; width: 15cm; background-color: #f7f7f7;" disabled="disabled">
-	            </div>
+			<div style="margin-bottom: 15px;">
+    			<h3 class="join_title"><label for="email">본인확인 이메일&nbsp;&nbsp;<button type="button" id="emailCheck" class="btn btn-info" style="background-color: #819FF7; border-color: #819FF7;">이메일 중복확인</button></label></h3>
+    			<span class="box int_email">
+        			<input type="text" id="email" class="int" maxlength="100" name="email" style="font-size: 12px;" placeholder="이메일을 입력해주세요">
+        			<input type="hidden" id="emailCheck1" name="emailCheck1" value="0">
+				</span>
+				<input type="text" id="emailMessage" style="border: 0; width: 15cm; background-color: #f7f7f7;" disabled="disabled">
             </div>
 			<div>
                 <h3 class="join_title"><label for="addr">우편번호&nbsp;&nbsp;<button type="button" onclick="findAddr()" id="findaddr" class="btn btn-info" style="background-color: #819FF7; border-color: #819FF7;">주소찾기</button></label></h3>
 				<span class="box int_zip_num">
-    				<input type="text" id="zip_num" class="int" maxlength="7" name="zip_num" style="font-size: 12px;">
+    				<input type="text" id="zip_num" class="int" maxlength="7" name="zip_num" style="font-size: 12px;" readonly="readonly" placeholder="주소 찾기로 입력됩니다.">
 				</span>
 				<input type="text" id="2" style="border: 0; width: 15cm; background-color: #f7f7f7;" disabled="disabled">
                 <span class="error_next_box"></span>    
@@ -87,7 +136,7 @@
 			<div>
                 <h3 class="join_title"><label for="addr">주소</label></h3>
             	    <span class="box int_addr">
-	                    <input type="text" id="address" class="int" maxlength="100" name="address" style="font-size: 12px;">
+	                    <input type="text" id="address" class="int" maxlength="100" name="address" style="font-size: 12px;" readonly="readonly" placeholder="주소 찾기로 입력됩니다.">
 					</span>
 					<input type="text" id="3" style="border: 0; width: 15cm; background-color: #f7f7f7;" disabled="disabled">
    				<span class="error_next_box"></span>    
@@ -95,7 +144,7 @@
 			<div>
                 <h3 class="join_title"><label for="addr">상세주소</label></h3>
             	    <span class="box int_addr">
-	                    <input type="text" id="DetailAddress" class="int" maxlength="100" name="DetailAddress" style="font-size: 12px;">
+	                    <input type="text" id="DetailAddress" class="int" maxlength="100" name="DetailAddress" style="font-size: 12px;" placeholder="상세 주소를 입력해주세요.">
 					</span>
 					<input type="text" id="5" style="border: 0; width: 15cm; background-color: #f7f7f7;" disabled="disabled">
    				<span class="error_next_box"></span>    

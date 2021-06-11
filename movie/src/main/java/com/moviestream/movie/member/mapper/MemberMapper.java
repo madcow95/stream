@@ -25,4 +25,5 @@ public interface MemberMapper {
 	public void exitAuth(Map<String, String> exitMap) throws Exception;
 	public int recoverAuth(MemberDTO mDto) throws Exception;
 	public void recoverEnable(MemberDTO mDto) throws Exception;
+	public int emailCheck(String email) throws Exception;
 }

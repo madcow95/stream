@@ -68,6 +68,11 @@ public class MemberController {
 	public void changePwd(@RequestParam("id") String id, Model model) {
 		model.addAttribute("id", id);
 	}
+	@GetMapping("accessDeny")
+	public String accessDeny() {
+		return "member/result/accessDeny";
+	}
+	
 	@GetMapping("/login_fail")
 	public void login_fail(Authentication auth) {
 		log.info("login fail");
@@ -324,5 +329,18 @@ public class MemberController {
 		}
  		log.info("before return url >>> " + returnUrl);
 		return returnUrl;
+	}
+	
+	@PostMapping("/emailCheck")
+	public @ResponseBody String emailCheck(@RequestParam("email") String email) throws Exception {
+		String result = "canuse";
+		int emailCount = 0;
+		if(email != null) {
+			emailCount = service.emailCheck(email);
+			if(emailCount > 0) {
+				result = "used";
+			}
+		}
+		return result;
 	}
 }

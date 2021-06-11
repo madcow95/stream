@@ -150,12 +150,17 @@ $(document).ready(function() {
 		var targetFile = $(this).data("file");
 		var type = $(this).data("type");
 		var targetLi = $(this).closest("li");
+		var token = $("meta[name='_csrf']").attr("content");
+		var header = $("meta[name='_csrf_header']").attr("content");
 		    
 		$.ajax({
-			url: "${contextPath}/deleteFile",
+			url: "${ctx}/upload/deleteFile",
 			data: {fileName: targetFile, type:type},
 			dataType:"text",
 			type: "POST",
+			beforeSend : function(xhr){
+				xhr.setRequestHeader(header, token);
+			},
 			success: function(result){
 				alert(result);
 		           
@@ -169,32 +174,10 @@ $(document).ready(function() {
 <title>Insert title here</title>
 
 </head>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-  <div class="container">
-      <a class="navbar-brand" href="${ctx}/">MOVIE</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-          <c:choose>
-          	<c:when test="${empty sessionScope.mDto}">
-          		<li class="nav-item"><button class="nav-link" style="border: 0px; background-color: #343A40;" data-toggle="modal" data-target=".bs-example-modal-lg">LOGIN</button></li>
-  				<li class="nav-item"><button class="nav-link" style="border: 0px; background-color: #343A40;" data-toggle="modal" data-target=".bs-example-modal-lg1">JOIN</button></li>
-          	</c:when>
-          	<c:otherwise>
-          		<li class="nav-item"><a class="nav-link" href="${ctx}/member/mypage">${sessionScope.mDto.name}님</a></li>
-	   			<li class="nav-item"><a class="nav-link" href="${ctx}/logout">LOGOUT</a></li>
-	   			<li class="nav-item"><a class="nav-link" href="${ctx}/member/mypage">MY PAGE</a></li>
-          	</c:otherwise>
-          </c:choose>
-	           	<li class="nav-item"><a href="${ctx}/board/list" class="nav-link" >BOARD</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<body style="margin-left: 15%; margin-right: 15%;">
+<body>
+<%@ include file="../header.jsp" %>
 
-<%-- <%@ include file="../header.jsp" %> --%>
 <%-- <form method="post" style="margin-left: 15%; margin-right: 15%; margin-top: 5%;" action="${ctx}/board/register" role="form">
      <div class="form-group">
             <label>Title</label> <input class="form-control" name="subject">
@@ -233,7 +216,7 @@ $(document).ready(function() {
 		
 		
 		<div class="row" >
-  <div class="col-lg-12">
+  <div class="col-lg-12" >
     <h1 class="page-header">Board Register</h1>
   </div>
   <!-- /.col-lg-12 -->
@@ -241,12 +224,12 @@ $(document).ready(function() {
 <!-- /.row -->
 
 <div class="row" >
-  <div class="col-lg-12">
-    <div class="panel panel-default">
+  <div class="col-lg-12" >
+    <div class="panel panel-default" style="margin-left: 15%; margin-right: 15%;">
 
       <div class="panel-heading">Board Register</div>
       <!-- /.panel-heading -->
-      <div class="panel-body">
+      <div class="panel-body" >
 
         <form role="form" action="${contextPath}/board/register" method="post">
           <div class="form-group">
@@ -273,7 +256,7 @@ $(document).ready(function() {
 </div>
 <div class="row">
   <div class="col-lg-12">
-    <div class="panel panel-default">
+    <div class="panel panel-default" style="margin-left: 15%; margin-right: 15%;">
 
       <div class="panel-heading">File Attach</div>
       <div class="panel-body">

@@ -88,6 +88,7 @@
 		var articleno = $("input[name=artno]").val();
 		if(loginId == id){
 			if(confirm("삭제하시겠습니까?")) {
+				
 				location.href="${ctx}/replies/delete?articleno="+articleno+"&rno="+rno;				
 			} else {
 				alert("취소");
@@ -391,7 +392,7 @@ $(document).ready(function() {
 <%-- <%@ include file="../header.jsp" %> --%>
 <div class="row">
   <div class="col-lg-12">
-    <div class="panel panel-default">
+    <div class="panel panel-default" >
       <!-- /.panel-heading -->
       <div class="panel-body">
         <!-- <form role="form" action="/board/register" method="post"> -->

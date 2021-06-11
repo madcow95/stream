@@ -26,12 +26,12 @@
 	
 	<beans:bean id="loginInterceptor" class="com.moviestream.movie.member.LoginInterceptor"/>
 	<beans:bean id="AuthInterceptor" class="com.moviestream.movie.member.AuthInterceptor"/>
-	<interceptors>
+	<!-- <interceptors>
 		<interceptor>
 			<mapping path="/loginPost"/>
 			<beans:ref bean="loginInterceptor"/>
 		</interceptor>
-	</interceptors>
+	</interceptors> -->
 	
 	<context:component-scan base-package="com.moviestream.movie" />
 	
