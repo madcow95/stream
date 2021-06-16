@@ -1,5 +1,0 @@
-package com.moviestream.movie.board.service;
-
-public interface IReplyService {
-
-}

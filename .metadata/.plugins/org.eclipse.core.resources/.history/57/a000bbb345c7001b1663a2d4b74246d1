@@ -1,7 +1,0 @@
-package com.moviestream.movie.board.mapper;
-
-public interface ReplyMapper {
-	
-	public List<ReplyDTO> getListWithPaging(@Param("cri") Criteria cri, @Param("bno") int bno);
-
-}

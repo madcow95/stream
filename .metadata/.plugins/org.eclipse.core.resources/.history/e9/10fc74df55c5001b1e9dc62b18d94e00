@@ -1,7 +1,0 @@
-$(document).ready(function() {
-	var changeBtn = $("button[name='change']");
-	
-	changeBtn.on("click", function(){
-		alert("aaaa");
-	});
-});

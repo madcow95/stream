@@ -66,6 +66,7 @@ public class MemberController {
 	}
 	@RequestMapping("/changePwd")
 	public void changePwd(@RequestParam("id") String id, Model model) {
+		log.info("코드 입력후 비밀번호 이동 페이지 id >>> " + id);
 		model.addAttribute("id", id);
 	}
 	@GetMapping("accessDeny")

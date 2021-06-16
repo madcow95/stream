@@ -34,6 +34,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://www.youtube.com/iframe_api"></script>
 <script type="text/javascript">
+
 		var player;
 		function test(title, rating) {
 			var key = "AIzaSyD6Gzk_-YieLA_oo0v_m1WyyM63QWoBUbo";
@@ -96,20 +97,24 @@
 		function boardManage() {
 			location.href="${ctx}/admin/boardManager"
 		}
-			
 		
-	
+		function modalClear() {
+			$("#playerModal").clear();
+		}
+		
 	$(document).ready(function () {
 		
 		$("img[name='movieImg1']").on("click", function () {
 			
 			$("button[name='test']").click();
+			this.clean();
 			this.click();
 		}); // mouse enter end
 		
 		$("button[name='realExit']").on("click", function () {
 			$("form[name='realExitForm']").submit();
 		});
+		
 	});
 	
 </script>
@@ -201,11 +206,11 @@
 </sec:authorize>
 
 <button name="test" data-toggle="modal" data-target=".bs-example-modal-lg8" style="display: none;"></button>
-<div class="modal fade bs-example-modal-lg8" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade bs-example-modal-lg8" id="playerModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" >
     <div class="modal-content" style="background-color: #000000;">
     <div class="modal-header">
-    	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    	<button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="modalClear()"><span aria-hidden="true">&times;</span></button>
     </div>
 	<div id="player"></div>
 		<div style="margin: 0 auto; text-align: center;">

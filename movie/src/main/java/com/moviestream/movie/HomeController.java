@@ -27,10 +27,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.moviestream.movie.board.domain.MovieInfoDTO;
 import com.moviestream.movie.member.domain.MemberDTO;
-import com.moviestream.movie.member.mapper.MemberMapper;
 import com.moviestream.movie.member.service.IMemberService;
 import com.moviestream.movie.movie.mapper.MovieMapper;
-import com.moviestream.movie.movie.service.IMovieService;
 
 import lombok.extern.log4j.Log4j;
 
@@ -39,9 +37,6 @@ import lombok.extern.log4j.Log4j;
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
-	@Autowired
-	private IMovieService service;
 	
 	@Autowired
 	private IMemberService memberService;

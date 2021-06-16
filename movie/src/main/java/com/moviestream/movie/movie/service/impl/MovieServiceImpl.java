@@ -22,10 +22,8 @@ import com.moviestream.movie.movie.domain.MovieDTO;
 import com.moviestream.movie.movie.persistence.IMovieDAO;
 import com.moviestream.movie.movie.service.IMovieService;
 
-import lombok.extern.log4j.Log4j;
 
 @Service
-@Log4j
 public class MovieServiceImpl implements IMovieService{
 	
 	private static final long NUMBER_OF_VIDEOS_RETURNED = 1;

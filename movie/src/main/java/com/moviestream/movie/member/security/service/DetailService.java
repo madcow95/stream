@@ -5,7 +5,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import com.moviestream.movie.member.domain.AdminDTO;
 import com.moviestream.movie.member.domain.CustomUser;
 import com.moviestream.movie.member.domain.MemberDTO;
 import com.moviestream.movie.member.mapper.MemberMapper;

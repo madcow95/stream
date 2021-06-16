@@ -1,7 +1,5 @@
 package com.moviestream.movie.board;
 
-import java.util.HashMap;
-import java.util.Map;
 
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;

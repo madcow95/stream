@@ -1,8 +1,0 @@
-$(document).ready(function() {
-	var changeBtn = $("button[name='updateInfo']");
-	
-	changeBtn.on("click", function(){
-		var pwd = document.getElementById("inputConfirmPassword").value;
-		alert(pwd);
-	});
-});

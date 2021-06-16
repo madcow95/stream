@@ -5,22 +5,13 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.moviestream.movie.member.domain.MemberDTO;
 import com.moviestream.movie.member.mapper.MemberMapper;
-import com.moviestream.movie.member.persistence.IMemberDAO;
 import com.moviestream.movie.member.service.IMemberService;
 
-import lombok.extern.log4j.Log4j;
-
 @Service
-@Log4j
 public class MemberServiceImpl implements IMemberService{
-	
-	@Autowired
-	private IMemberDAO mDao;
-	
 	@Autowired
 	private MemberMapper mapper;
 	

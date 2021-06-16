@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.moviestream.movie.board.service.IBoardService;
 import com.moviestream.movie.member.domain.MemberDTO;
 import com.moviestream.movie.member.service.IMemberService;
 
@@ -23,9 +22,6 @@ public class AdminController {
 	@Autowired
 	private IMemberService memberService;
 	
-	@Autowired
-	private IBoardService boardService;
-
 	@RequestMapping("/memberManager")
 	public void memberManager(Model model) throws Exception{
 		List<MemberDTO> memList = memberService.getMember();

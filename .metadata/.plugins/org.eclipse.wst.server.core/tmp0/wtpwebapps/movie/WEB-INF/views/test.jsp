@@ -13,7 +13,26 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://www.youtube.com/iframe_api"></script>
 <script type="text/javascript">
+ $(document).ready(function () {
+	var data = {
+		serviceKey: '5GDqy1l6rYOSeOdetdjNxL%2BZoCsOoWnkNUbZksy955oFGJhr1BIejr6m6LqyZsiBCBnYROEbmnFCjB7bXM3fwA%3D%3D',
+	     s_page: 0,
+	     s_list: 1,
+	     type: 'json',
+	};
 	
+	$.ajax({
+		post : 'get',
+		url : 'http://api.data.go.kr/openapi/tn_pubr_public_cltur_fstvl_api',
+		data : data,
+		dataType: 'jsonp',
+		contentType: 'application/json; charset=UTF-8',
+		jsonp : 'data',
+		success : function (data) {
+			console.log(data);
+		}
+	});
+});
 </script>
 <title>Test Page</title>
 </head>

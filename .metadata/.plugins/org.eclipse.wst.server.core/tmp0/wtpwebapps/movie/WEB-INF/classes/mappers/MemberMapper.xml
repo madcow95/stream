@@ -93,7 +93,7 @@
 	
 	<update id="addrUpdate" parameterType="com.moviestream.movie.member.domain.MemberDTO">
 		UPDATE tbl_member
-		SET address=#{address}
+		SET address=#{address}, zip_num=#{zip_num}
 		WHERE id=#{id}
 	</update>
 	
