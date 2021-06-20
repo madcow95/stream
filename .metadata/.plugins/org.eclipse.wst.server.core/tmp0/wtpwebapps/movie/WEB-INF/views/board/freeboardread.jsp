@@ -255,26 +255,6 @@
 	        });
 		});
 	    
-	    /* $(".chat").on("click", "li", function(e){
-	    	var reply = {
-	    		rno : $(this).data("rno"),
-	    		contextPath:"${ctx}",
-	    	};
-
-	    	replyService.get(reply, function(reply){
-	    		modalInputReplyText.val(reply.replytext);
-	    		modalInputReplyer.val(reply.replyer);
-	    		modalInputReplyDate.val(replyService.displayTime(reply.regdate)).attr("readonly","readonly");
-	    		modal.data("rno", reply.rno);
-	    		
-	    		modal.find("button[id !='modalCloseBtn']").hide();
-	    		modalModifyBtn.show();
-	    		modalRemoveBtn.show();
-	    		
-	    		$(".modal").modal("show");
-	    	});
-	    }); */
-	    
 	    modalModifyBtn.on("click", function(e){
 	    	var reply = {
 	    			rno:modal.data("rno"), 

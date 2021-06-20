@@ -48,7 +48,6 @@ public class HomeController {
 	public String home(Locale locale, Model model, HttpServletRequest request, HttpSession session) throws Exception{
 //		request.get
 		logger.info("Welcome home! The client locale is {}.", locale);
-		logger.info("");
 		List<MovieInfoDTO> movieList = mapper.getMovie();
 		model.addAttribute("movieList", movieList);
 		return "index";
@@ -56,13 +55,15 @@ public class HomeController {
 	
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) throws Exception {
-		log.info("logout....");
 		session.invalidate();
 		return "redirect:/";
 	}
 	
 	@RequestMapping("/test")
 	public void test() throws Exception{
+	}
+	@RequestMapping("/test2")
+	public void test2() throws Exception{
 	}
 	
 	@GetMapping("/login")
@@ -71,49 +72,18 @@ public class HomeController {
 		return "/member/login";
 		
 	}
-//	@PostMapping("/loginPost")
-//	public String loginpost(@RequestParam("username") String id, @RequestParam("password") String pwd, Model model, HttpSession session) throws Exception {
-//		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-//		log.info("login id >>> "+id);
-//		String returnUrl = "";
-//		MemberDTO mDto = memberService.read(id);
-//		Map<String, String> loginMap = new HashMap<>();
-//		if(mDto != null) {
-//			if(encoder.matches(pwd, mDto.getPwd())) {
-//				log.info("info same");
-//				loginMap.put("id", id);
-//				loginMap.put("pwd", mDto.getPwd());
-//				MemberDTO memList = memberService.login(loginMap);
-//				model.addAttribute("memInfo", memList);
-//				returnUrl = "index";
-//			} else {
-//				returnUrl = "member/result/login_fail";
-//			}
-//		}else {
-//			returnUrl = "member/result/login_fail";
-//			
-//		}
-//		return returnUrl;
-//	}
 	
 	@PostMapping("/loginPost")
 	public String loginpost(@RequestParam("username") String id, @RequestParam("password") String pwd, Model model, HttpSession session) throws Exception {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		log.info("login id >>> "+id);
 		String returnUrl = "";
 		MemberDTO mDto = memberService.read(id);
 		Map<String, String> loginMap = new HashMap<>();
 		if(mDto != null) {
 			if(encoder.matches(pwd, mDto.getPwd())) {
-				log.info("info same");
 				loginMap.put("id", id);
 				loginMap.put("pwd", mDto.getPwd());
 				MemberDTO memList = memberService.login(loginMap);
-				if(memList.isEnabled()) {
-					log.info("enabled >>>>> 1");
-				} else {
-					log.info("enabled >>>>> 0");
-				}
 				model.addAttribute("memInfo", memList);
 				returnUrl = "index";
 			} else {

@@ -1,0 +1,28 @@
+package com.moviestream.movie;
+
+public class Solution {
+	
+	public static String solution(String S, String C) {
+		String[] S1 = S.split(",");
+		C = "@"+C.toLowerCase()+".com";
+		
+		for(int i = 0; i < S1.length; i++) {
+			String S2 = S1[i].replace(" ", "");
+			System.out.println(S2.toLowerCase().charAt(0) + S2);
+//			if(S1[i].contains("-")) {
+//				System.out.println("-포함 " + S2);
+//			} else {
+//				System.out.println("그냥"+S2);
+//			}
+		}
+		return "";
+	}
+	
+	public static void main(String[] args) {
+		String a = solution("John Doe, Peter Parker, Mary Jane Watson-Parker, James Doe, John Elvis Doe, Jane Doe, Penny Parker", "Example");
+		System.out.println(a);
+		// 65 ~ 90 A ~ Z
+		// 97 ~ 122 a ~ z
+	}
+
+}

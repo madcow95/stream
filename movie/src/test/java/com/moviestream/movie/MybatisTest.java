@@ -1,6 +1,5 @@
 package com.moviestream.movie;
 
-import static org.junit.Assert.*;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;

@@ -40,6 +40,7 @@ public class MovieServiceImpl implements IMovieService{
 	@Override
 	public String get(String apiUrl, Map<String, String> requestHeaders) throws Exception {
 		HttpURLConnection con = connect(apiUrl);
+		System.out.println("get url >>> "+con);
         try {
             con.setRequestMethod("GET");
             for(Map.Entry<String, String> header :requestHeaders.entrySet()) {
@@ -47,6 +48,7 @@ public class MovieServiceImpl implements IMovieService{
             }
 
             int responseCode = con.getResponseCode();
+            System.out.println("resCode"+responseCode);
             if (responseCode == HttpURLConnection.HTTP_OK) { // 정상 호출
                 return readBody(con.getInputStream());
             } else { // 에러 발생

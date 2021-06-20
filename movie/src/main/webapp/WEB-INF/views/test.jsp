@@ -13,31 +13,23 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://www.youtube.com/iframe_api"></script>
 <script type="text/javascript">
- $(document).ready(function () {
-	var data = {
-		serviceKey: '5GDqy1l6rYOSeOdetdjNxL%2BZoCsOoWnkNUbZksy955oFGJhr1BIejr6m6LqyZsiBCBnYROEbmnFCjB7bXM3fwA%3D%3D',
-	     s_page: 0,
-	     s_list: 1,
-	     type: 'json',
-	};
-	
-	$.ajax({
-		post : 'get',
-		url : 'http://api.data.go.kr/openapi/tn_pubr_public_cltur_fstvl_api',
-		data : data,
-		dataType: 'jsonp',
-		contentType: 'application/json; charset=UTF-8',
-		jsonp : 'data',
-		success : function (data) {
-			console.log(data);
-		}
+if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+	navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+		var video = document.getElementById('video');
+		video.srcObject = stream;
+		video.play();
 	});
-});
+}
+
+var canvas = document.getElementById('canvas');
+var context = canvas.getContext('2d');
+var video = document.getElementById('video');
 </script>
 <title>Test Page</title>
 </head>
-<body>
+<body onload="load()">
 <%@ include file="header.jsp" %>
-
+	<video id="video" width="320" height="240" autoplay></video>
+	<canvas id="canvas" width="960" height="720"></canvas>
 </body>
 </html>
