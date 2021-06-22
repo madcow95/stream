@@ -1,14 +1,27 @@
 package com.moviestream.movie;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Properties;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,11 +37,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.util.UrlPathHelper;
 
+import com.google.api.client.googleapis.json.GoogleJsonResponseException;
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpRequestInitializer;
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.json.JsonFactory;
+import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.services.youtube.YouTube;
+import com.google.api.services.youtube.YouTube.Search;
+import com.google.api.services.youtube.model.SearchListResponse;
+import com.google.api.services.youtube.model.SearchResult;
 import com.moviestream.movie.board.domain.MovieInfoDTO;
 import com.moviestream.movie.member.domain.MemberDTO;
 import com.moviestream.movie.member.service.IMemberService;
 import com.moviestream.movie.movie.mapper.MovieMapper;
+import com.moviestream.movie.movie.service.IMovieService;
 
 import lombok.extern.log4j.Log4j;
 
@@ -37,6 +64,19 @@ import lombok.extern.log4j.Log4j;
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	
+	private static String PROPERTIES_FILENAME = "youtube.properties";
+	
+	private static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
+	
+	private static final JsonFactory JSON_FACTORY = new JacksonFactory();
+	
+	private static final long NUMBER_OF_VIDEOS_RETURNED = 3;
+	
+	private static YouTube youtube;
+	
+	@Autowired
+	private IMovieService service;
 	
 	@Autowired
 	private IMemberService memberService;
@@ -65,6 +105,40 @@ public class HomeController {
 	@RequestMapping("/test2")
 	public void test2() throws Exception{
 	}
+	@RequestMapping("/test3")
+	public void test3() throws Exception{
+	}
+	@RequestMapping("/kakaologin")
+	public void kakaologin() throws Exception{
+	}
+	@RequestMapping("/kakaojoin")
+	public String kakaojoin(@RequestParam("kakaoName") String name,
+						  @RequestParam("kakaoEmail") String email,
+						  @RequestParam("kakaoGender") String gender,
+						  @RequestParam("kakaoImage") String image,
+						  Model model) throws Exception{
+		Map<String, String> kakaoMap = new HashMap<>();
+		kakaoMap.put("name", name);
+		kakaoMap.put("email", email);
+		kakaoMap.put("gender", gender);
+		kakaoMap.put("image", image);
+		model.addAttribute("kakaoMap", kakaoMap);
+		return "/kakaojoin";
+	}
+//	@PostMapping("/kakao")
+//	public @ResponseBody String kakao(@RequestBody JSONObject kakaoInfo, Model model, RedirectAttributes rttr) throws Exception{
+//		String name = (String)kakaoInfo.get("name");
+//		String email = (String)kakaoInfo.get("email");
+//		String gender = (String)kakaoInfo.get("gender");
+//		String image = (String)kakaoInfo.get("image");
+//		Map<String, String> kakaoMap = new HashMap<>();
+//		kakaoMap.put("name", name);
+//		kakaoMap.put("email", email);
+//		kakaoMap.put("gender", gender);
+//		kakaoMap.put("image", image);
+//		rttr.addFlashAttribute("kakaoMap", kakaoMap);
+//		return "kakaojoin";
+//	}
 	
 	@GetMapping("/login")
 	public String login(String error, String logout,
@@ -84,7 +158,7 @@ public class HomeController {
 				loginMap.put("id", id);
 				loginMap.put("pwd", mDto.getPwd());
 				MemberDTO memList = memberService.login(loginMap);
-				model.addAttribute("memInfo", memList);
+				session.setAttribute("memInfo", memList);
 				returnUrl = "index";
 			} else {
 				returnUrl = "member/result/login_fail";
@@ -138,4 +212,132 @@ public class HomeController {
 		log.info("exit Mem id >>>> " + id);
 	}
 	
+	@PostMapping("/shop")
+	public @ResponseBody Map<String, String> shop(@RequestParam("data") String data) throws Exception {
+		log.info(data);
+		String clientId = "5QM_wfDAdLPm12A5by6q"; //애플리케이션 클라이언트 아이디값"
+		String clientSecret = "Dxo2BaBD_q"; //애플리케이션 클라이언트 시크릿값"
+		try {
+			data = URLEncoder.encode(data, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			throw new RuntimeException("검색어 인코딩 실패",e);
+		}
+		String apiURL = "https://openapi.naver.com/v1/search/shop.json?query=" + data;
+		Map<String, String> requestHeaders = new HashMap<>();
+		requestHeaders.put("X-Naver-Client-Id", clientId);
+		requestHeaders.put("X-Naver-Client-Secret", clientSecret);
+		String responseBody = get(apiURL,requestHeaders);
+		System.out.println("responsebody >>> " + responseBody);
+		JSONParser parser = new JSONParser();
+		JSONObject jsonObject = (JSONObject) parser.parse(responseBody);
+		JSONArray items = (JSONArray) jsonObject.get("items");
+		JSONObject result = (JSONObject) items.get(0);
+		log.info("상품 정보 목록 >>>>> "+result);
+		String image = (String) result.get("image");
+		String title = (String) result.get("title");
+		String lprice = (String) result.get("lprice");
+		Map<String, String> ResultMap = new HashMap<>();
+		ResultMap.put("image", image);
+		ResultMap.put("title", title);
+		ResultMap.put("lprice", lprice);
+		return ResultMap;
+	}
+	
+	public static String get(String apiUrl, Map<String, String> requestHeaders) throws Exception {
+		HttpURLConnection con = connect(apiUrl);
+		System.out.println("get url >>> "+con);
+        try {
+            con.setRequestMethod("GET");
+            for(Map.Entry<String, String> header :requestHeaders.entrySet()) {
+                con.setRequestProperty(header.getKey(), header.getValue());
+            }
+
+            int responseCode = con.getResponseCode();
+            System.out.println("resCode"+responseCode);
+            if (responseCode == HttpURLConnection.HTTP_OK) { // 정상 호출
+                return readBody(con.getInputStream());
+            } else { // 에러 발생
+                return readBody(con.getErrorStream());
+            }
+        } catch (IOException e) {
+            throw new RuntimeException("API 요청과 응답 실패", e);
+        } finally {
+            con.disconnect();
+        }
+	}
+	
+	public static HttpURLConnection connect(String apiUrl) throws Exception {
+		try {
+            URL url = new URL(apiUrl);
+            return (HttpURLConnection)url.openConnection();
+        } catch (MalformedURLException e) {
+            throw new RuntimeException("API URL이 잘못되었습니다. : " + apiUrl, e);
+        } catch (IOException e) {
+            throw new RuntimeException("연결이 실패했습니다. : " + apiUrl, e);
+        }
+	}
+	
+	public static String readBody(InputStream body) throws Exception {
+		InputStreamReader streamReader = new InputStreamReader(body);
+
+        try (BufferedReader lineReader = new BufferedReader(streamReader)) {
+            StringBuilder responseBody = new StringBuilder();
+
+
+            String line;
+            while ((line = lineReader.readLine()) != null) {
+                responseBody.append(line);
+            }
+
+            return responseBody.toString();
+        } catch (IOException e) {
+            throw new RuntimeException("API 응답을 읽는데 실패했습니다.", e);
+        }
+	} // readyBody end
+	
+	@PostMapping(value = "/ySearch")
+	public @ResponseBody List<TestDTO> youtube(@RequestParam("keyword") String keyword) throws Exception {
+		log.info("운동 영상 검색 >>>> " + keyword);
+		Properties properties = new Properties();
+		try {
+			InputStream in = Search.class.getResourceAsStream("/"+PROPERTIES_FILENAME);
+			properties.load(in);
+		} catch (IOException e) {
+			System.err.println("There was an error reading " + PROPERTIES_FILENAME + ": " + e.getCause()
+	          + " : " + e.getMessage());
+			System.exit(1);
+		}
+		List<TestDTO> videoUrl = null;
+		try {
+			String queryTerm = keyword;
+			youtube = new YouTube.Builder(HTTP_TRANSPORT, JSON_FACTORY, new HttpRequestInitializer() {
+		        public void initialize(HttpRequest request) throws IOException {}
+		      }).setApplicationName("youtube-cmdline-search-sample").build();
+			
+			
+			YouTube.Search.List search = youtube.search().list("id,snippet");
+			
+			String apiKey = properties.getProperty("youtube.apikey");
+			search.setKey(apiKey);
+			search.setQ(queryTerm);
+			search.setType("video");
+			search.setFields("items(id/kind,id/videoId,snippet/title,snippet/thumbnails/high/url)");
+			search.setMaxResults(NUMBER_OF_VIDEOS_RETURNED);
+			SearchListResponse searchResponse = search.execute();
+			
+			List<SearchResult> searchResultList = searchResponse.getItems();
+			if(searchResultList != null) {
+				videoUrl = service.prettyPrint(searchResultList.iterator(), queryTerm);
+			}
+		} catch (GoogleJsonResponseException e) {
+			System.err.println("There was a service error: " + e.getDetails().getCode() + " : "
+			          + e.getDetails().getMessage());
+		} catch (IOException e) {
+			System.err.println("There was an IO error: " + e.getCause() + " : " + e.getMessage());
+		} catch (Throwable t) {
+			t.printStackTrace();
+		}
+		log.info("before return videoUrl >>> " + videoUrl);
+		return videoUrl;
+	}
 }

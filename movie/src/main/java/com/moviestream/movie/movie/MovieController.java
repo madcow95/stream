@@ -197,7 +197,7 @@ public class MovieController {
 			
 			List<SearchResult> searchResultList = searchResponse.getItems();
 			if(searchResultList != null) {
-				videoUrl = service.prettyPrint(searchResultList.iterator(), queryTerm);
+//				videoUrl = service.prettyPrint(searchResultList.iterator(), queryTerm);
 			}
 		} catch (GoogleJsonResponseException e) {
 			System.err.println("There was a service error: " + e.getDetails().getCode() + " : "

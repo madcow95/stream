@@ -98,10 +98,6 @@
 			location.href="${ctx}/admin/boardManager"
 		}
 		
-		function modalClear() {
-			$("#playerModal").clear();
-		}
-		
 	$(document).ready(function () {
 		
 		$("img[name='movieImg1']").on("click", function () {
@@ -109,7 +105,7 @@
 			$("button[name='test']").click();
 			this.clean();
 			this.click();
-		}); // mouse enter end
+		});
 		
 		$("button[name='realExit']").on("click", function () {
 			$("form[name='realExitForm']").submit();
@@ -210,7 +206,7 @@
   <div class="modal-dialog modal-lg" >
     <div class="modal-content" style="background-color: #000000;">
     <div class="modal-header">
-    	<button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="modalClear()"><span aria-hidden="true">&times;</span></button>
+    	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     </div>
 	<div id="player"></div>
 		<div style="margin: 0 auto; text-align: center;">

@@ -24,6 +24,7 @@ public class DetailService implements UserDetailsService{
 		log.warn("Load User By UserName  >>> "+userName);
 		MemberDTO mDto = mapper.read(userName);
 		log.warn("queried by member mapper >>>>>> "+mDto);
+		log.warn("순서 체크 >>>>>> 1");
 			return mDto == null ? null : new CustomUser(mDto);
 	}
 

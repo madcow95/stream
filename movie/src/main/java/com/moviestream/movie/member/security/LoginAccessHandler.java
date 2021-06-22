@@ -27,6 +27,7 @@ public class LoginAccessHandler implements AuthenticationSuccessHandler{
 			roleNames.add(authority.getAuthority());
 		});
 		
+		log.warn("순서체크 3");
 		log.warn("ROLE NAMES : " + roleNames);
 		log.warn("TEST INFO : " + auth.getName());
 		

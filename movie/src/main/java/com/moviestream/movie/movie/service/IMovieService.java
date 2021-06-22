@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.google.api.services.youtube.model.SearchResult;
+import com.moviestream.movie.TestDTO;
 import com.moviestream.movie.board.domain.MovieInfoDTO;
 import com.moviestream.movie.movie.domain.MovieDTO;
 
@@ -22,5 +23,5 @@ public interface IMovieService {
 	
 	public void delSameInfo(String link) throws Exception;
 	public List<MovieInfoDTO> search(String keyword) throws Exception;
-	public String prettyPrint(Iterator<SearchResult> iteratorSearchResults, String query);
+	public List<TestDTO> prettyPrint(Iterator<SearchResult> iteratorSearchResults, String query);
 }

@@ -1,0 +1,45 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="ctx" value="${pageContext.request.contextPath == '/' ? '' : pageContext.request.contextPath }" scope="application"></c:set>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="_csrf" content="${_csrf.token}">
+<meta name="_csrf_header" content="${_csrf.headerName}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		Kakao.init("ef662570a1f847f41f5b1b2e24a22e6a");
+		console.log(Kakao.isInitialized());
+		$("button[name='kakaologin']").on("click", function () {
+			Kakao.Auth.login({
+				success : function (response) {
+					Kakao.API.request({
+						uri : "/v2/user/me",
+						success : function (response) {
+							console.log(response);
+						},
+						fail : function (error) {
+							console.log(error)
+						}
+					});
+				},
+				fail : function (error) {
+					console.log(error);
+				}
+			});
+		});
+	});
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+<%@ include file="header.jsp" %>
+<button name="kakaologin"><img src="${ctx}/resources/images/kakaologin.png"></button>
+<button name="kakaologin">카카오 로그아웃</button>
+</body>
+</html>
