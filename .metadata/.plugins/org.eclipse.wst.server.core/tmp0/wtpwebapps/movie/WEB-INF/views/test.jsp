@@ -11,7 +11,6 @@
 	
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://www.youtube.com/iframe_api"></script>
 <script type="text/javascript">
 if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 	navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
@@ -22,12 +21,11 @@ if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 }
 
 var canvas = document.getElementById('canvas');
-var context = canvas.getContext('2d');
 var video = document.getElementById('video');
 </script>
 <title>Test Page</title>
 </head>
-<body onload="load()">
+<body>
 <%@ include file="header.jsp" %>
 	<video id="video" width="320" height="240" autoplay></video>
 	<canvas id="canvas" width="960" height="720"></canvas>

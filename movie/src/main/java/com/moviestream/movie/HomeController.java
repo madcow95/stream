@@ -102,6 +102,9 @@ public class HomeController {
 	@RequestMapping("/test")
 	public void test() throws Exception{
 	}
+	@RequestMapping("/moira")
+	public void moira() throws Exception{
+	}
 	@RequestMapping("/test2")
 	public void test2() throws Exception{
 	}
@@ -111,19 +114,37 @@ public class HomeController {
 	@RequestMapping("/kakaologin")
 	public void kakaologin() throws Exception{
 	}
-	@RequestMapping("/kakaojoin")
+	@PostMapping("/kakaojoin")
 	public String kakaojoin(@RequestParam("kakaoName") String name,
 						  @RequestParam("kakaoEmail") String email,
 						  @RequestParam("kakaoGender") String gender,
 						  @RequestParam("kakaoImage") String image,
+						  @RequestParam("loginCategory") String category,
 						  Model model) throws Exception{
 		Map<String, String> kakaoMap = new HashMap<>();
 		kakaoMap.put("name", name);
 		kakaoMap.put("email", email);
 		kakaoMap.put("gender", gender);
 		kakaoMap.put("image", image);
+		kakaoMap.put("category", category);
+		log.info(kakaoMap);
 		model.addAttribute("kakaoMap", kakaoMap);
 		return "/kakaojoin";
+	}
+	
+	@PostMapping("/kakaojoin2")
+	public void kakaojoin2(@RequestParam("username1") String id,
+						   @RequestParam("pwd") String pwd,
+						   @RequestParam("name") String name,
+						   @RequestParam("gender") String gender,
+						   @RequestParam("category") String category) throws Exception {
+		Map<String, String> map = new HashMap<>();
+		map.put("username", id);
+		map.put("pwd", pwd);
+		map.put("name", name);
+		map.put("gender", gender);
+		map.put("category", category);
+		
 	}
 //	@PostMapping("/kakao")
 //	public @ResponseBody String kakao(@RequestBody JSONObject kakaoInfo, Model model, RedirectAttributes rttr) throws Exception{

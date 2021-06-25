@@ -20,6 +20,8 @@
 				Kakao.API.request({
 					url : "/v2/user/me",
 					success : function (response) {
+						console.log(response);
+						console.log(response.kakao_account);
 						/* var kakaoInfo = new Object();
 						kakaoInfo.name = response.kakao_account.profile.nickname;
 						kakaoInfo.gender = response.kakao_account.gender;
@@ -29,6 +31,7 @@
 						document.getElementById("kakaoGender").value = response.kakao_account.gender;
 						document.getElementById("kakaoEmail").value = response.kakao_account.email;
 						document.getElementById("kakaoImage").value = response.kakao_account.profile.profile_image_url;
+						document.getElementById("loginCategory").value = "k";
 						document.kakaojoin.submit();
 					},
 					fail : function (error) {
@@ -56,18 +59,28 @@
 			Kakao.Auth.setAccessToken(undefined);
 		}
 	}
+	function Naverlogin() {
+		document.getElementById("loginCategory").value = "n";
+	}
+	function test() {
+		alert(document.kakaojoin.kakaoName.value);
+	}
 </script>
 <title>Insert title here</title>
 </head>
 <body>
 <%@ include file="header.jsp" %>
+
+<button name="kakaologin" onclick="test()">test</button>
 <button name="kakaologin" onclick="kakaologin()"><img src="${ctx}/resources/images/kakaologin.png"></button>
+<button name="kakaologin" onclick="Naverlogin()">네이버로그인</button>
 <button name="kakaologout" onclick="kakaologout()">카카오 로그아웃</button>
-<form action="${ctx}/kakaojoin" name="kakaojoin">
+<form action="${ctx}/kakaojoin" name="kakaojoin" method="post">
 	<input type="text" id="kakaoName" name="kakaoName">
 	<input type="text" id="kakaoEmail" name="kakaoEmail">
 	<input type="text" id="kakaoGender" name="kakaoGender">
 	<input type="text" id="kakaoImage" name="kakaoImage">
+	<input type="text" id="loginCategory" name="loginCategory">
 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" id="token">
 </form>
 </body>

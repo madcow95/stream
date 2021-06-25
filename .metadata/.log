@@ -795,3 +795,1604 @@ java.lang.NullPointerException
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-22 15:46:20.091
 !MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.xSdzwLTi => OK
+!SESSION 2021-06-22 16:04:01.172 -----------------------------------------------
+eclipse.buildId=4.10.0.202103111225
+java.version=15.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.jface 2 0 2021-06-22 16:04:27.651
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-06-22 16:04:27.651
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3d8512e9,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@46f597f1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2021-06-22 16:04:28.490
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2021-06-22 16:04:28.490
+!MESSAGE Could not load repository template extension contributed by 'org.eclipse.mylyn.bugzilla.ide' with connectorKind 'bugzilla'
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-22 16:04:41.026
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-22 16:04:41.027
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@5e1fc897[org.springframework.tooling.boot.ls:1.25.0.202103111026(id=555)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-22 16:04:41.029
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-22 16:04:41.062
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-06-22 16:04:42.598
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\choi'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-22 16:04:43.730
+!MESSAGE Boot LS startup time from start to initialized: 2689ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-22 16:04:43.990
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.XtrBgtzvisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-22 16:04:43.993
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-22 16:04:43.998
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-22 16:04:43.999
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-22 16:04:44.000
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.XtrBgtzv => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-22 16:04:44.008
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-22 16:04:44.019
+!MESSAGE classpath=122 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-22 16:04:44.023
+!MESSAGE buffering callback sts4.classpath.XtrBgtzv movie false 122
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-22 16:04:44.024
+!MESSAGE executing callback sts4.classpath.XtrBgtzv 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-22 16:04:44.384
+!MESSAGE executing callback sts4.classpath.XtrBgtzv SUCCESS [done]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-22 16:17:45.085
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-22 16:17:45.095
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-22 16:18:05.061
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-22 16:18:05.065
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-22 16:19:27.465
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-22 16:19:27.467
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-22 16:23:54.200
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-22 16:23:54.203
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 4 0 2021-06-22 16:27:57.913
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
+	at java.base/java.util.ImmutableCollections$MapN.<init>(ImmutableCollections.java:1019)
+	at java.base/java.util.Map.of(Map.java:1327)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.toLemMinXOptions(InitializationOptionsProvider.java:26)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.get(InitializationOptionsProvider.java:22)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.get(InitializationOptionsProvider.java:1)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLExtensionRegistry.getInitiatizationOptions(XMLExtensionRegistry.java:135)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLLanguageServer.getInitializationOptions(XMLLanguageServer.java:158)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$5(LanguageServerWrapper.java:352)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1146)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1769)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1756)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 4 0 2021-06-22 16:28:18.277
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
+	at java.base/java.util.ImmutableCollections$MapN.<init>(ImmutableCollections.java:1019)
+	at java.base/java.util.Map.of(Map.java:1327)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.toLemMinXOptions(InitializationOptionsProvider.java:26)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.get(InitializationOptionsProvider.java:22)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.get(InitializationOptionsProvider.java:1)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLExtensionRegistry.getInitiatizationOptions(XMLExtensionRegistry.java:135)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLLanguageServer.getInitializationOptions(XMLLanguageServer.java:158)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$5(LanguageServerWrapper.java:352)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1146)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1769)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1756)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-22 16:29:38.334
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-22 16:29:38.339
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-22 16:30:17.022
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-22 16:30:17.024
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-22 16:31:11.113
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-22 16:31:11.115
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2021-06-22 20:32:43.659
+!MESSAGE Connection to https://spring.io/blog.atom failed on 알려진 호스트가 없습니다 (spring.io). Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: 알려진 호스트가 없습니다 (spring.io)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:932)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1517)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:851)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1507)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1366)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1300)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1003)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:995)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:991)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-22 23:49:58.459
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.XtrBgtzv
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-22 23:49:58.459
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.XtrBgtzv
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-22 23:49:58.460
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-22 23:49:58.461
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.XtrBgtzv => OK
+!SESSION 2021-06-23 10:28:58.899 -----------------------------------------------
+eclipse.buildId=4.10.0.202103111225
+java.version=15.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.jface 2 0 2021-06-23 10:29:30.081
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-06-23 10:29:30.081
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3d8512e9,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@46f597f1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2021-06-23 10:29:31.026
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2021-06-23 10:29:31.026
+!MESSAGE Could not load repository template extension contributed by 'org.eclipse.mylyn.bugzilla.ide' with connectorKind 'bugzilla'
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-06-23 10:29:47.517
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\choi'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 10:29:56.127
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 10:29:56.139
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:34:07.276
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:34:07.277
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@3669d7ac[org.springframework.tooling.boot.ls:1.25.0.202103111026(id=555)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:34:07.287
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:34:07.449
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 4 0 2021-06-23 10:34:11.276
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
+	at java.base/java.util.ImmutableCollections$MapN.<init>(ImmutableCollections.java:1019)
+	at java.base/java.util.Map.of(Map.java:1327)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.toLemMinXOptions(InitializationOptionsProvider.java:26)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.get(InitializationOptionsProvider.java:22)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.get(InitializationOptionsProvider.java:1)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLExtensionRegistry.getInitiatizationOptions(XMLExtensionRegistry.java:135)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLLanguageServer.getInitializationOptions(XMLLanguageServer.java:158)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$5(LanguageServerWrapper.java:352)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1146)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1769)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1756)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:34:12.757
+!MESSAGE Boot LS startup time from start to initialized: 5460ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:34:13.692
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.yddHPqbAisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:34:13.697
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:34:13.700
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:34:13.704
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:34:13.704
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:34:13.710
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.yddHPqbA => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:34:13.740
+!MESSAGE classpath=122 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:34:13.746
+!MESSAGE buffering callback sts4.classpath.yddHPqbA movie false 122
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:34:13.751
+!MESSAGE executing callback sts4.classpath.yddHPqbA 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:34:14.199
+!MESSAGE executing callback sts4.classpath.yddHPqbA SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:36:33.593
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.yddHPqbA
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:36:33.594
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.yddHPqbA
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:36:33.594
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:36:33.595
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.yddHPqbA => OK
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 10:54:32.981
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 10:54:32.984
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 10:54:59.175
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 10:54:59.178
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:59:12.429
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:59:12.430
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@3669d7ac[org.springframework.tooling.boot.ls:1.25.0.202103111026(id=555)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:59:12.430
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:59:14.160
+!MESSAGE Boot LS startup time from start to initialized: 1729ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:59:14.222
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.KmNBSAqoisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:59:14.223
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:59:14.224
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:59:14.224
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:59:14.225
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:59:14.225
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.KmNBSAqo => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:59:14.228
+!MESSAGE classpath=122 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:59:14.231
+!MESSAGE buffering callback sts4.classpath.KmNBSAqo movie false 122
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:59:14.231
+!MESSAGE executing callback sts4.classpath.KmNBSAqo 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 10:59:14.437
+!MESSAGE executing callback sts4.classpath.KmNBSAqo SUCCESS [done]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 12:44:29.882
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 12:44:29.885
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 12:50:39.418
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 12:50:39.421
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 12:53:57.281
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 12:53:57.283
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 12:54:22.870
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 12:54:22.872
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 12:56:20.126
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 12:56:20.128
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 12:56:22.990
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 12:56:22.992
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 12:57:38.709
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 12:57:38.711
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 13:15:22.741
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 13:15:22.748
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 13:28:56.146
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 13:28:56.150
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:15:51.089
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:15:51.091
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.jface 2 0 2021-06-23 16:19:40.592
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-06-23 16:19:40.592
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.togglelinecommentcommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7edb9957,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@30a8f757,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.lsp4e 1 0 2021-06-23 16:20:00.918
+!MESSAGE [Info]	ESLint server running in node v14.15.4
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:25:19.893
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:25:20.732
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:37:16.319
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:37:16.320
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:41:58.462
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:41:58.465
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:42:07.483
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:42:07.485
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:42:45.496
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:42:45.497
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:47:03.850
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:47:03.853
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:48:40.583
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:48:40.584
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:49:04.424
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:49:04.426
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:49:27.135
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:49:27.136
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:49:43.372
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:49:43.374
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:50:50.936
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:50:50.937
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:51:16.438
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:51:16.443
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 4 0 2021-06-23 16:51:16.639
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
+	at java.base/java.util.ImmutableCollections$MapN.<init>(ImmutableCollections.java:1019)
+	at java.base/java.util.Map.of(Map.java:1327)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.toLemMinXOptions(InitializationOptionsProvider.java:26)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.get(InitializationOptionsProvider.java:22)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.get(InitializationOptionsProvider.java:1)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLExtensionRegistry.getInitiatizationOptions(XMLExtensionRegistry.java:135)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLLanguageServer.getInitializationOptions(XMLLanguageServer.java:158)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$5(LanguageServerWrapper.java:352)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1146)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1769)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1756)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:51:24.372
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:51:24.374
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:57:33.501
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:57:33.504
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:59:38.423
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:59:38.425
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:59:41.966
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:59:41.969
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:59:55.208
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 16:59:55.209
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 17:00:14.717
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 17:00:14.718
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 17:00:58.826
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 17:00:58.829
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 17:02:08.920
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 17:02:08.922
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2021-06-23 18:58:20.593
+!MESSAGE Connection to https://dist.springsource.com/release/STS/doc/updates.xml failed on 알려진 호스트가 없습니다 (dist.springsource.com). Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: 알려진 호스트가 없습니다 (dist.springsource.com)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:932)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1517)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:851)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1507)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1366)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1300)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1003)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:995)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:991)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 19:12:52.822
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 19:12:52.824
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 19:12:52.970
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.KmNBSAqo
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 19:12:52.971
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.KmNBSAqo
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 19:12:52.979
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 19:12:52.979
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.KmNBSAqo => OK
+!SESSION 2021-06-23 23:20:21.254 -----------------------------------------------
+eclipse.buildId=4.10.0.202103111225
+java.version=15.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.jface 2 0 2021-06-23 23:20:49.532
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-06-23 23:20:49.532
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@48861d1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@118f39f3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2021-06-23 23:20:50.493
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2021-06-23 23:20:50.493
+!MESSAGE Could not load repository template extension contributed by 'org.eclipse.mylyn.bugzilla.ide' with connectorKind 'bugzilla'
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-06-23 23:21:06.061
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\choi'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:21:14.235
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:21:14.247
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:26:54.972
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:26:54.976
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 23:26:55.956
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 23:26:55.956
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@3669d7ac[org.springframework.tooling.boot.ls:1.25.0.202103111026(id=555)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 23:26:55.967
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 23:26:56.148
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 23:27:00.659
+!MESSAGE Boot LS startup time from start to initialized: 4678ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 23:27:01.222
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.vNSCpcqfisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 23:27:01.225
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 23:27:01.227
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 23:27:01.228
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 23:27:01.229
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 23:27:01.229
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.vNSCpcqf => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 23:27:01.243
+!MESSAGE classpath=122 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 23:27:01.246
+!MESSAGE buffering callback sts4.classpath.vNSCpcqf movie false 122
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 23:27:01.247
+!MESSAGE executing callback sts4.classpath.vNSCpcqf 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-23 23:27:01.493
+!MESSAGE executing callback sts4.classpath.vNSCpcqf SUCCESS [done]
+
+!ENTRY org.eclipse.lsp4e 2 0 2021-06-23 23:27:13.181
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:385)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2086)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:27:39.369
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:27:39.371
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 4 0 2021-06-23 23:27:56.721
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
+	at java.base/java.util.ImmutableCollections$MapN.<init>(ImmutableCollections.java:1019)
+	at java.base/java.util.Map.of(Map.java:1327)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.toLemMinXOptions(InitializationOptionsProvider.java:26)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.get(InitializationOptionsProvider.java:22)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.get(InitializationOptionsProvider.java:1)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLExtensionRegistry.getInitiatizationOptions(XMLExtensionRegistry.java:135)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLLanguageServer.getInitializationOptions(XMLLanguageServer.java:158)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$5(LanguageServerWrapper.java:352)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1146)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1769)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1756)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:27:56.821
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:27:56.850
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:28:01.959
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:28:01.961
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:28:48.201
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:28:48.203
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:28:56.353
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:28:56.355
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:29:08.843
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:29:08.847
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:29:22.638
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:29:22.640
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:29:52.635
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:29:52.637
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:30:02.964
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:30:02.966
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:30:18.453
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:30:18.455
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:30:58.450
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:30:58.451
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:31:02.565
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:31:02.567
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:31:22.764
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:31:22.765
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:32:01.008
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:32:01.013
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:33:24.192
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:33:24.193
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:45:35.556
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:45:35.558
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:47:08.735
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:47:08.737
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:47:25.182
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:47:25.184
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:47:29.972
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:47:29.974
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:47:44.248
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:47:44.249
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:48:06.684
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:48:06.687
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:48:12.863
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:48:12.864
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:48:15.953
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:48:15.954
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:48:22.210
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:48:22.211
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:48:40.189
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:48:40.191
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:49:00.610
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:49:00.612
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:49:09.416
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:49:09.417
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:49:19.898
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:49:19.900
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:49:41.572
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:49:41.574
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:50:36.907
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:50:36.910
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:50:39.179
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:50:39.183
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 4 0 2021-06-23 23:50:39.309
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
+	at java.base/java.util.ImmutableCollections$MapN.<init>(ImmutableCollections.java:1019)
+	at java.base/java.util.Map.of(Map.java:1327)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.toLemMinXOptions(InitializationOptionsProvider.java:26)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.get(InitializationOptionsProvider.java:22)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.get(InitializationOptionsProvider.java:1)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLExtensionRegistry.getInitiatizationOptions(XMLExtensionRegistry.java:135)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLLanguageServer.getInitializationOptions(XMLLanguageServer.java:158)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$5(LanguageServerWrapper.java:352)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1146)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1769)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1756)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:51:16.658
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:51:16.660
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:51:31.021
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:51:31.023
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:53:05.331
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:53:05.332
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:53:55.650
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:53:55.652
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:54:12.478
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:54:12.480
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:54:16.126
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:54:16.127
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:55:03.263
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:55:03.264
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:55:35.595
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:55:35.596
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:55:49.998
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:55:50.000
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:56:32.063
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:56:32.065
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:57:47.550
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:57:47.551
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:58:06.902
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:58:06.910
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:58:46.278
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:58:46.281
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:59:35.920
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-23 23:59:35.922
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-24 00:00:13.169
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-24 00:00:13.171
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-24 00:02:58.191
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-24 00:02:58.194
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-24 01:07:48.187
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.vNSCpcqf
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-24 01:07:48.188
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.vNSCpcqf
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-24 01:07:48.188
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-24 01:07:48.189
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.vNSCpcqf => OK
+!SESSION 2021-06-24 09:18:40.415 -----------------------------------------------
+eclipse.buildId=4.10.0.202103111225
+java.version=15.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.jface 2 0 2021-06-24 09:18:46.653
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-06-24 09:18:46.653
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3f7a7ce6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1de6689c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2021-06-24 09:18:47.520
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2021-06-24 09:18:47.520
+!MESSAGE Could not load repository template extension contributed by 'org.eclipse.mylyn.bugzilla.ide' with connectorKind 'bugzilla'
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-24 09:18:52.885
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-24 09:18:52.885
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@46916d68[org.springframework.tooling.boot.ls:1.25.0.202103111026(id=555)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-24 09:18:52.885
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-24 09:18:52.936
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-06-24 09:18:54.381
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\choi'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-24 09:18:56.159
+!MESSAGE Boot LS startup time from start to initialized: 3257ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-24 09:18:56.544
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.TxmNWwHnisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-24 09:18:56.548
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-24 09:18:56.551
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-24 09:18:56.552
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-24 09:18:56.553
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.TxmNWwHn => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-24 09:18:56.553
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-24 09:18:56.564
+!MESSAGE classpath=122 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-24 09:18:56.569
+!MESSAGE buffering callback sts4.classpath.TxmNWwHn movie false 122
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-24 09:18:56.570
+!MESSAGE executing callback sts4.classpath.TxmNWwHn 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-24 09:18:56.939
+!MESSAGE executing callback sts4.classpath.TxmNWwHn SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-24 09:19:09.042
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.TxmNWwHn
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-24 09:19:09.045
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.TxmNWwHn
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-24 09:19:09.046
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-24 09:19:09.046
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.TxmNWwHn => OK
+!SESSION 2021-06-25 15:01:31.234 -----------------------------------------------
+eclipse.buildId=4.10.0.202103111225
+java.version=15.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.jface 2 0 2021-06-25 15:01:38.848
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-06-25 15:01:38.848
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@38d9c9c4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@a4388f1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2021-06-25 15:01:39.522
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2021-06-25 15:01:39.522
+!MESSAGE Could not load repository template extension contributed by 'org.eclipse.mylyn.bugzilla.ide' with connectorKind 'bugzilla'
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-06-25 15:01:43.601
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\choi'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 15:03:45.530
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 15:03:45.531
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@32bc12d5[org.springframework.tooling.boot.ls:1.25.0.202103111026(id=555)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 15:03:45.544
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 15:03:45.636
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 4 0 2021-06-25 15:03:45.773
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
+	at java.base/java.util.ImmutableCollections$MapN.<init>(ImmutableCollections.java:1019)
+	at java.base/java.util.Map.of(Map.java:1327)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.toLemMinXOptions(InitializationOptionsProvider.java:26)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.get(InitializationOptionsProvider.java:22)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.get(InitializationOptionsProvider.java:1)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLExtensionRegistry.getInitiatizationOptions(XMLExtensionRegistry.java:135)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLLanguageServer.getInitializationOptions(XMLLanguageServer.java:158)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$5(LanguageServerWrapper.java:352)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1146)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1769)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1756)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 15:03:49.505
+!MESSAGE Boot LS startup time from start to initialized: 3938ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 15:03:49.754
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.aeSKsOqgisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 15:03:49.757
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 15:03:49.760
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 15:03:49.761
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 15:03:49.762
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 15:03:49.762
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.aeSKsOqg => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 15:03:49.779
+!MESSAGE classpath=122 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 15:03:49.783
+!MESSAGE buffering callback sts4.classpath.aeSKsOqg movie false 122
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 15:03:49.784
+!MESSAGE executing callback sts4.classpath.aeSKsOqg 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 15:03:50.079
+!MESSAGE executing callback sts4.classpath.aeSKsOqg SUCCESS [done]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 15:03:51.364
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 15:03:51.391
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 15:03:57.238
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.aeSKsOqg
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 15:03:57.238
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.aeSKsOqg
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 15:03:57.239
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 15:03:57.240
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.aeSKsOqg => OK
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:26:20.538
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:26:20.563
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:26:30.562
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:26:30.566
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:26:46.088
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:26:46.093
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:26:50.161
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:26:50.165
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:27:09.298
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:27:09.304
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:27:26.657
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:27:26.662
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:27:43.805
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:27:43.810
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:27:52.514
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:27:52.518
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:27:58.262
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:27:58.267
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:28:08.149
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:28:08.153
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:28:12.429
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:28:12.437
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:28:15.526
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:28:15.530
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.jface 2 0 2021-06-25 17:28:24.975
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-06-25 17:28:24.975
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.togglelinecommentcommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@71309fa2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@36e23858,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.lsp4e 1 0 2021-06-25 17:28:25.018
+!MESSAGE [Info]	ESLint server running in node v14.15.4
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:29:52.466
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:29:52.471
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:30:14.514
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:30:14.517
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:32:40.085
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:32:40.092
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:33:26.571
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:33:26.575
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 17:33:32.869
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 17:33:32.869
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@32bc12d5[org.springframework.tooling.boot.ls:1.25.0.202103111026(id=555)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 17:33:32.870
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 17:33:39.958
+!MESSAGE Boot LS startup time from start to initialized: 7087ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 17:33:40.085
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.aygzBMkRisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 17:33:40.086
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 17:33:40.087
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 17:33:40.087
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 17:33:40.088
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 17:33:40.088
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.aygzBMkR => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 17:33:40.092
+!MESSAGE classpath=122 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 17:33:40.097
+!MESSAGE buffering callback sts4.classpath.aygzBMkR movie false 122
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 17:33:40.097
+!MESSAGE executing callback sts4.classpath.aygzBMkR 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 17:33:42.100
+!MESSAGE executing callback sts4.classpath.aygzBMkR FAILED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2021-06-25 17:33:42.101
+!MESSAGE 
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1950)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2085)
+	at org.springframework.tooling.ls.eclipse.commons.LSP4ECommandExecutor.executeClientCommand(LSP4ECommandExecutor.java:37)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.flush(SendClasspathNotificationsJob.java:178)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.run(SendClasspathNotificationsJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.lsp4e 2 0 2021-06-25 17:33:44.928
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:385)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2086)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:33:48.765
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 4 0 2021-06-25 17:33:49.123
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
+	at java.base/java.util.ImmutableCollections$MapN.<init>(ImmutableCollections.java:1019)
+	at java.base/java.util.Map.of(Map.java:1327)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.toLemMinXOptions(InitializationOptionsProvider.java:26)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.get(InitializationOptionsProvider.java:22)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.get(InitializationOptionsProvider.java:1)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLExtensionRegistry.getInitiatizationOptions(XMLExtensionRegistry.java:135)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLLanguageServer.getInitializationOptions(XMLLanguageServer.java:158)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$5(LanguageServerWrapper.java:352)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1146)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1769)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1756)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:33:50.045
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:35:24.029
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:35:24.035
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2021-06-25 17:35:51.724
+!MESSAGE Several ports (8005, 4444, 8009) required by Tomcat v8.0 Server at localhost are already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:36:40.655
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:36:40.657
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:37:09.471
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:37:09.475
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:37:55.734
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:37:55.739
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:38:12.474
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:38:12.477
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:38:19.372
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-25 17:38:19.376
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 17:48:44.969
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.aygzBMkR
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 17:48:44.970
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.aygzBMkR
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 17:48:44.971
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-25 17:48:44.972
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.aygzBMkR => OK
