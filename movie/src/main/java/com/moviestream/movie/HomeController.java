@@ -102,7 +102,7 @@ public class HomeController {
 	@RequestMapping("/test")
 	public void test() throws Exception{
 	}
-	@RequestMapping("/moira")
+	@RequestMapping("/kakaomap")
 	public void moira() throws Exception{
 	}
 	@RequestMapping("/test2")

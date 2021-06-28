@@ -32,7 +32,9 @@
 						document.getElementById("kakaoEmail").value = response.kakao_account.email;
 						document.getElementById("kakaoImage").value = response.kakao_account.profile.profile_image_url;
 						document.getElementById("loginCategory").value = "k";
-						document.kakaojoin.submit();
+						/* document.kakaojoin.submit(); */
+						1777238440
+						1777238440
 					},
 					fail : function (error) {
 						console.log(error);
