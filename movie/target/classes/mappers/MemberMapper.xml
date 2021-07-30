@@ -23,6 +23,11 @@
 		<result property="id" column="id"/>
 		<result property="auth" column="auth"/>
 	</resultMap>
+	<select id="read" resultMap="memberMap">
+		SELECT mem.id, pwd, name, email, zip_num, address, phone, regdate, lastlogin, enabled, auth
+		FROM tbl_member mem LEFT OUTER JOIN tbl_auth auth on mem.id = auth.id
+		WHERE mem.id = #{id}
+	</select>
 	<!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
 	<resultMap type="com.moviestream.movie.member.domain.AdminDTO" id="adminMap">
 		<id property="id" column="id"/>
@@ -38,11 +43,6 @@
 		<result property="auth" column="auth"/>
 	</resultMap>
 	
-	<select id="read" resultMap="memberMap">
-		SELECT mem.id, pwd, name, email, zip_num, address, phone, regdate, lastlogin, enabled, auth
-		FROM tbl_member mem LEFT OUTER JOIN tbl_auth auth on mem.id = auth.id
-		WHERE mem.id = #{id}
-	</select>
 	
 	<select id="adminread" resultMap="adminMap">
 		SELECT mem.id, pwd, name, auth

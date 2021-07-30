@@ -11,8 +11,10 @@ public interface IBoardService {
 
 	// 공지사항
 	public List<BoardDTO> boardList(Criteria cri) throws Exception;
-	public BoardDTO adminread(int articleno) throws Exception;
 	public int getTotalCnt(Criteria cri) throws Exception;
+	
+	
+	public BoardDTO adminread(int articleno) throws Exception;
 	public BoardDTO read(int articleno) throws Exception;
 	public int adminRegister(BoardDTO bDto) throws Exception;
 	

@@ -6,11 +6,13 @@
 		<item value="org.aspectj:1.9.6.202012111622"/>
 		<item value="org.eclipse.ajdt:2.2.4.202012111622"/>
 		<item value="org.eclipse.buildship:3.1.5.v20210113-0929"/>
+		<item value="org.eclipse.draw2d:3.10.100.201606061308"/>
 		<item value="org.eclipse.egit.gitflow.feature:5.11.0.202103091610-r"/>
 		<item value="org.eclipse.egit:5.11.0.202103091610-r"/>
-		<item value="org.eclipse.emf.common:2.22.0.v20210114-1734"/>
-		<item value="org.eclipse.emf.ecore:2.23.0.v20200630-0516"/>
+		<item value="org.eclipse.emf.common:2.22.0.v20210319-0732"/>
+		<item value="org.eclipse.emf.ecore:2.24.0.v20210405-0628"/>
 		<item value="org.eclipse.epp.mpc:1.9.1.v20210204-1408"/>
+		<item value="org.eclipse.gef:3.11.0.201606061308"/>
 		<item value="org.eclipse.help:2.3.500.v20210303-1800"/>
 		<item value="org.eclipse.jdt:3.18.700.v20210303-1800"/>
 		<item value="org.eclipse.jgit.gpg.bc:5.11.0.202103091610-r"/>
@@ -40,6 +42,8 @@
 		<item value="org.eclipse.pde:3.14.700.v20210303-1800"/>
 		<item value="org.eclipse.platform:4.19.0.v20210303-1800"/>
 		<item value="org.eclipse.rcp:4.19.0.v20210303-1800"/>
+		<item value="org.eclipse.team.svn.revision.graph:4.0.0.I20160226-1700"/>
+		<item value="org.eclipse.team.svn:4.0.5.I20170425-1700"/>
 		<item value="org.eclipse.tm.terminal.connector.ssh.feature:10.2.0.202012191711"/>
 		<item value="org.eclipse.tm.terminal.control.feature:10.2.0.202103012351"/>
 		<item value="org.eclipse.tm.terminal.feature:10.2.0.202012191711"/>
@@ -49,8 +53,11 @@
 		<item value="org.eclipse.wst.json_ui.feature:1.1.9.v202101100033"/>
 		<item value="org.eclipse.wst.web_ui.feature:3.21.0.v202102251419"/>
 		<item value="org.eclipse.wst.xml_ui.feature:3.21.0.v202102222242"/>
+		<item value="org.insightech.er.feature:1.0.0.v20150619-0219"/>
 		<item value="org.jboss.tools.m2e.wro4j.feature:1.1.0.201406251020"/>
 		<item value="org.jboss.tools.maven.apt.feature:1.5.2.201812241535"/>
+		<item value="org.polarion.eclipse.team.svn.connector.svnkit18:6.0.4.I20161211-1700"/>
+		<item value="org.polarion.eclipse.team.svn.connector:6.0.4.I20161211-1700"/>
 		<item value="org.sonatype.m2e.buildhelper.feature:0.15.0.201207090124"/>
 		<item value="org.sonatype.m2e.egit.feature:0.15.1.201806191431"/>
 		<item value="org.sonatype.m2e.mavenarchiver.feature:0.17.5.202002191804"/>

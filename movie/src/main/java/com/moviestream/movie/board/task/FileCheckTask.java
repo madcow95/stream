@@ -33,14 +33,14 @@ public class FileCheckTask {
 		
 		Calendar cal = Calendar.getInstance();
 		
-		cal.add(Calendar.DATE, -1);
+		cal.add(Calendar.DATE, 0);
 		
 		String str = sdf.format(cal.getTime());
 		
 		return str.replace("-", File.separator);
 	}
 	
-	@Scheduled(cron = "* * 2 * * *")
+	@Scheduled(cron = "* * 0 * * *")
 	public void checkFiles() throws Exception {
 		log.warn("File check task running >>>>>>>>>>>>>>>>>>>>>>.");
 		log.warn("=================================================");

@@ -26,6 +26,7 @@
 				},
 				type : "post",
 				success : function (result) {
+					console.log("어깨운동 상품들" + result);
 					document.getElementById("info1").value = result.title;
 					document.getElementById("info2").src= result.image;
 					document.getElementById("info3").value = result.lprice;
@@ -41,6 +42,7 @@
 				},
 				type : "post",
 				success : function (result) {
+					console.log("등운동 상품들" + result);
 					document.getElementById("info1").value = result.title;
 					document.getElementById("info2").src= result.image;
 					document.getElementById("info3").value = result.lprice;

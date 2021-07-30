@@ -63,13 +63,14 @@
     </div>
 </div>
 <input type="text" id="test">
-<input type="text" id="x">
-<input type="text" id="y">
+<input type="text" id="lati">
+<input type="text" id="longi">
+<button onclick="maptest()">test</button>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ef662570a1f847f41f5b1b2e24a22e6a&libraries=services"></script>
 <script type="text/javascript">
 var markers = [];
-/* if(navigator.geolocation) {
+if(navigator.geolocation) {
 	navigator.geolocation.getCurrentPosition(function (position) {
 		document.getElementById("lati").value = position.coords.latitude;
 		document.getElementById("longi").value = position.coords.longitude;
@@ -77,9 +78,18 @@ var markers = [];
 		console.log(position.coords.longitude);
 	});
 }
-var lati = document.getElementById("lati").value;
-var longi = document.getElementById("longi").value;
-alert(lati + longi); */
+function maptest() {
+	var lati = document.getElementById("lati").value;
+	var longi = document.getElementById("longi").value;
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = {
+        center: new kakao.maps.LatLng(lati, longi), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };  
+
+// 지도를 생성합니다    
+var map = new kakao.maps.Map(mapContainer, mapOption); 
+}
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = {
         center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
@@ -164,11 +174,24 @@ function displayPlaces(places) {
         (function(marker, title, x, y) {
         	
             kakao.maps.event.addListener(marker, 'click', function() {
-            	document.getElementById("test").value = title;
+            	/* document.getElementById("test").value = title;
             	document.getElementById("x").value = x;
-            	document.getElementById("y").value = y;
-            	var divtest = document.createElement("h1");
-            	var divtesttext = documen
+            	document.getElementById("y").value = y; */
+            	var divtest = document.createElement('input');
+            	var divtest1 = document.createElement('input');
+            	var divtest2 = document.createElement('input');
+            	var newForm = document.createElement('form');
+            	divtest.setAttribute("type", "text");
+            	divtest1.setAttribute("type", "text");
+            	divtest2.setAttribute("type", "text");
+            	divtest.setAttribute("value", title);
+            	divtest1.setAttribute("value", x);
+            	divtest2.setAttribute("value", y);
+            	newForm.appendChild(divtest);
+            	newForm.appendChild(divtest1);
+            	newForm.appendChild(divtest2);
+            	document.body.appendChild(newForm);
+            	
                 displayInfowindow(marker, title);
             });
 
@@ -195,10 +218,10 @@ function displayPlaces(places) {
     // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
     map.setBounds(bounds);
 }
-function test(a, b) {
+/* function test(a, b) {
 	document.getElementById("x").value = a;
 	document.getElementById("y").value = b;
-}
+} */
 
 // 검색결과 항목을 Element로 반환하는 함수입니다
 function getListItem(index, places) {

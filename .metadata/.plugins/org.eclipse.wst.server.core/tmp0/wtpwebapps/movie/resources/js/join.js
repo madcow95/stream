@@ -104,11 +104,6 @@
 			}
 		});
 		
-		/* $("#name").on("change keyup paste", function () {
-			var name = document.getElementById("name").value;
-			name = name.replace(/[^ㄱ-ㅎㅏ-ㅣ]/gi,"");
-			
-		}); */
 	}); // ready end
 	
 	function txtblock(e) {
@@ -119,11 +114,3 @@
 		e.value=e.value.replace(/[a-z0-9A-Z!@#$%^&\]*()-=_+`~;:,\\\|\}{./<>?\"\[']/gi,"");
 	}
 	
-	/*function findAddr(){
-		var pop = window.open("jusoPopup","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
-	}
-	
-	function jusoCallBack(roadFullAddr,zipNo) {
-		document.getElementById("zip_num").value = zipNo;
-		document.getElementById("address").value = roadFullAddr;
-	}*/

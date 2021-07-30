@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="itemStr"/>
+		<item key="selection" value="pageNum"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="itemStr"/>
-			<item value="setMap"/>
-			<item value="addMarker"/>
-			<item value="console"/>
-			<item value="searchPlaces"/>
-			<item value="current"/>
-			<item value="currentStyle"/>
-			<item value="data"/>
-			<item value="images"/>
-			<item value="session"/>
-			<item value="member/result"/>
-			<item value="test1"/>
-			<item value="test12"/>
-			<item value="get"/>
-			<item value="changepwd"/>
+			<item value="pageNum"/>
+			<item value="actionForm"/>
+			<item value="task"/>
+			<item value="step"/>
+			<item value="displayMarker"/>
+			<item value="infowindow"/>
+			<item value="test"/>
+			<item value="getListItem"/>
+			<item value="logout"/>
+			<item value="utf"/>
+			<item value="simple"/>
+			<item value="parser"/>
+			<item value="jackson"/>
+			<item value="bind"/>
+			<item value="lati"/>
 		</list>
 		<list key="replacehistory">
 			<item value="${ctx}/resources/images"/>

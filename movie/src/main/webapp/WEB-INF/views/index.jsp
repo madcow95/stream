@@ -8,7 +8,7 @@
 <head>
 <style type="text/css">
 	.carousel-item {
-	  height: 75vh;
+	  height: 50vh;
 	  min-height: 500px;
 	  background: no-repeat center center scroll;
 	  -webkit-background-size: cover;

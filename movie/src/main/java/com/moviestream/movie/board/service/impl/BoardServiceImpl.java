@@ -34,11 +34,11 @@ public class BoardServiceImpl implements IBoardService{
 	public List<BoardDTO> boardList(Criteria cri) throws Exception {
 		return bDao.boardList(cri);
 	}
-
 	@Override
 	public int getTotalCnt(Criteria cri) throws Exception {
 		return bDao.getTotalCnt(cri);
 	}
+
 
 	@Override
 	public BoardDTO read(int articleno) throws Exception {

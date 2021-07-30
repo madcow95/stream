@@ -102,6 +102,9 @@ public class HomeController {
 	@RequestMapping("/test")
 	public void test() throws Exception{
 	}
+	@RequestMapping("/map")
+	public void map() throws Exception{
+	}
 	@RequestMapping("/kakaomap")
 	public void moira() throws Exception{
 	}
@@ -111,9 +114,17 @@ public class HomeController {
 	@RequestMapping("/test3")
 	public void test3() throws Exception{
 	}
+	@RequestMapping("/test4")
+	public void test4() throws Exception{
+	}
 	@RequestMapping("/kakaologin")
 	public void kakaologin() throws Exception{
 	}
+	@PostMapping("/record")
+	public void record() throws Exception {
+		
+	}
+	
 	@PostMapping("/kakaojoin")
 	public String kakaojoin(@RequestParam("kakaoName") String name,
 						  @RequestParam("kakaoEmail") String email,

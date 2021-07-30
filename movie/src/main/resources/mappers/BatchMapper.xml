@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.moviestream.movie.member.mapper.BatchMapper">
+  	<select id="getOldUser" resultType="com.moviestream.movie.member.domain.BatchDTO">
+  		SELECT *
+  		FROM tbl_test_member
+  		WHERE status='N'
+  	</select>
+  	
+  	<delete id="delOldUser" parameterType="String">
+  		DELETE FROM tbl_test_member
+  		WHERE id=#{id}
+  	</delete>
+  </mapper>
