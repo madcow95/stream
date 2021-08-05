@@ -1,17 +1,17 @@
 # 영화 예고편 제공 사이트 - 개인 프로젝트
 
-## :heavy_check_mark: 소개
+## :small_blue_diamond: 소개
      'MOIRA'는 취향기반 관심사 커뮤니티로써, 각각의 카테고리별로 (운동,맛집,스터디,축제) 
     일회성 모임을 주선하는 플랫폼입니다.
 
-## :heavy_check_mark: 기획의도
+## :small_blue_diamond: 기획의도
     워라밸이 중요한 시대에, 여가및 취미활동에서 관심 분야가 맞는 사람들끼리의 모임을 만들고 싶었습니다. 
     각 관심사별로 다양한 기능을 제공하며 운동,맛집,스터디,축제등의 카테고리로 분류하였습니다.
 
-## :heavy_check_mark: 시연영상  (클릭시 영상이 재생됩니다)
+## :small_blue_diamond: 시연영상  (클릭시 영상이 재생됩니다)
 
 
-## :heavy_check_mark: 주요 개발 내용
+## :small_blue_diamond: 주요 개발 내용
     - Java 기반의 Spring MVC 서버 백엔드 개발
     - SVN을 통한 형상 관리
     - 웹캠을 통한 AI 모션인식
@@ -20,7 +20,7 @@
     - 카카오맵 API를 통한 현재 내주변맛집 표시, 셀렉트박스를 통한 맛집 자동 검색 등
     - 카카오, 구글 오픈 API를 이용한 소셜로그인   (OAuth) 
     - 맛집 별점등록 기능
-## :heavy_check_mark: 프로젝트 총평 및 기여한 부분
+## :small_blue_diamond: 프로젝트 총평 및 기여한 부분
     1. 진행해본 프로젝트중 가장 완성도가 높은 서비스
  
     -  개인프로젝트를 진행했을 당시, 소셜로그인의 구현에 실패했었습니다. 
@@ -30,13 +30,13 @@
  
     -  사용자 입장에서 어떤 기능이필요할지 생각해봤습니다. 
     카카오맵을 이용한 맛집정보와 위치 표시, 맛집 일정관리등의 기능을 구현했습니다.
-## :heavy_check_mark: 웹 URL
+## :small_blue_diamond: 웹 URL
    :house: https://moira1.iptime.org:8443/meet/  
 
    :house: https://moira1.iptime.org:8443/meet/health/home
-## :heavy_check_mark: 제작 기간 ( 7주 - 2021/6/15 ~ 8/3 )
+## :small_blue_diamond: 제작 기간 ( 7주 - 2021/6/15 ~ 8/3 )
 
-## :heavy_check_mark: Overview
+## :small_blue_diamond: Overview
 ### 0. 메인페이지
 ![팀1-메인](https://user-images.githubusercontent.com/78129881/128335055-263f2803-f30d-4ca6-b2c9-440ef914ea21.jpg)
 <div align="center"> 부트스트랩을 이용한 moira 메인 페이지입니다. </div>
