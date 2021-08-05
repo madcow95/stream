@@ -1,25 +1,20 @@
 # 영화 예고편 제공 사이트 - 개인 프로젝트
 
 ## :small_blue_diamond: 소개
-     'MOIRA'는 취향기반 관심사 커뮤니티로써, 각각의 카테고리별로 (운동,맛집,스터디,축제) 
-    일회성 모임을 주선하는 플랫폼입니다.
+    'MOVIE'는 영화 예고편, 영화 간략한 정보, 검색 기능, 영화 추천 게시판 기능을 제공하는 페이지 입니다.
 
 ## :small_blue_diamond: 기획의도
-    워라밸이 중요한 시대에, 여가및 취미활동에서 관심 분야가 맞는 사람들끼리의 모임을 만들고 싶었습니다. 
-    각 관심사별로 다양한 기능을 제공하며 운동,맛집,스터디,축제등의 카테고리로 분류하였습니다.
+    영화를 좋아하는 저는 영화에 대한 정보를 얻고 서로 추천하는 영화에 대해 이야기를 나누는 페이지를 만들고 싶어 제작하게 되었습니다.
 
 ## :small_blue_diamond: 시연영상  (클릭시 영상이 재생됩니다)
 
 
 ## :small_blue_diamond: 주요 개발 내용
     - Java 기반의 Spring MVC 서버 백엔드 개발
-    - SVN을 통한 형상 관리
-    - 웹캠을 통한 AI 모션인식
-    - 스터디 플래너를 통한 일정관리
-    - 웹소켓을 이용한 채팅 서비스 구현 (개인/ 단체 채팅)
-    - 카카오맵 API를 통한 현재 내주변맛집 표시, 셀렉트박스를 통한 맛집 자동 검색 등
-    - 카카오, 구글 오픈 API를 이용한 소셜로그인   (OAuth) 
-    - 맛집 별점등록 기능
+    - Naver 영화 검색 API를 이용한 영화 검색
+    - YouTube iFrame API를 이용한 영화 예고편 제공
+    - Spring Security를 이용한 회원 정보 관리
+    
 ## :small_blue_diamond: 프로젝트 총평 및 기여한 부분
     1. 진행해본 프로젝트중 가장 완성도가 높은 서비스
  
@@ -30,11 +25,8 @@
  
     -  사용자 입장에서 어떤 기능이필요할지 생각해봤습니다. 
     카카오맵을 이용한 맛집정보와 위치 표시, 맛집 일정관리등의 기능을 구현했습니다.
-## :small_blue_diamond: 웹 URL
-   :house: https://moira1.iptime.org:8443/meet/  
 
-   :house: https://moira1.iptime.org:8443/meet/health/home
-## :small_blue_diamond: 제작 기간 ( 7주 - 2021/6/15 ~ 8/3 )
+## :small_blue_diamond: 제작 기간 ( 3주 - 2021/5/21 ~ 6/11 )
 
 ## :small_blue_diamond: Overview
 ### 0. 메인페이지
@@ -56,15 +48,15 @@
 ![팀-마이페이지모집글내역](https://user-images.githubusercontent.com/78129881/128335233-862a926f-98e8-4842-9936-c4acb5422719.jpg)
 <div align="center"> 마이페이지에서는 자신이 개설한모임과 신청한모임, 참여중인 모임, 완료중인 모임을 확인할수 있습니다. </div>
 
-## :heavy_check_mark: ERD
+## :small_blue_diamond: ERD
 ![table_erd_수정_210804](https://user-images.githubusercontent.com/78129881/128328964-0ee64b71-e73f-463a-9136-0188ea0f3469.png)
 
-## :heavy_check_mark: Tech stack
+## :small_blue_diamond: Tech stack
 ![backendd](https://user-images.githubusercontent.com/78129881/128328994-d3bb1f68-f9c9-4801-8a28-174cc019d885.jpg)
 
-## :heavy_check_mark: 담당 기능
+## :small_blue_diamond: 담당 기능
 
-## :heavy_check_mark: 역할 분배
+## :small_blue_diamond: 역할 분배
 
 
 
