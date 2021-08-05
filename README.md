@@ -1,8 +1,5 @@
 # 영화 예고편 제공 사이트 - 개인 프로젝트
 
-# <div align="center">:hatched_chick:  Welcome to MOIRA :hatched_chick: </div>
- ![moiralogo](https://user-images.githubusercontent.com/78129881/128320108-a399c821-5969-42ae-95c6-3dd394bf519f.jpg) 
-
 ## :heavy_check_mark: 소개
      'MOIRA'는 취향기반 관심사 커뮤니티로써, 각각의 카테고리별로 (운동,맛집,스터디,축제) 
     일회성 모임을 주선하는 플랫폼입니다.
