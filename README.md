@@ -1,7 +1,7 @@
 # 영화 예고편 제공 사이트 - 개인 프로젝트
 
 ## :small_blue_diamond: 소개
-    'MOVIE'는 영화 예고편, 영화 간략한 정보, 검색 기능, 영화 추천 게시판 기능을 제공하는 페이지 입니다.
+    'MOVIE'는 영화 예고편, 간략한 정보, 검색 기능, 영화 추천 게시판 기능을 제공하는 페이지 입니다.
 
 ## :small_blue_diamond: 기획의도
     영화를 좋아하는 저는 영화에 대한 정보를 얻고 서로 추천하는 영화에 대해 이야기를 나누는 페이지를 만들고 싶어 제작하게 되었습니다.
@@ -30,8 +30,15 @@
 
 ## :small_blue_diamond: Overview
 ### 0. 메인페이지
-![팀1-메인](https://user-images.githubusercontent.com/78129881/128335055-263f2803-f30d-4ca6-b2c9-440ef914ea21.jpg)
-<div align="center"> 부트스트랩을 이용한 moira 메인 페이지입니다. </div>
+
+![화면 캡처 2021-08-05 202542](https://user-images.githubusercontent.com/78129823/128342959-5cea1020-7574-4a59-af18-827efdb6b6bf.png)
+<div align="center"> 메인화면 입니다. </div>
+
+![화면 캡처 2021-08-05 202922](https://user-images.githubusercontent.com/78129823/128342819-84ec7ab5-ff7c-4086-9228-1c58d8998e5d.png)
+<div align="center"> 메인화면에서 로그인을 클릭했을 때 입니다. </div>
+
+![화면 캡처 2021-08-05 203209](https://user-images.githubusercontent.com/78129823/128343131-88724ea8-3a7d-4162-b101-a3ff2e925db9.png)
+<div align="center"> 로그인을 했을 때 메인 화면 입니다. </div>
 
 ### 1. 유저 로그인 (소셜 로그인)
 ![팀-로그인](https://user-images.githubusercontent.com/78129881/128335078-9b0f3c69-eeeb-4d93-b134-662d8568b87b.jpg)
