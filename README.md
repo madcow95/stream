@@ -29,7 +29,7 @@
 ## :small_blue_diamond: 제작 기간 ( 3주 - 2021/5/21 ~ 6/11 )
 
 ## :small_blue_diamond: Overview
-### 0. 메인페이지
+### 0. 메인페이지(Spring Security에서 hasRole을 사용해 권한에 따라 보이는 화면이 다르게 했습니다.)
 
 ![화면 캡처 2021-08-05 202542](https://user-images.githubusercontent.com/78129823/128342959-5cea1020-7574-4a59-af18-827efdb6b6bf.png)
 <div align="center"> 메인화면 입니다. </div>
