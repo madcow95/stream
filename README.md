@@ -49,7 +49,7 @@
 ![가입](https://user-images.githubusercontent.com/78129823/128465396-7af56808-c629-4079-8860-bdcdaf7f8008.png)
 ![bcr](https://user-images.githubusercontent.com/78129823/128465627-ad58d31b-d50e-48b3-85c0-9237240e14e6.png)
 ![auth](https://user-images.githubusercontent.com/78129823/128465741-385db66d-beb3-4db3-aee2-49a279157ef9.png)
-<div align="center"> 회원가입이 완료되면 비밀번호가 BcryptEncoder를 통해 암호화 되고, 
+<div align="center"> 회원가입이 완료되면 비밀번호가 BcryptPasswordEncoder를 통해 암호화 되고, 
     ROLE_MEMBER 권한을 부여해 DB에 저장시켰습니다. </div>
 
 ### 2-1 영화 검색 기능
