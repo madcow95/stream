@@ -6,7 +6,7 @@
 ## :small_blue_diamond: 기획의도
     영화를 좋아하는 저는 영화에 대한 정보를 얻고 서로 추천하는 영화에 대해 이야기를 나누는 페이지를 만들고 싶어 제작하게 되었습니다.
 
-## :small_blue_diamond: 시연영상  (클릭시 영상이 재생됩니다)
+<!-- ## :small_blue_diamond: 시연영상  (클릭시 영상이 재생됩니다) -->
 
 
 ## :small_blue_diamond: 주요 개발 내용
@@ -15,7 +15,7 @@
     - YouTube iFrame API를 이용한 영화 예고편 제공
     - Spring Security를 이용한 회원 정보 관리
     
-## :small_blue_diamond: 프로젝트 총평 및 기여한 부분
+<!-- ## :small_blue_diamond: 프로젝트 총평 및 기여한 부분 -->
 <!--     1. 진행해본 프로젝트중 가장 완성도가 높은 서비스
  
     -  개인프로젝트를 진행했을 당시, 소셜로그인의 구현에 실패했었습니다. 
@@ -50,11 +50,16 @@
 
 ### 1-1. 아이디 중복검사
 ![id](https://user-images.githubusercontent.com/78129823/128442644-6d19744e-7596-410d-aef1-e25133ee7fa5.gif)     ![idfail](https://user-images.githubusercontent.com/78129823/128442855-c30db8d0-c06b-42a0-a858-95ea9ba7543d.gif) 
-<div align="center"> keyup과 ajax를 사용하여 중복검사를 했습니다. </div>
+<div align="center"> keyup과 ajax로 DB에 일치하는 결과가 있는지 조회하여 유효성 검사를 했습니다.</div>
 
 ### 1-2. 비밀번호 유효성 검사
 ![pwd](https://user-images.githubusercontent.com/78129823/128444151-8c82f5d9-c152-43d8-8c78-b2567df5257b.gif)
 <div align="center"> keyup을 사용하여 유효성 검사를 했습니다. </div>
+
+### 2-1 영화 검색 기능
+![ms](https://user-images.githubusercontent.com/78129823/128464132-31b44a97-dfae-4ed5-90be-938232e0537c.gif)
+<div align="center"> Ajax로 검색어를 Naver 영화 검색 API를 통해 취득한 데이터를
+DB에 저장하는 동시에 별점순으로 정렬하여 화면에 출력시켰습니다.</div>
 <!-- ### 1. 유저 로그인 (소셜 로그인)
 ![팀-로그인](https://user-images.githubusercontent.com/78129881/128335078-9b0f3c69-eeeb-4d93-b134-662d8568b87b.jpg)
 <div align="center"> 카카오와 구글 API를 이용한 소셜로그인 구현 (OAuth)</div>
@@ -76,9 +81,9 @@
 ## :small_blue_diamond: Tech stack
 ![backendd](https://user-images.githubusercontent.com/78129881/128328994-d3bb1f68-f9c9-4801-8a28-174cc019d885.jpg) -->
 
-## :small_blue_diamond: 담당 기능
+<!-- ## :small_blue_diamond: 담당 기능
 
-## :small_blue_diamond: 역할 분배
+## :small_blue_diamond: 역할 분배 -->
 
 
 
