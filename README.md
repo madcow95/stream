@@ -16,7 +16,7 @@
     - Spring Security를 이용한 회원 정보 관리
     
 ## :small_blue_diamond: 프로젝트 총평 및 기여한 부분
-    1. 진행해본 프로젝트중 가장 완성도가 높은 서비스
+<!--     1. 진행해본 프로젝트중 가장 완성도가 높은 서비스
  
     -  개인프로젝트를 진행했을 당시, 소셜로그인의 구현에 실패했었습니다. 
     이번 프로젝트에서 구글과 카카오톡 API를 정밀하게  분석하며 소셜로그인을 구현했습니다. 
@@ -24,7 +24,8 @@
     2. 사용자들이 편리하게 이용할 서비스들로 구성
  
     -  사용자 입장에서 어떤 기능이필요할지 생각해봤습니다. 
-    카카오맵을 이용한 맛집정보와 위치 표시, 맛집 일정관리등의 기능을 구현했습니다.
+    카카오맵을 이용한 맛집정보와 위치 표시, 맛집 일정관리등의 기능을 구현했습니다. -->
+    
 
 ## :small_blue_diamond: 제작 기간 ( 3주 - 2021/5/21 ~ 6/11 )
 
@@ -40,7 +41,7 @@
 ![화면 캡처 2021-08-05 203209](https://user-images.githubusercontent.com/78129823/128343131-88724ea8-3a7d-4162-b101-a3ff2e925db9.png)
 <div align="center"> 로그인을 했을 때 메인 화면 입니다. </div>
 
-### 1. 유저 로그인 (소셜 로그인)
+<!-- ### 1. 유저 로그인 (소셜 로그인)
 ![팀-로그인](https://user-images.githubusercontent.com/78129881/128335078-9b0f3c69-eeeb-4d93-b134-662d8568b87b.jpg)
 <div align="center"> 카카오와 구글 API를 이용한 소셜로그인 구현 (OAuth)</div>
 
@@ -59,7 +60,7 @@
 ![table_erd_수정_210804](https://user-images.githubusercontent.com/78129881/128328964-0ee64b71-e73f-463a-9136-0188ea0f3469.png)
 
 ## :small_blue_diamond: Tech stack
-![backendd](https://user-images.githubusercontent.com/78129881/128328994-d3bb1f68-f9c9-4801-8a28-174cc019d885.jpg)
+![backendd](https://user-images.githubusercontent.com/78129881/128328994-d3bb1f68-f9c9-4801-8a28-174cc019d885.jpg) -->
 
 ## :small_blue_diamond: 담당 기능
 
