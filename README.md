@@ -71,4 +71,4 @@
 
 
 
- # <div align="center"> :sparkles: 봐주셔서 감사합니다. :sparkles: </div>
+ # <div align="center"> 감사합니다. </div>
