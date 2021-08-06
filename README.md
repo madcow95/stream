@@ -37,13 +37,24 @@
 <hr>
 
 ![화면 캡처 2021-08-05 202922](https://user-images.githubusercontent.com/78129823/128342819-84ec7ab5-ff7c-4086-9228-1c58d8998e5d.png)
-<div align="center"> 메인화면에서 로그인을 클릭했을 때 입니다. </div>
+<div align="center"> 메인화면에서 로그인(LOGIN)을 클릭했을 때 입니다. </div>
 <hr>
 
 ![화면 캡처 2021-08-05 203209](https://user-images.githubusercontent.com/78129823/128343131-88724ea8-3a7d-4162-b101-a3ff2e925db9.png)
 <div align="center"> 로그인을 했을 때 메인 화면 입니다. </div>
 <hr>
 
+### 1. 회원가입
+![화면 캡처 2021-08-06 102115](https://user-images.githubusercontent.com/78129823/128441571-501ffc09-c08e-4801-a784-2de033a2a9a1.png)
+<div align="center"> 회원가입(JOIN)을 클릭했을 때 입니다. </div>
+
+### 1-1. 아이디 중복검사
+![id](https://user-images.githubusercontent.com/78129823/128442644-6d19744e-7596-410d-aef1-e25133ee7fa5.gif)     ![idfail](https://user-images.githubusercontent.com/78129823/128442855-c30db8d0-c06b-42a0-a858-95ea9ba7543d.gif) 
+<div align="center"> keyup과 ajax를 사용하여 중복검사를 했습니다. </div>
+
+### 1-2. 비밀번호 유효성 검사
+![pwd](https://user-images.githubusercontent.com/78129823/128444151-8c82f5d9-c152-43d8-8c78-b2567df5257b.gif)
+<div align="center"> keyup을 사용하여 유효성 검사를 했습니다. </div>
 <!-- ### 1. 유저 로그인 (소셜 로그인)
 ![팀-로그인](https://user-images.githubusercontent.com/78129881/128335078-9b0f3c69-eeeb-4d93-b134-662d8568b87b.jpg)
 <div align="center"> 카카오와 구글 API를 이용한 소셜로그인 구현 (OAuth)</div>
